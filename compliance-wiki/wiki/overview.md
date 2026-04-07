@@ -13,7 +13,14 @@ status: active
 ## Current Priorities
 
 ### 1. KYB Vendor Selection — High Priority
-[[Kota]] lacks a dedicated KYB provider. The current tool ([[ComplyAdvantage]]) handles sanctions/PEP screening but does not cover full business verification, UBO identification, or registry checks. A comprehensive requirements document has been produced (see [[Kota KYB Software Requirements]]) covering both Platform and Embed verticals. Key decision: extend ComplyAdvantage with a complementary KYB tool, or replace it entirely.
+[[Kota]] lacks a dedicated KYB provider. The current tool ([[ComplyAdvantage]]) handles sanctions/PEP screening but does not cover full business verification, UBO identification, or registry checks. A comprehensive requirements document has been produced (see [[Kota KYB Software Requirements]]) covering both Platform and Embed verticals.
+
+**Market research completed** — 10 developer-friendly KYB providers have been evaluated (see [[KYB Provider Comparison — Top 10 Developer-Friendly Providers]]). Top recommendations:
+1. **[[Sumsub]]** — Best all-round (fast, unified KYC+KYB, webhooks, 200+ countries)
+2. **[[Persona]]** — Best developer experience (clean APIs, dynamic flows)
+3. **[[ComplyCube]]** — Best pricing transparency (published rates, UK-based)
+
+**Next steps:** Request demos from Tier 1 providers, validate EU/EEA registry coverage, request SOC 2 / ISO 27001 evidence.
 
 ### 2. PEPP Product Risk Assessment — Medium Priority
 The [[KYB Requirements by Product Type]] matrix shows director and UBO identification requirements for PEPP are **unknown**. A product-specific risk assessment must be completed before PEPP onboarding processes can be finalised.

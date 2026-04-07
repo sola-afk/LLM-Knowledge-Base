@@ -34,3 +34,11 @@ status: active
 - Source: raw/case-creation-workflow-notes.md (renamed from "Conditions are mainly for case creation.md")
 - Created: wiki/sources/case-creation-workflow-notes.md
 - Notes: Brief internal notes on conditional logic for case creation workflows. Low priority — useful context for KYB platform configuration.
+
+## [2026-04-07] research | KYB Provider Market Research — Top 10 Developer-Friendly Providers
+- Source: Web research across multiple industry comparison guides and provider websites
+- Created: wiki/sources/kyb-provider-research-2026-04.md
+- Created: wiki/comparisons/kyb-provider-comparison.md
+- Created: wiki/entities/sumsub.md, wiki/entities/signzy.md, wiki/entities/complycube.md, wiki/entities/ondato.md, wiki/entities/veriff.md, wiki/entities/idenfy.md, wiki/entities/aiprise.md, wiki/entities/persona.md, wiki/entities/alloy.md, wiki/entities/onfido.md
+- Updated: wiki/index.md, wiki/overview.md
+- Notes: Evaluated 10 KYB providers against Kota's requirements. Top 3 recommendations: Sumsub (best all-round), Persona (best DX), ComplyCube (best pricing transparency). Next steps: request demos, validate EU coverage, request security certifications.
