@@ -20,7 +20,14 @@ status: active
 2. **[[Persona]]** — Best developer experience (clean APIs, dynamic flows)
 3. **[[ComplyCube]]** — Best pricing transparency (published rates, UK-based)
 
-**Next steps:** Request demos from Tier 1 providers, validate EU/EEA registry coverage, request SOC 2 / ISO 27001 evidence.
+**UX research also completed** — 10 providers evaluated for user experience and simplistic design (see [[KYB Provider UX Comparison — Top 10 for User Experience & Simplistic Design]]). Top UX picks:
+1. **[[Spektr]]** — Best compliance team UX (AI tree view, no-code workflows)
+2. **[[Vespia]] / [[Veriff]]** — Best onboarding UX (sub-30s, 300+ jurisdictions, one-click PDF export)
+3. **[[Persona]]** — Best combined DX + UX
+
+**Overall leaders across both dimensions:** [[Persona]] and [[Sumsub]] rank highly on developer experience AND user experience.
+
+**Next steps:** Request demos from top providers (Persona, Sumsub, Spektr, ComplyCube), validate EU/EEA registry coverage, request SOC 2 / ISO 27001 evidence.
 
 ### 2. PEPP Product Risk Assessment — Medium Priority
 The [[KYB Requirements by Product Type]] matrix shows director and UBO identification requirements for PEPP are **unknown**. A product-specific risk assessment must be completed before PEPP onboarding processes can be finalised.

@@ -28,11 +28,18 @@ status: active
 - [[ComplyCube]] — Developer-first, transparent pricing, UK-based
 - [[Ondato]] — EU-focused, 5AMLD compliant, financial data
 - [[Veriff]] — 230+ countries, Estonia-based, broadest coverage
+- [[Vespia]] — Sub-30s verification, 300+ jurisdictions, acquired by Veriff
 - [[iDenfy]] — 99.8% accuracy, no-code rule builder
 - [[AiPrise]] — AI-powered, explainable decisions, 80% faster onboarding
 - [[Persona]] — Best developer experience, dynamic flows
 - [[Alloy]] — Orchestration layer, ~500 bank/fintech customers
 - [[Onfido (Entrust)]] — Strong IDV, Entrust-acquired
+- [[Spektr]] — Best compliance team UX, AI tree view, no-code workflows
+- [[Strise]] — Living customer profiles, 90% faster onboarding, Nordic banks
+- [[Checkin.com]] — Conversion-first design, A/B testing on compliance flows
+- [[Shufti Pro]] — Conditional questionnaires, 90% pass rate, 250+ countries
+- [[Compliancely]] — Single dashboard, 3s verification, plug & play widgets
+- [[Middesk]] — Best UX design patterns, US-only coverage
 
 ## Concepts
 - [[KYB (Know Your Business)]] — Corporate customer due diligence (3 sources)
@@ -45,6 +52,8 @@ status: active
 - [[KYB Requirements by Product Type]] — Due diligence matrix across Health, Pensions, Income Protection, PEPP
 - [[Case Creation Workflow Notes]] — Internal notes on case management conditional logic
 - [[KYB Provider Market Research — April 2026]] — Web research on 10 developer-friendly KYB providers
+- [[KYB Provider UX Research — April 2026]] — Web research on 10 UX-focused KYB providers
 
 ## Comparisons
 - [[KYB Provider Comparison — Top 10 Developer-Friendly Providers]] — Full evaluation matrix against Kota's requirements
+- [[KYB Provider UX Comparison — Top 10 for User Experience & Simplistic Design]] — UX and design evaluation matrix

@@ -42,3 +42,11 @@ status: active
 - Created: wiki/entities/sumsub.md, wiki/entities/signzy.md, wiki/entities/complycube.md, wiki/entities/ondato.md, wiki/entities/veriff.md, wiki/entities/idenfy.md, wiki/entities/aiprise.md, wiki/entities/persona.md, wiki/entities/alloy.md, wiki/entities/onfido.md
 - Updated: wiki/index.md, wiki/overview.md
 - Notes: Evaluated 10 KYB providers against Kota's requirements. Top 3 recommendations: Sumsub (best all-round), Persona (best DX), ComplyCube (best pricing transparency). Next steps: request demos, validate EU coverage, request security certifications.
+
+## [2026-04-07] research | KYB Provider UX Research — Top 10 for User Experience & Simplistic Design
+- Source: Web research across provider websites and industry guides
+- Created: wiki/sources/kyb-provider-ux-research-2026-04.md
+- Created: wiki/comparisons/kyb-provider-ux-comparison.md
+- Created: wiki/entities/vespia.md, wiki/entities/spektr.md, wiki/entities/strise.md, wiki/entities/checkin-com.md, wiki/entities/shufti-pro.md, wiki/entities/compliancely.md, wiki/entities/middesk.md
+- Updated: wiki/index.md, wiki/overview.md
+- Notes: Evaluated 10 KYB providers on UX and design simplicity. Top 3 UX picks: Spektr (best compliance team UX), Vespia/Veriff (best onboarding UX), Persona (best combined DX+UX). Persona and Sumsub rank highly across both developer and UX dimensions.
