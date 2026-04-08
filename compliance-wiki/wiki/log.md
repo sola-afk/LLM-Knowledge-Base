@@ -54,3 +54,11 @@ status: active
 ## [2026-04-07] deliverable | KYB Provider Product Requirements Document
 - Created: output/kyb-provider-product-requirements.md
 - Notes: Formal PRD synthesising all knowledge base sources — functional requirements (40 items), technical requirements (20 items), security requirements (12 items), UX requirements (7 items), vendor requirements (8 items). Includes evaluation scorecard, shortlisted providers, decision framework (replace vs extend ComplyAdvantage), and 16-week implementation timeline.
+
+## [2026-04-08] ingest | Q1 2026 Compliance Review — Embed Hubs
+- Source: raw/Q1 2026 Compliance Review- Embed hubs.docx (converted to raw/q1-2026-compliance-review-embed-hubs.md)
+- Notes: Terms of Reference for compliance audit of Embed Hubs — customer-facing information portals on kota.io subdomains. Scope: consumer protection, insurance distribution, data protection. Built on Lovable by Josh Ellwood.
+
+## [2026-04-08] deliverable | Embed Hub Sampling Review Template
+- Created: output/embed-hub-sampling-review-template.md
+- Notes: 30-item checklist across 7 categories (clear presentation, product information, disclosures, IPIDs, data protection, consistency, governance) with regulatory references down to section/subsection level. Covers CBI Consumer Protection Code 2025, S.I. No. 229/2018, IDD, FCA Consumer Duty (PRIN 2A), ICOBS, GDPR.
