@@ -9,7 +9,7 @@ tags:
   - status/in-force
 created: 2026-04-08
 updated: 2026-04-08
-source_count: 4
+source_count: 7
 status: active
 ---
 
@@ -44,6 +44,47 @@ Transposition of IDD Art.25 into Irish law.
 - **Art.25(1)(a)–(d)**: Target market identification, risk assessment, distribution strategy consistency
 - **Art.25(3)**: Distributors must understand products and their target markets
 - **Art.25(4)**: Review obligations
+
+### Commission Delegated Regulation (EU) 2017/2358
+
+The primary EU regulation detailing insurance product governance requirements. Supplements IDD Art.25.
+
+**Manufacturer requirements:**
+- **Art.4** — Product approval process: written POG policy, board approval and oversight, compliance function monitoring
+- **Art.5** — Target market: identified at sufficiently granular level; positive and negative target market; must consider characteristics, risk profile, complexity, sustainability factors
+- **Art.6** — Product testing: scenario analysis before launch; product must not be launched if testing shows it does not meet target market needs
+- **Art.7** — Monitoring and review: continuous monitoring; regular review using sales data, complaints, distribution outcomes; **corrective action** mandatory where product is detrimental (including ceasing distribution and contacting existing customers)
+- **Art.8** — Distribution channels: must be appropriate for target market; manufacturers must provide distributors with target market definition and product approval information
+
+**Distributor requirements:**
+- **Art.10** — Product distribution arrangements: obtain all necessary information from manufacturers; use own customer knowledge to refine target market; regularly review; inform manufacturer and take corrective action where product is not in line with target market
+
+**Sustainability amendment** (Delegated Regulation 2021/1257): target market identification, product design, and distribution must also consider sustainability factors.
+
+### EIOPA Peer Review on POG — 2023 Findings
+
+Key findings from EIOPA's cross-EU peer review relevant to insurance distributors:
+- Target market definitions often **too broad** to provide meaningful guidance
+- **Product testing** (scenario analysis) inconsistently applied by manufacturers
+- **Distributor feedback loop** to manufacturers often weak or non-existent
+- **Value for money** emerging as key supervisory focus
+- POG supervision expanding beyond investment products to **all insurance products** from 2026
+- 110 recommendations issued to NCAs — signals tightening expectations
+
+See [[EIOPA Peer Review on Product Oversight and Governance — 2023]] for full detail.
+
+### EU Retail Investment Strategy (December 2025) — Upcoming
+
+> [!warning] Upcoming
+> Political agreement December 2025. Application expected ~end 2028.
+
+Amends IDD Art.25 to introduce:
+- Mandatory **value-for-money** assessments — products where costs are not justified and proportionate must not be approved for sale
+- Concept of **"undue costs"** — costs that cannot be justified by product features
+- **Supervisory benchmarks** for insurance products (4-year transitional)
+- Enhanced **pricing governance** at manufacturer and distributor levels
+
+See [[EU Retail Investment Strategy — Product Governance Changes (Dec 2025)]] for full detail.
 
 ### Revised Consumer Protection Code 2025 (effective 24 March 2026)
 
@@ -164,6 +205,18 @@ Product governance is a **shared responsibility**:
 - Compliance with CPC 2025 "secure customers' interests" standard from 24 March 2026
 - Feedback loop with insurer partners on complaints, distribution data, and target market alignment
 
+## Corrective Action
+
+Under Delegated Regulation 2017/2358, Art.7(4), where a product is found to be **detrimental to customers** or not in line with the identified target market, corrective action is mandatory:
+
+1. Inform distributors and customers
+2. Amend the product approval process
+3. Modify the product
+4. Cease further distribution
+5. Contact the existing customer base
+
+Distributors have a parallel obligation under Art.10(4): inform the manufacturer and, where appropriate, cease distribution.
+
 ## Open Questions / Gaps
 - Has Kota obtained formal target market assessments from all insurer partners?
 - Are distribution arrangements documented per product and per distribution channel?
@@ -172,13 +225,19 @@ Product governance is a **shared responsibility**:
 - Is there a negative target market definition for each product?
 - Are review triggers defined and documented?
 - Is there a process for feeding distribution data and complaints back to manufacturers?
+- Has Kota requested evidence of product testing (scenario analysis) from manufacturers?
+- Is Kota prepared for value-for-money assessments under the upcoming Retail Investment Strategy?
 
 ## Sources
+- [[Delegated Regulation (EU) 2017/2358 — Product Oversight and Governance]]
+- [[EIOPA Peer Review on Product Oversight and Governance — 2023]]
+- [[EU Retail Investment Strategy — Product Governance Changes (Dec 2025)]]
 - [[Modern Product Governance Framework (Skyjed)]]
 - [[Product Governance — Target Market Assessment (ESMA/A&L Goodbody)]]
 - [[How Good Is Your Product Governance? (Ruleguard)]]
 - [[Product Governance — Manufacturer & Distributor Obligations (KPMG Ireland)]]
 - S.I. No. 229/2018, Reg.38
 - Directive (EU) 2016/97 (IDD), Art.25
+- Commission Delegated Regulation (EU) 2017/2358
 - CBI Consumer Protection Code 2025
 - FCA Handbook, PRIN 2A.3

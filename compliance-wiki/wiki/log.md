@@ -75,3 +75,11 @@ status: active
 - Created: wiki/sources/ pages for all 4
 - Updated: wiki/concepts/product-governance.md — added lifecycle phases, five target market categories, feedback loop, self-assessment checklist, expanded open questions
 - Updated: wiki/index.md
+
+## [2026-04-08] research | EU product governance regulatory framework
+- Sources: Delegated Regulation (EU) 2017/2358 (EUR-Lex), EIOPA POG Peer Review 2023, EU Retail Investment Strategy (Dec 2025)
+- Created: raw/eu-delegated-regulation-2017-2358-pog.md, raw/eiopa-pog-peer-review-2023.md, raw/eu-retail-investment-strategy-pog-2025.md
+- Created: wiki/sources/ pages for all 3
+- Updated: wiki/concepts/product-governance.md — added Delegated Regulation 2017/2358 articles (product approval, target market, testing, monitoring, corrective action), EIOPA peer review findings, upcoming Retail Investment Strategy (value-for-money, undue costs)
+- Updated: wiki/index.md
+- Notes: Delegated Reg. 2017/2358 is the foundational EU regulation — Articles 4-8 (manufacturers) and 10 (distributors). EIOPA peer review found target markets too broad, product testing inconsistent, distributor feedback loops weak. RIS introduces value-for-money assessments (~2028).

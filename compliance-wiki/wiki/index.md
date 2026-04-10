@@ -46,7 +46,7 @@ status: active
 - [[Sanctions and PEP Screening]] — Sanctions, PEP, and adverse media screening (2 sources)
 - [[UBO Identification]] — Ultimate beneficial owner identification and verification (2 sources)
 - [[AML Compliance]] — Anti-money laundering programme overview (2 sources)
-- [[Product Governance]] — Product oversight, target market, approval processes (IDD/IDR Reg.38, CPC 2025) (4 sources)
+- [[Product Governance]] — Product oversight, target market, approval processes (IDD/IDR Reg.38, Delegated Reg. 2017/2358, CPC 2025) (7 sources)
 - [[Insurance Distribution]] — Disclosures, pre-contractual info, IPIDs, conduct obligations (S.I. 229/2018, IDD, CPC 2025, FCA PRIN 2A)
 
 ## Sources
@@ -59,6 +59,9 @@ status: active
 - [[Product Governance — Target Market Assessment (ESMA/A&L Goodbody)]] — Five target market categories, negative target market, feedback loop
 - [[How Good Is Your Product Governance? (Ruleguard)]] — Self-assessment checklist, common gaps, what good looks like
 - [[Product Governance — Manufacturer & Distributor Obligations (KPMG Ireland)]] — Detailed manufacturer/distributor obligations, oversight, record-keeping
+- [[Delegated Regulation (EU) 2017/2358 — Product Oversight and Governance]] — Primary EU regulation: product approval, target market, testing, monitoring, corrective action
+- [[EIOPA Peer Review on Product Oversight and Governance — 2023]] — Cross-EU peer review findings, 110 recommendations, supervisory expectations
+- [[EU Retail Investment Strategy — Product Governance Changes (Dec 2025)]] — Upcoming: value-for-money, undue costs, pricing governance (application ~2028)
 
 ## Comparisons
 - [[KYB Provider Comparison — Top 10 Developer-Friendly Providers]] — Full evaluation matrix against Kota's requirements
