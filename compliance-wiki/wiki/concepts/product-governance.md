@@ -9,7 +9,7 @@ tags:
   - status/in-force
 created: 2026-04-08
 updated: 2026-04-08
-source_count: 0
+source_count: 4
 status: active
 ---
 
@@ -93,20 +93,91 @@ Transposition of IDD Art.25 into Irish law.
 4. **Distribution strategy aligned** with target market
 5. **Regular product reviews** considering material changes
 
+## Product Lifecycle Phases
+
+Product governance operates across three phases:
+
+### 1. Design
+- Product approval process with defined sign-off authority
+- Target market definition (positive and negative)
+- Risk assessment for the target market
+- Distribution strategy aligned with the target market
+
+### 2. Distribution
+- Products reach the correct target market through appropriate channels
+- Negative target market enforced — products not distributed to incompatible customers
+- Distribution channel assessed for compatibility
+
+### 3. Monitoring and Review
+- **Annual reviews** at minimum, covering: sales volumes, complaints data, claims experience, lapse rates, distribution channel mix
+- **Review triggers** prompting immediate ad-hoc reviews:
+  - Significant change in risk profile
+  - Material change in target market
+  - Spike in complaints
+  - Regulatory change
+  - Change in distribution channel or partner arrangement
+  - Evidence product is reaching customers outside target market
+- **Product retirement** where a product no longer meets the target market's needs
+
+## Five Target Market Assessment Categories
+
+Adapted from the ESMA framework, applicable to insurance distribution:
+
+| Category | Insurance Application |
+|----------|----------------------|
+| **Customer type** | Employer size, industry sector, group size, jurisdiction, employee demographics |
+| **Knowledge & experience** | HR/benefits team familiarity with group insurance, claims, benefits admin |
+| **Financial situation** | Ability to sustain premiums, co-insurance capacity, financial stability |
+| **Risk tolerance** | Appetite for waiting periods, excesses, exclusions, benefit caps |
+| **Objectives & needs** | Employee retention, regulatory compliance, wellbeing strategy, tax efficiency |
+
+**Negative target market** must also be defined — employers whose employees would be systematically excluded, employers in unsupported jurisdictions, employers whose financial situation makes premiums unsustainable.
+
+## Manufacturer-Distributor Feedback Loop
+
+Product governance is a **shared responsibility**:
+
+1. **Manufacturer → Distributor:** Target market definition, product information, approval process details
+2. **Distributor → Manufacturer:** Sales data, complaints, claims patterns, market intelligence, evidence of products reaching unintended customers
+3. **Manufacturer oversight:** Manufacturers must oversee distributors to ensure the distribution strategy is followed — including restricting or terminating arrangements where governance concerns arise
+
+## Self-Assessment Checklist
+
+| # | Question |
+|---|---------|
+| 1 | Do you have a documented product governance policy? |
+| 2 | Is there a clear product approval process with defined sign-off? |
+| 3 | Does every product have a documented target market (positive and negative)? |
+| 4 | Is the distribution strategy for each product explicitly aligned with its target market? |
+| 5 | Do you conduct product reviews at least annually? |
+| 6 | Are review triggers defined and documented? |
+| 7 | Do you have MI that shows whether products are reaching the intended target market? |
+| 8 | Do you share relevant information with manufacturers (complaints, distribution data)? |
+| 9 | Is there a clear audit trail of all product governance decisions? |
+| 10 | Does senior management receive regular reporting on product governance? |
+
 ## Our Approach
 [[Kota]] distributes group insurance products (Health, Pensions, Income Protection, PEPP) across Platform and Embed verticals. Product governance obligations require:
 - Target market information from each insurer partner
 - Distribution arrangements ensuring products reach appropriate employers
 - Regular review of product appropriateness
 - Compliance with CPC 2025 "secure customers' interests" standard from 24 March 2026
+- Feedback loop with insurer partners on complaints, distribution data, and target market alignment
 
 ## Open Questions / Gaps
 - Has Kota obtained formal target market assessments from all insurer partners?
 - Are distribution arrangements documented per product and per distribution channel?
 - Is there a product review cycle in place?
 - How does the CPC 2025 "effectively informed" standard change current practices?
+- Is there a negative target market definition for each product?
+- Are review triggers defined and documented?
+- Is there a process for feeding distribution data and complaints back to manufacturers?
 
 ## Sources
+- [[Modern Product Governance Framework (Skyjed)]]
+- [[Product Governance — Target Market Assessment (ESMA/A&L Goodbody)]]
+- [[How Good Is Your Product Governance? (Ruleguard)]]
+- [[Product Governance — Manufacturer & Distributor Obligations (KPMG Ireland)]]
 - S.I. No. 229/2018, Reg.38
 - Directive (EU) 2016/97 (IDD), Art.25
 - CBI Consumer Protection Code 2025

@@ -68,3 +68,10 @@ status: active
 - Created: wiki/concepts/insurance-distribution.md
 - Updated: wiki/index.md
 - Notes: Product governance covers IDR Reg.38 manufacturer and distributor obligations, IDD Art.25, CPC 2025 Standards for Business, FCA PRIN 2A.3. Insurance distribution covers disclosures (Reg.23), pre-contractual info (Reg.26), IPIDs (Reg.27), CPC 2025 Parts 3–4, ICOBS, and FCA Consumer Duty.
+
+## [2026-04-08] ingest | Product governance framework articles (4 sources)
+- Sources: Skyjed, ESMA/A&L Goodbody, Ruleguard, KPMG Ireland (all adapted from MiFID II to insurance distribution)
+- Created: raw/product-governance-framework-skyjed.md, raw/product-governance-target-market-esma-alg.md, raw/product-governance-quality-assessment-ruleguard.md, raw/product-governance-manufacturer-distributor-kpmg.md
+- Created: wiki/sources/ pages for all 4
+- Updated: wiki/concepts/product-governance.md — added lifecycle phases, five target market categories, feedback loop, self-assessment checklist, expanded open questions
+- Updated: wiki/index.md

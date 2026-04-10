@@ -46,7 +46,7 @@ status: active
 - [[Sanctions and PEP Screening]] — Sanctions, PEP, and adverse media screening (2 sources)
 - [[UBO Identification]] — Ultimate beneficial owner identification and verification (2 sources)
 - [[AML Compliance]] — Anti-money laundering programme overview (2 sources)
-- [[Product Governance]] — Product oversight, target market, approval processes (IDD/IDR Reg.38, CPC 2025)
+- [[Product Governance]] — Product oversight, target market, approval processes (IDD/IDR Reg.38, CPC 2025) (4 sources)
 - [[Insurance Distribution]] — Disclosures, pre-contractual info, IPIDs, conduct obligations (S.I. 229/2018, IDD, CPC 2025, FCA PRIN 2A)
 
 ## Sources
@@ -55,6 +55,10 @@ status: active
 - [[Case Creation Workflow Notes]] — Internal notes on case management conditional logic
 - [[KYB Provider Market Research — April 2026]] — Web research on 10 developer-friendly KYB providers
 - [[KYB Provider UX Research — April 2026]] — Web research on 10 UX-focused KYB providers
+- [[Modern Product Governance Framework (Skyjed)]] — Lifecycle phases, target market methodology, review triggers
+- [[Product Governance — Target Market Assessment (ESMA/A&L Goodbody)]] — Five target market categories, negative target market, feedback loop
+- [[How Good Is Your Product Governance? (Ruleguard)]] — Self-assessment checklist, common gaps, what good looks like
+- [[Product Governance — Manufacturer & Distributor Obligations (KPMG Ireland)]] — Detailed manufacturer/distributor obligations, oversight, record-keeping
 
 ## Comparisons
 - [[KYB Provider Comparison — Top 10 Developer-Friendly Providers]] — Full evaluation matrix against Kota's requirements
