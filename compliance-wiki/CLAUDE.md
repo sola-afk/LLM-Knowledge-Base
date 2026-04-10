@@ -198,10 +198,11 @@ A single source might touch 5–15 wiki pages. Take the time to update everythin
 
 When the user asks a question:
 
-1. Read `wiki/index.md` to find relevant pages.
-2. Read the relevant wiki pages.
-3. Synthesise an answer with links to sources.
-4. If the answer is valuable and reusable, offer to file it back into the wiki as a new page (e.g., a comparison, analysis, or regulatory summary).
+1. **Always read the wiki first.** Read `wiki/index.md` to find relevant pages, then read those pages. Do NOT search the web or make assumptions before checking what the knowledge base already contains.
+2. Synthesise an answer from wiki content with links to sources.
+3. Only search externally if the wiki does not contain sufficient information to answer — and say so explicitly.
+4. **Answer only what was asked.** Do not assume context the user did not provide. Do not reference specific projects, reviews, or workstreams unless the user mentions them.
+5. If the answer is valuable and reusable, offer to file it back into the wiki as a new page (e.g., a comparison, analysis, or regulatory summary).
 
 Outputs can take different forms:
 - A new wiki page (markdown)
