@@ -62,3 +62,9 @@ status: active
 ## [2026-04-08] deliverable | Embed Hub Sampling Review Template
 - Created: output/embed-hub-sampling-review-template.md
 - Notes: 30-item checklist across 7 categories (clear presentation, product information, disclosures, IPIDs, data protection, consistency, governance) with regulatory references down to section/subsection level. Covers CBI Consumer Protection Code 2025, S.I. No. 229/2018, IDD, FCA Consumer Duty (PRIN 2A), ICOBS, GDPR.
+
+## [2026-04-08] wiki | Product Governance and Insurance Distribution concept pages
+- Created: wiki/concepts/product-governance.md
+- Created: wiki/concepts/insurance-distribution.md
+- Updated: wiki/index.md
+- Notes: Product governance covers IDR Reg.38 manufacturer and distributor obligations, IDD Art.25, CPC 2025 Standards for Business, FCA PRIN 2A.3. Insurance distribution covers disclosures (Reg.23), pre-contractual info (Reg.26), IPIDs (Reg.27), CPC 2025 Parts 3–4, ICOBS, and FCA Consumer Duty.

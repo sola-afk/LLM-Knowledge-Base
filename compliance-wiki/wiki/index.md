@@ -46,6 +46,8 @@ status: active
 - [[Sanctions and PEP Screening]] — Sanctions, PEP, and adverse media screening (2 sources)
 - [[UBO Identification]] — Ultimate beneficial owner identification and verification (2 sources)
 - [[AML Compliance]] — Anti-money laundering programme overview (2 sources)
+- [[Product Governance]] — Product oversight, target market, approval processes (IDD/IDR Reg.38, CPC 2025)
+- [[Insurance Distribution]] — Disclosures, pre-contractual info, IPIDs, conduct obligations (S.I. 229/2018, IDD, CPC 2025, FCA PRIN 2A)
 
 ## Sources
 - [[Kota KYB Software Requirements]] — Comprehensive KYB vendor evaluation criteria for Platform & Embed
