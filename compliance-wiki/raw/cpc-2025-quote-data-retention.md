@@ -21,7 +21,7 @@ The CPC 2025 distinguishes between two categories of consumer record:
 
 The 12-month retention period for non-customer records is **subject to consumer consent** — if the consumer withdraws consent for data retention, the data must not be retained for the 12 months.
 
-**Regulatory basis:** S.I. No. 81/2025 — Central Bank (Supervision and Enforcement) Act 2013 (Section 48) (Consumer Protection) Regulations 2025, record retention provisions (exact regulation number to be confirmed against full statutory instrument — note that Regulation 48 of this S.I. covers prominence of key information, not retention).
+**Regulatory basis:** S.I. No. 81/2025, **Regulation 117** (Period of Retention of Records). Note: Regulation 48 of the same S.I. covers prominence of key information — a separate provision.
 
 ## Implication for Quote Data
 

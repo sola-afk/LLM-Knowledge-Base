@@ -30,7 +30,7 @@ Record retention distinguishes between two consumer categories:
 
 The 12-month period is **subject to consumer consent** — if consent is withdrawn, data must be deleted immediately.
 
-**Regulatory basis:** S.I. No. 81/2025 — Consumer Protection Regulations 2025, record retention provisions (exact regulation number to be confirmed against full statutory instrument — Regulation 48 of this S.I. covers prominence of key information, not retention)
+**Regulatory basis:** S.I. No. 81/2025 — Consumer Protection Regulations 2025, **Regulation 117** (Period of Retention of Records). Note: Regulation 48 of the same S.I. covers prominence of key information — a separate provision.
 
 ### GDPR — Regulation (EU) 2016/679
 
@@ -59,8 +59,8 @@ The DPC's suggested ~21 days is **shorter** than the CPC 2025 12-month maximum.
 
 | Data type | Retention period | Basis | Trigger for deletion |
 |-----------|-----------------|-------|---------------------|
-| Customer records (active relationship) | 6 years after relationship ends | CPC 2025 | End of relationship + 6 years |
-| Quote-only / non-customer records | Up to 12 months (with consent); DPC suggests ~21 days | CPC 2025 / GDPR Art.5(1)(e) | End of retention period or consent withdrawal |
+| Customer records (active relationship) | 6 years after relationship ends | CPC 2025 Reg.117 | End of relationship + 6 years |
+| Quote-only / non-customer records | Up to 12 months (with consent); DPC suggests ~21 days | CPC 2025 Reg.117 / GDPR Art.5(1)(e) | End of retention period or consent withdrawal |
 | AML/KYB records (where CDD performed) | 5 years after business relationship ends | CJA 2010 s.55 | End of relationship + 5 years |
 | Complaint records | Subject to CPC record-keeping + GDPR | CPC 2025 / GDPR | Per documented schedule |
 | Financial transaction data | 6 years (tax/audit) | Tax and accounting rules | End of period |
@@ -93,7 +93,7 @@ The DPC's suggested ~21 days is **shorter** than the CPC 2025 12-month maximum.
 
 ## Sources
 - [[CPC 2025 — Customer Quote Data Retention and Deletion]]
-- S.I. No. 81/2025 — Section 48 Consumer Protection Regulations 2025
+- S.I. No. 81/2025 — Consumer Protection Regulations 2025, Reg.117 (Period of Retention of Records)
 - GDPR Art.5(1)(e), Art.17
 - DPC Guidance on insurance quote retention
 - CJA 2010 s.55 (AML record-keeping)
