@@ -30,7 +30,7 @@ Record retention distinguishes between two consumer categories:
 
 The 12-month period is **subject to consumer consent** — if consent is withdrawn, data must be deleted immediately.
 
-**Regulatory basis:** S.I. No. 81/2025 — Central Bank (Supervision and Enforcement) Act 2013 (Section 48) (Consumer Protection) Regulations 2025
+**Regulatory basis:** S.I. No. 81/2025 — Consumer Protection Regulations 2025, record retention provisions (exact regulation number to be confirmed against full statutory instrument — Regulation 48 of this S.I. covers prominence of key information, not retention)
 
 ### GDPR — Regulation (EU) 2016/679
 
