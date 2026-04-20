@@ -48,6 +48,7 @@ status: active
 - [[AML Compliance]] — Anti-money laundering programme overview (2 sources)
 - [[Product Governance]] — Product oversight, target market, approval processes (IDD/IDR Reg.38, Delegated Reg. 2017/2358, CPC 2025) (7 sources)
 - [[Insurance Distribution]] — Disclosures, pre-contractual info, IPIDs, conduct obligations (S.I. 229/2018, IDD, CPC 2025, FCA PRIN 2A)
+- [[Data Retention]] — CPC 2025 retention periods, GDPR storage limitation, DPC quote guidance (1 source)
 
 ## Sources
 - [[Kota KYB Software Requirements]] — Comprehensive KYB vendor evaluation criteria for Platform & Embed
@@ -62,6 +63,7 @@ status: active
 - [[Delegated Regulation (EU) 2017/2358 — Product Oversight and Governance]] — Primary EU regulation: product approval, target market, testing, monitoring, corrective action
 - [[EIOPA Peer Review on Product Oversight and Governance — 2023]] — Cross-EU peer review findings, 110 recommendations, supervisory expectations
 - [[EU Retail Investment Strategy — Product Governance Changes (Dec 2025)]] — Upcoming: value-for-money, undue costs, pricing governance (application ~2028)
+- [[CPC 2025 — Customer Quote Data Retention and Deletion]] — Quote data retention (12 months), GDPR overlay, DPC ~21-day guidance
 
 ## Comparisons
 - [[KYB Provider Comparison — Top 10 Developer-Friendly Providers]] — Full evaluation matrix against Kota's requirements

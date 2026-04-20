@@ -83,3 +83,11 @@ status: active
 - Updated: wiki/concepts/product-governance.md — added Delegated Regulation 2017/2358 articles (product approval, target market, testing, monitoring, corrective action), EIOPA peer review findings, upcoming Retail Investment Strategy (value-for-money, undue costs)
 - Updated: wiki/index.md
 - Notes: Delegated Reg. 2017/2358 is the foundational EU regulation — Articles 4-8 (manufacturers) and 10 (distributors). EIOPA peer review found target markets too broad, product testing inconsistent, distributor feedback loops weak. RIS introduces value-for-money assessments (~2028).
+
+## [2026-04-08] research | CPC 2025 quote data retention and deletion
+- Source: S.I. 81/2025, DPC guidance, Insurance Ireland guidance, industry briefings
+- Created: raw/cpc-2025-quote-data-retention.md
+- Created: wiki/sources/cpc-2025-quote-data-retention.md
+- Created: wiki/concepts/data-retention.md
+- Updated: wiki/index.md
+- Notes: CPC 2025 sets 12-month retention for non-customer records (quote-only) — reduced from 6 years. 6 years retained for active customers. 12 months is consent-based. GDPR Art.5(1)(e) overlay — DPC suggests ~21-day cooling-off for abandoned quotes. Effective 24 March 2026.
