@@ -25,7 +25,7 @@ note: "Recording consent check removed — collected pre-call. 5 calls regraded 
 >
 > **Note — recording consent removed**: Pre-call consent is collected separately; verbal disclosure at call start is no longer a detection criterion. 5 calls regraded from Grade 2 to Grade 1 (DailyPay, Frontiers, Voltalis, Gabriela, Allianz White Label).
 >
-> **Note — timestamps**: Timestamps for the 6 priority calls (CHM, Carwow, Jennifer Kenyon, Volta, Enrico Grande, Riot Games) are estimates derived by linear interpolation from sentence position (±30-60s accuracy) because the Fireflies `get_transcript` MCP response did not return `start_time` fields in this run. Designer/CONTEXT.md has been updated to require exact `start_time` from the API on future runs (the field needs explicit selection).
+> **Note — timestamps**: Timestamps for the 6 priority calls (CHM, Carwow, Jennifer Kenyon, Volta, Enrico Grande, Riot Games) are anchored to Fireflies AI-summary topic ranges (~±30s accuracy). The Fireflies `fireflies_get_summary` returns timestamped action items and topic-section ranges that map cleanly to specific moments in the call. Per-sentence `start_time` is not currently exposed by the MCP transcript tools — Designer/CONTEXT.md requires future runs to use the summary anchors and/or push for exact `start_time` exposure.
 
 ---
 
@@ -42,12 +42,12 @@ note: "Recording consent check removed — collected pre-call. 5 calls regraded 
 #### Findings
 | Criterion | Severity | Timestamp | Transcript span | Regulation |
 |---|---|---|---|---|
-| HF-00 | High | ~00:30 | Karl runs full regulated advisory call solo — PMI underwriting, pension providers, group risk — no qualified supervisor present | CBI MCC 2017; FCA COBS |
-| HF-10 | High | ~08:00 | "It is moratorium" — Karl confirms and explains underwriting type (moratorium vs MHD) to prospect | CBI MCC 2017 — unqualified speaker describing type of cover |
-| HF-11 | High | ~10:00 | "We can ask Vitality, Accent, Aviva as well if you want to look at them" — Karl initiating plan comparison across PMI providers | CBI MCC 2017 — unqualified speaker comparing plans |
-| HF-02 | High | ~14:00 | "Unum usually come back a lot more competitive" re group risk; "Aviva, who have been performing really well over the past year or two" re pensions | CPC 2025 Part 3 — clear, fair, not misleading |
-| HF-11 | High | ~16:00 | Karl compares pension providers by quality: "it's not as market leading as you would with a Cushon or a Royal London Scottish Widows... Even Aviva, who have been performing really well" | CBI MCC 2017 — unqualified speaker comparing plans |
-| HF-01 | High | ~19:00 | "I would say it is better off to go with the platform process" — explicit recommendation on service pathway | CBI MCC 2017; CPC 2025 |
+| HF-00 | High | ~00:06 onwards | Karl runs full regulated advisory call solo — PMI underwriting, pension providers, group risk — no qualified supervisor present | CBI MCC 2017; FCA COBS |
+| HF-10 | High | ~02:40 | "It is moratorium" — Karl confirms and explains underwriting type (moratorium vs MHD) to prospect | CBI MCC 2017 — unqualified speaker describing type of cover |
+| HF-11 | High | ~04:08 | "We can ask Vitality, Accent, Aviva as well if you want to look at them" — Karl initiating plan comparison across PMI providers | CBI MCC 2017 — unqualified speaker comparing plans |
+| HF-02 | High | ~30:06 | "Unum usually come back a lot more competitive" re group risk; "Aviva, who have been performing really well over the past year or two" re pensions | CPC 2025 Part 3 — clear, fair, not misleading |
+| HF-11 | High | ~15:50 | Karl compares pension providers by quality: "it's not as market leading as you would with a Cushon or a Royal London Scottish Widows... Even Aviva, who have been performing really well" | CBI MCC 2017 — unqualified speaker comparing plans |
+| HF-01 | High | ~24:01 | "I would say it is better off to go with the platform process" — explicit recommendation on service pathway | CBI MCC 2017; CPC 2025 |
 
 #### Notes
 Karl explicitly states at 00:30: *"from a regulatory perspective, the salesperson can't do much purely because we're regulated by the FCA"* — demonstrating awareness of the constraint — then spends 32 minutes conducting full regulated activity including PMI underwriting explanations, pension provider quality comparisons, and group risk product recommendations. No qualified supervisor present throughout.
@@ -67,11 +67,11 @@ Karl explicitly states at 00:30: *"from a regulatory perspective, the salesperso
 #### Findings
 | Criterion | Severity | Timestamp | Transcript span | Regulation |
 |---|---|---|---|---|
-| HF-00 | High | ~01:00 | Karl runs full regulated advisory call solo — PMI market overview, pension contribution rules, group risk product descriptions, tax implications | CBI MCC 2017; FCA COBS |
-| HF-11 | High | ~12:00 | "BUPA and Vitality are probably the optimal ones within the market... BUPA has more flexibility in the pricing packages... Vitality are less likely to come back with the custom price and medical history disregarded for smaller businesses" | CBI MCC 2017 — unqualified speaker comparing plans |
-| HF-10 | High | ~13:00 | Karl explains MHD vs moratorium underwriting to prospect for a virgin PMI scheme | CBI MCC 2017 — unqualified speaker describing type of cover |
-| HF-05 | High | ~20:00 | "you'll also get tax implications for that. With benefit in kind... it will benefit you through benefit in kind... you can get benefit in kind and tax relief at source on that too" — tax conclusions applied to Enrico's specific scenario | CPC 2025; personal tax conclusions outside scope |
-| HF-00 | High | ~22:00 | Karl explains occupational pension contribution mechanics: "the employer is minimum three and the employee has to give 5%... has to add up to 8%" — applied to Enrico's specific hire | CBI MCC 2017; FCA COBS |
+| HF-00 | High | ~01:01 onwards | Karl runs full regulated advisory call solo — PMI market overview, pension contribution rules, group risk product descriptions, tax implications | CBI MCC 2017; FCA COBS |
+| HF-11 | High | ~14:23 | "BUPA and Vitality are probably the optimal ones within the market... BUPA has more flexibility in the pricing packages... Vitality are less likely to come back with the custom price and medical history disregarded for smaller businesses" | CBI MCC 2017 — unqualified speaker comparing plans |
+| HF-10 | High | ~14:14 | Karl explains MHD vs moratorium underwriting to prospect for a virgin PMI scheme (Note: agent verification could not pin down explicit moratorium contrast — see Asana task) | CBI MCC 2017 — unqualified speaker describing type of cover |
+| HF-05 | High | ~20:32 | "you'll also get tax implications for that. With benefit in kind... it will benefit you through benefit in kind... you can get benefit in kind and tax relief at source on that too" — tax conclusions applied to Enrico's specific scenario | CPC 2025; personal tax conclusions outside scope |
+| HF-00 | High | ~18:15 | Karl explains occupational pension contribution mechanics: "the employer is minimum three and the employee has to give 5%... has to add up to 8%" — applied to Enrico's specific hire | CBI MCC 2017; FCA COBS |
 
 #### Notes
 Karl's self-correction at end of call (*"I can't go through it, for regulatory reasons"* when asked for a specific plan cost estimate) demonstrates awareness of the boundary but this occurs after ~30 minutes of sustained regulated activity. Self-correction does not undo the prior breaches.
@@ -179,12 +179,12 @@ The following 10 calls were assessed via evaluation agent using direct Fireflies
 #### Findings
 | Criterion | Severity | Timestamp | Transcript span | Regulation |
 |---|---|---|---|---|
-| HF-00 | High | ~08:02 | "So I would split it down into kind of two sides of benefits. So you have your core benefits and you're flexible. So the core would be like. I kind of look at it as like the big four. So you'd look at your pmi, your pension, your life assurance and your income protection" — Karl describes regulated products solo | CBI MCC 2017; FCA COBS |
-| HF-01 | High | ~09:03 | "I would almost tier them into like that pet, like healthcare and pension. Like they're obviously kind of the bog standard that people understand. And then like the life assurance and income protection, like feeding them in thereafter is quite nice" | CBI MCC 2017; CPC 2025 |
-| HF-01 | High | ~13:22 | "I would probably recommend just wait until you get them on because there's a level of underwriting, they expect minimum for the group." | CBI MCC 2017; CPC 2025 |
-| HF-11 | High | ~11:05 | "Allianz is really good, but it's really expensive like because it's an international… if you're going to be in the UK for a while, like Bupa and Vitality are great options." | CBI MCC 2017 — unqualified speaker comparing plans |
-| HF-02 | High | ~10:45 | "Allianz is really good, but it's really expensive" — comparative value judgement | CPC 2025 Part 3 |
-| SF-15 | Low | ~09:44 | "when you see it like because 18% of usually is what it comes down to about is total payroll is benefits" — social proof anchoring without evidence | MCC SF-15 |
+| HF-00 | High | ~05:34 | "So I would split it down into kind of two sides of benefits. So you have your core benefits and you're flexible. So the core would be like. I kind of look at it as like the big four. So you'd look at your pmi, your pension, your life assurance and your income protection" — Karl describes regulated products solo | CBI MCC 2017; FCA COBS |
+| HF-01 | High | ~10:19 | "I would almost tier them into like that pet, like healthcare and pension. Like they're obviously kind of the bog standard that people understand. And then like the life assurance and income protection, like feeding them in thereafter is quite nice" | CBI MCC 2017; CPC 2025 |
+| HF-01 | High | ~11:26 | "I would probably recommend just wait until you get them on because there's a level of underwriting, they expect minimum for the group." | CBI MCC 2017; CPC 2025 |
+| HF-11 | High | ~08:30 | "Allianz is really good, but it's really expensive like because it's an international… if you're going to be in the UK for a while, like Bupa and Vitality are great options." | CBI MCC 2017 — unqualified speaker comparing plans |
+| HF-02 | High | ~08:30 | "Allianz is really good, but it's really expensive" — comparative value judgement | CPC 2025 Part 3 |
+| SF-15 | Low | ~10:19 | "when you see it like because 18% of usually is what it comes down to about is total payroll is benefits" — social proof anchoring without evidence | MCC SF-15 |
 
 #### Notes
 Karl conducts the entire 18-minute sales call solo, describing and comparing regulated products (PMI, pension, life assurance, income protection) and making explicit recommendations. Third solo advisory call this week alongside Volta and Enrico Grande — systematic pattern.
@@ -280,8 +280,8 @@ Henry absent (no spoken lines). Paul's conduct is exemplary: accurate firm descr
 #### Findings
 | Criterion | Severity | Timestamp | Transcript span | Regulation |
 |---|---|---|---|---|
-| HF-00 | High | ~09:58 | Katie Garry (script pathway BDR ❌): "Nico, sorry, just with regards to, you know, your renewals, are you involved with that or is that more part of the US team as well?" — Katie actively participates in substantive PMI renewal discussion, crossing script pathway carve-out | CBI MCC 2017 — script pathway BDR active in regulated product discussion |
-| HF-00 | Medium | ~15:18 | Katie: "So we have 50 in total. And then in the Dublin office, I think at the moment we have about. There's, I think 20 in. But I think there's around 30 are in the Dublin office..." — active participation in regulated call context | CBI MCC 2017 |
+| HF-00 | High | ~09:00 | Katie Garry (script pathway BDR ❌): "Nico, sorry, just with regards to, you know, your renewals, are you involved with that or is that more part of the US team as well?" — Katie actively participates in substantive PMI renewal discussion, crossing script pathway carve-out | CBI MCC 2017 — script pathway BDR active in regulated product discussion |
+| HF-00 | Medium | ~14:37 | Katie: "So we have 50 in total. And then in the Dublin office, I think at the moment we have about. There's, I think 20 in. But I think there's around 30 are in the Dublin office..." — active participation in regulated call context | CBI MCC 2017 |
 
 #### Notes
 Paul's conduct throughout is clean. The failure is Katie's active participation beyond a pure admin/intro role: the renewals question probes the commercial relationship in a regulated PMI context and is outside the script pathway carve-out.
@@ -340,14 +340,14 @@ Trevor and Elaine consult Richard Jackson (Innovative Risk) about the framework 
 #### Findings
 | Criterion | Severity | Timestamp | Transcript span | Regulation |
 |---|---|---|---|---|
-| HF-02 | High | ~08:16 | Dan: "if you are really sick, you know, ultimately you'd be better served under paper." — comparative quality judgement: BUPA better than Vitality for serious illness, presented as a factual conclusion | CPC 2025 Part 3 — clear, fair, not misleading |
-| HF-02 | High | ~18:40 | Dan: "This doesn't relate specifically to you, but if I look at all of the new schemes that are coming through us at the moment when we quote with Vitality and Bupa at the moment, Bupa is often 10 to 15% cheaper for the exact same cover." — directional pricing claim using aggregate data | CPC 2025 Part 3 |
-| HF-02 | High | ~20:40 | Dan: "I'd personally be surprised if they weren't able to come in with a price either at the same level or cheaper than what Vitality will give you." — personal opinion framed as near-certainty on pricing | CPC 2025 Part 3 |
-| HF-00 | Medium | ~27:20 | Simon Ward (script pathway CS Co-ordinator ❌): "I'm sure you're aware Edan, that Matthew moved to the GM platform role. So he's sort of overseeing all products go to market..." — active participation in regulated PMI renewal call | CBI MCC 2017 |
-| ES-01 | Escalation | ~04:00 | Idan: "In the past few months we received a few complaints from employees about vitality...the very bad experience that we had with them regarding the five employees that we wanted to enroll, which was absolutely appalling." | MCC ES-01 — customer distress / complaint |
-| ES-02 | Escalation | ~05:20 | Idan: "the complaints we have for employees are around how difficult it is to prove vitality, that a potential claim is not pre existing condition...they give you a booklet that they expect the GP to complete. Now that's very unacceptable." — active coverage/claims dispute | MCC ES-02 — coverage dispute / potential liability |
-| SF-12 | Soft | ~07:44 | Dan: "The Vitality program, like across all of the healthcare providers, is absolutely the best rewards program." | MCC SF-12 |
-| SF-13 | Soft | ~08:16 | Dan: "if you are really sick, you know, ultimately you'd be better served under paper." — disparaging Vitality's claims capability | MCC SF-13 |
+| HF-02 | High | ~12:31 | Dan: "if you are really sick, you know, ultimately you'd be better served under paper." — comparative quality judgement: BUPA better than Vitality for serious illness, presented as a factual conclusion | CPC 2025 Part 3 — clear, fair, not misleading |
+| HF-02 | High | ~17:59 | Dan: "This doesn't relate specifically to you, but if I look at all of the new schemes that are coming through us at the moment when we quote with Vitality and Bupa at the moment, Bupa is often 10 to 15% cheaper for the exact same cover." — directional pricing claim using aggregate data | CPC 2025 Part 3 |
+| HF-02 | High | ~20:36 | Dan: "I'd personally be surprised if they weren't able to come in with a price either at the same level or cheaper than what Vitality will give you." — personal opinion framed as near-certainty on pricing | CPC 2025 Part 3 |
+| HF-00 | Medium | ~27:24 | Simon Ward (script pathway CS Co-ordinator ❌): "I'm sure you're aware Edan, that Matthew moved to the GM platform role. So he's sort of overseeing all products go to market..." — active participation in regulated PMI renewal call | CBI MCC 2017 |
+| ES-01 | Escalation | ~02:57 | Idan: "In the past few months we received a few complaints from employees about vitality...the very bad experience that we had with them regarding the five employees that we wanted to enroll, which was absolutely appalling." | MCC ES-01 — customer distress / complaint |
+| ES-02 | Escalation | ~04:30 | Idan: "the complaints we have for employees are around how difficult it is to prove vitality, that a potential claim is not pre existing condition...they give you a booklet that they expect the GP to complete. Now that's very unacceptable." — active coverage/claims dispute | MCC ES-02 — coverage dispute / potential liability |
+| SF-12 | Soft | ~15:23 | Dan: "The Vitality program, like across all of the healthcare providers, is absolutely the best rewards program." | MCC SF-12 |
+| SF-13 | Soft | ~12:31 | Dan: "if you are really sick, you know, ultimately you'd be better served under paper." — disparaging Vitality's claims capability | MCC SF-13 |
 
 #### Notes
 ES-01 and ES-02 both triggered: Idan reports active employee complaints about Vitality and a specific claims dispute (GP booklet process). Dan's three HF-02 breaches include a directional pricing claim and a comparative quality judgement presented as factual conclusions. Simon Ward's active participation in a regulated PMI renewal call is a script pathway breach.
@@ -368,14 +368,14 @@ ES-01 and ES-02 both triggered: Idan reports active employee complaints about Vi
 | Criterion | Severity | Timestamp | Transcript span | Regulation |
 |---|---|---|---|---|
 | HF-00 | Critical | ~01:21 onwards | Simon Ward (script pathway CS Co-ordinator ❌) leads the entire call solo: explaining pension scheme enrollment failures, contribution status, regulatory compliance position, employee options (occupational pension vs. My Future Fund), and quasi-advice on employer communications. Simon holds no regulated qualification. | CBI MCC 2017; APA Pensions requirement; OPSA |
-| HF-05 | High | ~02:54 | Simon: "we have deducted from their pay slip. Like it has been a pension contribution that has been assigned to their pay slip that we're then refunding to them." — characterising legal/tax status of pension deductions for specific named employees | CBI MCC 2017; pension regulation |
-| HF-05 | High | ~14:17 | Simon: "no employees will be worse off from this. Yeah it's just a reassurance and it's just that it's a confirmation that we're not gamma just." and "nothing wrong has been done." — representing the regulatory and legal position of the situation | CBI MCC 2017 |
-| HF-00 | Critical | ~16:03 | Simon: "the decision for him is, does he want to continue with an occupational pension? We have the funds, we haven't refunded them yet. Then we can, we can do that. If he wants to be refunded and go to my future fund. Absolutely. We can also do that." — framing pension decision options for specific named employees without qualification | CBI MCC 2017; APA Pensions |
-| ES-02 | Critical | ~13:19 | Laura: "he has his WRC lodge. I'm just waiting on a round envelope...he's lodged it with the wrc." — live WRC (Workplace Relations Commission) complaint by a named employee directly related to Kota's pension administration error | MCC ES-02 — coverage dispute / legal complaint |
-| ES-03 | Critical | ~12:01 | Simon: "I'm not going to say employment type. We'll come up with some way of explaining that caused a bug that basically caused you to be removed from coda." — Simon agrees to draft communications obscuring the true cause of the administration failure | MCC ES-03; Consumer Protection / transparency obligations |
-| HF-09 | High | ~20:10 (mobile) / ~19:46 (email) | Laura shares personal mobile number on recorded call: "So I am 087-490-7363" — Simon confirms he will save it. Additionally Laura: "I was kind of just trying to stay off the email just because I don't want to be putting too much in the email" — GDPR request avoidance strategy discussed on a recorded call | GDPR Art. 5; MCC HF-09 |
-| HF-03 | High | ~03:14 | Simon: "The pension regulator they're, they're. They're fully aware of the scenarios that are like." — regulatory authority claim Simon is not qualified to make | CBI MCC 2017; HF-03 — misrepresented regulatory status |
-| SF-10 | Soft | ~19:46 | Simon agrees to use WhatsApp/phone instead of email specifically to avoid creating a written record around the active GDPR request | MCC SF-10 — circumvention |
+| HF-05 | High | ~22:30 | Simon: "we have deducted from their pay slip. Like it has been a pension contribution that has been assigned to their pay slip that we're then refunding to them." — characterising legal/tax status of pension deductions for specific named employees | CBI MCC 2017; pension regulation |
+| HF-05 | High | ~07:00 | Simon: "no employees will be worse off from this. Yeah it's just a reassurance and it's just that it's a confirmation that we're not gamma just." and "nothing wrong has been done." — representing the regulatory and legal position of the situation | CBI MCC 2017 |
+| HF-00 | Critical | ~14:38 | Simon: "the decision for him is, does he want to continue with an occupational pension? We have the funds, we haven't refunded them yet. Then we can, we can do that. If he wants to be refunded and go to my future fund. Absolutely. We can also do that." — framing pension decision options for specific named employees without qualification | CBI MCC 2017; APA Pensions |
+| ES-02 | Critical | ~16:56 | Laura: "he has his WRC lodge. I'm just waiting on a round envelope...he's lodged it with the wrc." — live WRC (Workplace Relations Commission) complaint by a named employee directly related to Kota's pension administration error | MCC ES-02 — coverage dispute / legal complaint |
+| ES-03 | Critical | ~15:47 | Simon: "I'm not going to say employment type. We'll come up with some way of explaining that caused a bug that basically caused you to be removed from coda." — Simon agrees to draft communications obscuring the true cause of the administration failure | MCC ES-03; Consumer Protection / transparency obligations |
+| HF-09 | High | ~17:18 (mobile) / ~16:56 (email) | Laura shares personal mobile number on recorded call: "So I am 087-490-7363" — Simon confirms he will save it. Additionally Laura: "I was kind of just trying to stay off the email just because I don't want to be putting too much in the email" — GDPR request avoidance strategy discussed on a recorded call | GDPR Art. 5; MCC HF-09 |
+| HF-03 | High | ~07:00 | Simon: "The pension regulator they're, they're. They're fully aware of the scenarios that are like." — regulatory authority claim Simon is not qualified to make | CBI MCC 2017; HF-03 — misrepresented regulatory status |
+| SF-10 | Soft | ~16:56 | Simon agrees to use WhatsApp/phone instead of email specifically to avoid creating a written record around the active GDPR request | MCC SF-10 — circumvention |
 
 #### Notes
 This is the most severe finding of the week. Simon Ward — Script pathway CS Co-ordinator with no regulated qualifications — led a regulated pension administration call solo while the qualified Kota contact (Dan McAvinue) was absent.
