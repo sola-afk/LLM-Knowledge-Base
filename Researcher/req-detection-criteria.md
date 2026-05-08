@@ -30,6 +30,8 @@ Conventions:
 - Where a criterion behaves differently by speaker authorisation, it is annotated **[Speaker-scoped]**.
 - Examples are anonymised paraphrases of audit excerpts, not verbatim customer transcript.
 
+> **Excluded from agent detection — recording/call consent**: Kota collects recording consent from participants before each call begins (pre-call consent flow). The agent must **not** flag the absence of a verbal recording disclosure at the start of a call transcript. This is not a detection criterion.
+
 ---
 
 ## Tier 1 — High priority, hard rules

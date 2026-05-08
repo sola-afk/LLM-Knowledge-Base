@@ -5,12 +5,13 @@ type: eval
 run_type: live-fireflies
 date_range: "2026-05-05 to 2026-05-08"
 calls_reviewed: 16
-calls_flagged: 15
+calls_flagged: 10
 grade_5: 1
 grade_4: 3
 grade_3: 2
-grade_2: 9
-grade_1: 1
+grade_2: 4
+grade_1: 6
+note: "Recording consent check removed — collected pre-call. 5 calls regraded from Grade 2 to Grade 1. Timestamps in this run are approximate; future runs will report exact MM:SS from Fireflies sentence data."
 ---
 
 # Weekly Compliance Eval — 2026-05-05 to 2026-05-08
@@ -18,9 +19,11 @@ grade_1: 1
 ## Summary
 | Calls assessed | Customer-facing | Calls flagged | Grade 5 | Grade 4 | Grade 3 | Grade 2 | Grade 1 |
 |---|---|---|---|---|---|---|---|
-| 16 (19 not pulled) | 15 | 15 | **1 — URGENT** | 3 | 2 | 9 | 1 |
+| 16 (19 not pulled) | 15 | 10 | **1 — URGENT** | 3 | 2 | 4 | 6 |
 
 > 16 calls assessed: 6 direct transcript review + 10 via evaluation agent. 19 lower-risk calls not pulled — see "Calls Not Pulled" table. **CHM Pension Update is Grade 5 Severe Fail — requires immediate escalation to Simon Ellis.**
+>
+> **Note — recording consent removed**: Pre-call consent is collected separately; verbal disclosure at call start is no longer a detection criterion. 5 calls regraded from Grade 2 to Grade 1 (DailyPay, Frontiers, Voltalis, Gabriela, Allianz White Label). **Note — timestamps**: This run reports approximate timestamps; the agent prompt has been updated to require exact MM:SS from Fireflies sentence data on all future runs.
 
 ---
 
@@ -37,8 +40,7 @@ grade_1: 1
 #### Findings
 | Criterion | Severity | Timestamp | Transcript span | Regulation |
 |---|---|---|---|---|
-| HF-06 | Medium | 00:00 | Call opens "Hi Carl, how are you?" with no consent or recording disclosure opener | CPC 2025 Part 3; IDR S.I. 229/2018 Reg. 23 |
-| HF-00 | High | Throughout | Karl runs full regulated advisory call solo — PMI underwriting, pension providers, group risk — no qualified supervisor present | CBI MCC 2017; FCA COBS |
+| HF-00 | High | ~00:30 | Karl runs full regulated advisory call solo — PMI underwriting, pension providers, group risk — no qualified supervisor present | CBI MCC 2017; FCA COBS |
 | HF-10 | High | ~08:00 | "It is moratorium" — Karl confirms and explains underwriting type (moratorium vs MHD) to prospect | CBI MCC 2017 — unqualified speaker describing type of cover |
 | HF-11 | High | ~10:00 | "We can ask Vitality, Accent, Aviva as well if you want to look at them" — Karl initiating plan comparison across PMI providers | CBI MCC 2017 — unqualified speaker comparing plans |
 | HF-02 | High | ~14:00 | "Unum usually come back a lot more competitive" re group risk; "Aviva, who have been performing really well over the past year or two" re pensions | CPC 2025 Part 3 — clear, fair, not misleading |
@@ -63,8 +65,7 @@ Karl explicitly states at 00:30: *"from a regulatory perspective, the salesperso
 #### Findings
 | Criterion | Severity | Timestamp | Transcript span | Regulation |
 |---|---|---|---|---|
-| HF-06 | Medium | 00:00 | Call opens with scheduling apologies, no consent opener | CPC 2025 Part 3; IDR S.I. 229/2018 Reg. 23 |
-| HF-00 | High | Throughout | Karl runs full regulated advisory call solo — PMI market overview, pension contribution rules, group risk product descriptions, tax implications | CBI MCC 2017; FCA COBS |
+| HF-00 | High | ~01:00 | Karl runs full regulated advisory call solo — PMI market overview, pension contribution rules, group risk product descriptions, tax implications | CBI MCC 2017; FCA COBS |
 | HF-11 | High | ~12:00 | "BUPA and Vitality are probably the optimal ones within the market... BUPA has more flexibility in the pricing packages... Vitality are less likely to come back with the custom price and medical history disregarded for smaller businesses" | CBI MCC 2017 — unqualified speaker comparing plans |
 | HF-10 | High | ~13:00 | Karl explains MHD vs moratorium underwriting to prospect for a virgin PMI scheme | CBI MCC 2017 — unqualified speaker describing type of cover |
 | HF-05 | High | ~20:00 | "you'll also get tax implications for that. With benefit in kind... it will benefit you through benefit in kind... you can get benefit in kind and tax relief at source on that too" — tax conclusions applied to Enrico's specific scenario | CPC 2025; personal tax conclusions outside scope |
@@ -88,14 +89,10 @@ Cross-call pattern: same breach profile as Volta x Kota (01KR1C17K3073PNG1AMMYDH
 **Fireflies**: https://app.fireflies.ai/view/01KR0SKMWRBK3P940K1CYKX49C
 
 #### Findings
-| Criterion | Severity | Timestamp | Transcript span | Regulation |
-|---|---|---|---|---|
-| HF-06 | Medium | 00:00–00:10 | "Because we're regulated by the FCA, we do have to allow our note taker to join our calls. As long as that's okay and... Yeah, okay, perfect." — consent implied, Paul's own "Yeah, okay, perfect" follows without clear customer verbal confirmation captured | CPC 2025 Part 3; IDR S.I. 229/2018 Reg. 23 |
+No hard-rule or soft-signal findings.
 
 #### Notes
-Kate Fullen (`kate@kota.io`) is listed as a meeting participant but does not speak in the transcript. All substantive PMI discussion (BUPA vs Vitality, cover comparison, probation enrollment mechanics) is handled by Paul O'Hanlon who is APA PMI qualified — within scope.
-
-Kate Fullen's attendance on PMI calls should be flagged as a supervisory concern: even if silent, her presence on regulated product calls as an unregistered person is a risk. Recommend Compliance confirm Kate has no interaction with customers on these calls.
+Kate Fullen (`kate@kota.io`) is listed as a meeting participant but does not speak. All substantive PMI discussion is handled by Paul O'Hanlon (APA PMI qualified) — within scope. Kate Fullen's attendance on regulated PMI calls as an unregistered person is a compliance risk even if silent. Recommend Compliance confirm Kate has no customer interaction on these calls.
 
 **Escalation**: No.
 
@@ -106,13 +103,11 @@ Kate Fullen's attendance on PMI calls should be flagged as a supervisory concern
 **External**: Clyntin Aoki-Saffer, Molly Deng (DailyPay)
 **Department**: GTM
 **Duration**: 35 min
-**Grade**: **2 — Pass with comments**
+**Grade**: **1 — Pass**
 **Fireflies**: https://app.fireflies.ai/view/01KQQ6CST6K3AYH7H8TXGVZ7JW
 
 #### Findings
-| Criterion | Severity | Timestamp | Transcript span | Regulation |
-|---|---|---|---|---|
-| HF-06 | Medium | 00:00 | Call opens with pleasantries, no recording consent opener | CPC 2025 Part 3; IDR S.I. 229/2018 Reg. 23 |
+No findings.
 
 #### Notes
 This call is a platform demonstration — Karl shows the Kota admin dashboard, HRIS integration (ADP Workforce), payroll reports, spend module, and employee app. Content is operational/technology focused, not regulated product advice. Karl does not compare plans, discuss cover details, or give pension advice. Falls within the permitted MCC carve-out of "selling the platform & its benefits — not the insurance or pension product itself."
@@ -128,13 +123,11 @@ Contrast with Volta (01KR1C17K3073PNG1AMMYDH31V) and Enrico Grande (01KR0ZTP2QQK
 **External**: Stéphane Bavaud, Maria (Frontiers)
 **Department**: GTM
 **Duration**: 29 min
-**Grade**: **2 — Pass with comments**
+**Grade**: **1 — Pass**
 **Fireflies**: https://app.fireflies.ai/view/01KQPHSNTJ6HXH766WK791BKT1
 
 #### Findings
-| Criterion | Severity | Timestamp | Transcript span | Regulation |
-|---|---|---|---|---|
-| HF-06 | Medium | 00:00 | Call opens without recording disclosure | CPC 2025 Part 3; IDR S.I. 229/2018 Reg. 23 |
+No findings.
 
 #### Notes
 This is a commercial strategy / account management call — Karl and Matthew discuss transitioning Frontiers from Benefex to Kota, proposing Ireland as a proof-of-concept, and planning next steps. No specific plan comparisons, underwriting discussions, or product recommendations. Matthew Brennan (New Entrant) joins as "General Manager" and discusses platform capabilities and process — not regulated product advice.
@@ -156,7 +149,6 @@ Karl explicitly defers regulated discussion to Dan McAvinue for the next session
 #### Findings
 | Criterion | Severity | Timestamp | Transcript span | Regulation |
 |---|---|---|---|---|
-| HF-06 | Medium | 00:00 | Call opens with informal greetings, no recording consent opener | CPC 2025 Part 3; IDR S.I. 229/2018 Reg. 23 |
 | ES-02 | Medium | ~35:00 | Sam Gorny: "are we as Life Scientific not now quite vulnerable to HMRC and the pension ombudsman?" — potential regulatory liability flagged by customer | Pension ombudsman / HMRC auto-enrolment compliance |
 
 #### Notes
@@ -185,7 +177,6 @@ The following 10 calls were assessed via evaluation agent using direct Fireflies
 #### Findings
 | Criterion | Severity | Timestamp | Transcript span | Regulation |
 |---|---|---|---|---|
-| HF-06 | Medium | 00:00 | No recording/note-taker disclosure. Call opens "Hey Jennifer, how are you?" | CPC 2025 Part 3; IDR S.I. 229/2018 Reg. 23 |
 | HF-00 | High | Mid-call | "So I would split it down into kind of two sides of benefits. So you have your core benefits and you're flexible. So the core would be like. I kind of look at it as like the big four. So you'd look at your pmi, your pension, your life assurance and your income protection" — Karl describes regulated products solo | CBI MCC 2017; FCA COBS |
 | HF-01 | High | Mid-call | "I would almost tier them into like that pet, like healthcare and pension. Like they're obviously kind of the bog standard that people understand. And then like the life assurance and income protection, like feeding them in thereafter is quite nice" | CBI MCC 2017; CPC 2025 |
 | HF-01 | High | Mid-call | "I would probably recommend just wait until you get them on because there's a level of underwriting, they expect minimum for the group." | CBI MCC 2017; CPC 2025 |
@@ -211,7 +202,6 @@ Karl conducts the entire 18-minute sales call solo, describing and comparing reg
 #### Findings
 | Criterion | Severity | Timestamp | Transcript span | Regulation |
 |---|---|---|---|---|
-| HF-06 | Medium | 00:00 | No recording/note-taker disclosure. Callum opens "And Jana. Hi there. How are you?" | CPC 2025 Part 3; IDR S.I. 229/2018 Reg. 23 |
 | Observation | Informational | Throughout | Callum (PMI New Entrant) leads substantive PMI renewal/broker engagement including provider comparisons (AXA, BUPA, Vitality, Aviva); no supervisor on call | MCC New Entrant supervision |
 
 #### Notes
@@ -226,16 +216,14 @@ Henry organised the call but has zero spoken lines — "Henry's had to quickly p
 **External**: Stéphanie Thiagharajah (Voltalis)
 **Department**: GTM
 **Duration**: 12 min
-**Grade**: **2 — Pass with comments**
+**Grade**: **1 — Pass**
 **Fireflies**: https://app.fireflies.ai/view/01KQSC4X435R27HC3F2M6727AY
 
 #### Findings
-| Criterion | Severity | Timestamp | Transcript span | Regulation |
-|---|---|---|---|---|
-| HF-06 | Low | Opening | Paul: "Just to flag with you, our note taker joins all of our calls. That's just because we're regulated by the fca. As long as that's okay." — HF-06 PASS; timing vs. 60-second window to be confirmed against audio | CPC 2025 Part 3 |
+No findings.
 
 #### Notes
-Henry absent (no spoken lines). Paul handles the call cleanly: accurate firm description, honest about product fit mismatch (Voltalis too small), no product recommendations. Disclosure given — positive example of correct HF-06 behaviour.
+Henry absent (no spoken lines). Paul handles the call cleanly: accurate firm description, honest about product fit mismatch (Voltalis too small), no product recommendations. Positive example of compliant APA PMI conduct.
 
 **Escalation**: No.
 
@@ -252,7 +240,6 @@ Henry absent (no spoken lines). Paul handles the call cleanly: accurate firm des
 #### Findings
 | Criterion | Severity | Timestamp | Transcript span | Regulation |
 |---|---|---|---|---|
-| HF-06 | Medium | 00:00 | No recording/note-taker disclosure in opening | CPC 2025 Part 3 |
 | Observation | Informational | Throughout | Callum (PMI New Entrant) describes PMI providers (Vitality, Bupa, Aviva, AXA) and pension/group risk; no supervisor on call | MCC New Entrant supervision |
 
 #### Notes
@@ -267,13 +254,11 @@ Henry absent (no spoken lines). Callum stays within scope: transparent about geo
 **External**: Gabriela Merea (Cambiaso Risso)
 **Department**: GTM
 **Duration**: 14 min
-**Grade**: **2 — Pass with comments**
+**Grade**: **1 — Pass**
 **Fireflies**: https://app.fireflies.ai/view/01KQQEB7P2H826H7MR9K9ZTQ4D
 
 #### Findings
-| Criterion | Severity | Timestamp | Transcript span | Regulation |
-|---|---|---|---|---|
-| HF-06 | Low | Opening | Paul: "Health insurance and regulated products. We just have to let our note take her into." — disclosure given (minor phrasing "note take her"); Gabriela confirms. HF-06 PASS | CPC 2025 Part 3 |
+No findings.
 
 #### Notes
 Henry absent (no spoken lines). Paul's conduct is exemplary: accurate firm description, live platform demo, no recommendations, no plan comparisons, transparent about fit. Grade 2 only for disclosure phrasing — recommend standardising the opener script.
@@ -293,7 +278,6 @@ Henry absent (no spoken lines). Paul's conduct is exemplary: accurate firm descr
 #### Findings
 | Criterion | Severity | Timestamp | Transcript span | Regulation |
 |---|---|---|---|---|
-| HF-06 | Pass | Opening | Paul: "And I just have to allow our note taker into calls. Is that okay with you?" Nike confirms. Paul adds regulatory rationale. HF-06 PASS | CPC 2025 Part 3 |
 | HF-00 | High | Late-call | Katie Garry (script pathway BDR ❌): "Nico, sorry, just with regards to, you know, your renewals, are you involved with that or is that more part of the US team as well?" — Katie actively participates in substantive PMI renewal discussion, crossing script pathway carve-out | CBI MCC 2017 — script pathway BDR active in regulated product discussion |
 | HF-00 | Medium | Late-call | Katie: "So we have 50 in total. And then in the Dublin office, I think at the moment we have about. There's, I think 20 in. But I think there's around 30 are in the Dublin office..." — active participation in regulated call context | CBI MCC 2017 |
 
@@ -309,14 +293,14 @@ Paul's conduct throughout is clean. The failure is Katie's active participation 
 **External**: Marco Fattori, Patrick Lawlor, Paul Hogan (Allianz Partners)
 **Department**: GTM
 **Duration**: N/A
-**Grade**: **2 — Pass with comments**
+**Grade**: **1 — Pass**
 **Fireflies**: https://app.fireflies.ai/view/01KQQFE4XGGC4D3FEANP3NF53Y
 
 #### Findings
-| Criterion | Severity | Timestamp | Transcript span | Regulation |
-|---|---|---|---|---|
-| HF-06 | Low | Opening | No recording/note-taker disclosure. This is a B2B institutional meeting — no retail consumer present. Best-practice gap, not a consumer protection breach. | CPC 2025 Part 3 (best practice) |
-| Observation | Informational | Throughout | Luke Mackey (deregistered APA Pensions) participates as CEO in commercial/strategic B2B discussion. Does not conduct regulated activity or make product recommendations to a consumer. Call is a platform demo/partnership exploration with Allianz — sophisticated institutional counterparty. | MCC — deregistration context |
+No findings.
+
+#### Notes — Luke Mackey
+Luke Mackey (deregistered APA Pensions) participates as CEO in commercial/strategic B2B discussion with Allianz Partners. Does not conduct consumer-facing regulated activity on this call. Compliance to confirm Luke's external commercial call perimeter given deregistered status.
 
 #### Notes
 B2B platform partnership meeting — not a consumer-facing regulated product call. Luke's deregistration is a live compliance concern but on this call he does not engage in regulated activity. Recommend Compliance confirm Luke's external commercial call perimeter.
@@ -354,7 +338,6 @@ Trevor and Elaine consult Richard Jackson (Innovative Risk) about the framework 
 #### Findings
 | Criterion | Severity | Timestamp | Transcript span | Regulation |
 |---|---|---|---|---|
-| HF-06 | Medium | 00:00 | No recording/note-taker disclosure. Call opens with social chat (karaoke, last night's team event). | CPC 2025 Part 3; IDR S.I. 229/2018 Reg. 23 |
 | HF-02 | High | Mid-call | Dan: "if you are really sick, you know, ultimately you'd be better served under paper." — comparative quality judgement: BUPA better than Vitality for serious illness, presented as a factual conclusion | CPC 2025 Part 3 — clear, fair, not misleading |
 | HF-02 | High | Mid-call | Dan: "This doesn't relate specifically to you, but if I look at all of the new schemes that are coming through us at the moment when we quote with Vitality and Bupa at the moment, Bupa is often 10 to 15% cheaper for the exact same cover." — directional pricing claim using aggregate data | CPC 2025 Part 3 |
 | HF-02 | High | Mid-call | Dan: "I'd personally be surprised if they weren't able to come in with a price either at the same level or cheaper than what Vitality will give you." — personal opinion framed as near-certainty on pricing | CPC 2025 Part 3 |
@@ -382,7 +365,6 @@ ES-01 and ES-02 both triggered: Idan reports active employee complaints about Vi
 #### Findings
 | Criterion | Severity | Timestamp | Transcript span | Regulation |
 |---|---|---|---|---|
-| HF-06 | Medium | 00:00 | No recording/note-taker disclosure. Call opens with social pleasantries. | CPC 2025 Part 3; IDR S.I. 229/2018 Reg. 23 |
 | HF-00 | Critical | Throughout | Simon Ward (script pathway CS Co-ordinator ❌) leads the entire call solo: explaining pension scheme enrollment failures, contribution status, regulatory compliance position, employee options (occupational pension vs. My Future Fund), and quasi-advice on employer communications. Simon holds no regulated qualification. | CBI MCC 2017; APA Pensions requirement; OPSA |
 | HF-05 | High | Mid-call | Simon: "we have deducted from their pay slip. Like it has been a pension contribution that has been assigned to their pay slip that we're then refunding to them." — characterising legal/tax status of pension deductions for specific named employees | CBI MCC 2017; pension regulation |
 | HF-05 | High | Mid-call | Simon: "no employees will be worse off from this. Yeah it's just a reassurance and it's just that it's a confirmation that we're not gamma just." and "nothing wrong has been done." — representing the regulatory and legal position of the situation | CBI MCC 2017 |
@@ -438,7 +420,6 @@ The following calls have qualified Kota staff as the primary speakers and no unr
 
 ### Karl O'Brien — Systematic Regulated Activity Without Supervision (CRITICAL)
 Karl O'Brien (Script pathway) conducted **3 fully regulated advisory calls solo** this week (Volta, Enrico Grande, Jennifer Kenyon), in addition to clean platform demos (DailyPay) and accompanied commercial meetings (Frontiers). In all three solo advisory calls:
-- No recording consent opener
 - Full regulated product information provided (PMI underwriting, pension contribution mechanics, pension provider quality comparisons)
 - Explicit recommendations made ("I would recommend", "I would say it is better off to go with")
 - No qualified supervisor present
@@ -455,9 +436,6 @@ Dan McAvinue (Qualified Pensions/Life, New Entrant PMI) made multiple comparativ
 ### Henry Godson — Structural Compliance Pattern
 Henry Godson (Script pathway BDR) organised and is listed as host on 5 calls this week (Anjana, Voltalis, Model ML, Gabriela, and one other). On all assessed calls, Henry had zero spoken lines — qualified staff (Paul O'Hanlon, Callum Pearse) ran the substantive content. This is structurally compliant. However, the pattern warrants monitoring to confirm Henry is genuinely absent and not driving regulated conversations off-record before handover.
 
-### HF-06 — Majority Absence of Recording Consent Openers
-Of 16 calls assessed, 3 had compliant disclosure (Voltalis — Paul O'Hanlon; Gabriela — Paul O'Hanlon; Riot Games — Paul O'Hanlon). All three compliant disclosures were by Paul O'Hanlon. 13 calls lacked a recording/note-taker disclosure in the first 60 seconds — a 81% non-compliance rate. This is a firm-wide process failure, not individual behaviour. **Recommend a standardised mandatory opener script be issued to all Kota customer-facing staff, with immediate effect.**
-
 ### Kate Fullen — Attendance on Regulated Calls
 Kate Fullen (`kate@kota.io`) attended the PMI Via Employment Hero call but did not speak. Her presence on regulated product calls as an unregistered person (no MCC qualifications) is a compliance risk regardless of speech. **Recommend Compliance confirm Kate is not participating in regulated calls in any capacity and take immediate action per the April 2026 Action Log.**
 
@@ -466,5 +444,4 @@ Kate Fullen (`kate@kota.io`) attended the PMI Via Employment Hero call but did n
 ## Open Questions for the Designer
 
 1. The boundary between "platform demo" and "regulated advisory" is blurry when the same rep (Karl) conducts both types on the same day. Should there be a structural rule that script-pathway staff may only run demo calls with a qualified person present?
-2. HF-06 failures are universal — should the agent auto-flag this as a cross-call finding rather than per-call, and generate a single systemic finding?
-3. The Life Scientific call involved employees raising HMRC/pension ombudsman concerns (ES-02 trigger). The conversation was handled appropriately. Should ES-02 generate a task when the customer raises it but Kota staff handle it correctly?
+2. The Life Scientific call involved employees raising HMRC/pension ombudsman concerns (ES-02 trigger). The conversation was handled appropriately. Should ES-02 generate a task when the customer raises it but Kota staff handle it correctly?
