@@ -352,7 +352,7 @@ Out-of-distribution input. Better to escalate than to silently miss.
 
 These were considered and excluded from the first version, to keep precision high:
 - Sentiment / tone analysis beyond SF-12
-- Speaker-level pattern tracking across calls (Reviewer workspace will track this manually)
+- Speaker-level pattern tracking across calls (Compliance will track this manually from the Asana queue)
 - Multi-language calls (if the call isn't English, escalate per ES-03)
 - Action items mentioned on the call but executed elsewhere (e.g. an emailed spreadsheet sent after the call) — agent's perimeter is the transcript only
 

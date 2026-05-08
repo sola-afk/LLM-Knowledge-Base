@@ -92,7 +92,7 @@ Gaps the wiki does not yet cover that this project will need:
 - **Auto-enrolment Retirement Savings Act 2024 (My Future Fund)** — no concept page; relevant to most pension calls
 - **GDPR call-recording lawful basis & PII handoff** — no dedicated page; touched in [[Data Retention]] only
 
-## Open questions for the Designer / Reviewer workspaces
+## Open questions for the Designer
 
 1. Should the agent flag "Pass with comments" caliber issues (single absolute, light marketing tone) at all in v1, or only "Fail" caliber issues, to keep precision high?
 2. The reviewers sometimes overrule a flagged risk on listening (see Q3-25-PC-01) — does the agent need an explicit "auto-overrule" path for known-benign phrases, or should we let the human reviewer continue to do that?

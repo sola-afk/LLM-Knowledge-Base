@@ -204,7 +204,7 @@ The Designer should:
 - `compliance-wiki/wiki/concepts/insurance-distribution.md` — IDD/IDR conduct overlay
 - Open: `compliance-wiki/wiki/concepts/minimum-competency-code.md` does not yet exist — recommend the Researcher create it as a follow-up
 
-## Open questions for the Designer / Reviewer
+## Open questions for the Designer
 
 1. How is speaker identity captured in the Fireflies feed today — by name only, by email, or with a stable employee ID? The agent's lookup design depends on which is canonical.
 2. For mixed-attendance calls (qualified + unqualified speakers), is the agent meant to flag only the unqualified speaker's lines, or the call as a whole when an unqualified speaker is present without a qualified colleague?
