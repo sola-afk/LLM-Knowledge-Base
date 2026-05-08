@@ -4,8 +4,8 @@ Build an AI agent that listens to customer-facing call transcripts and flags com
 ## Workspaces
 - /Researcher — Gathers regulations, monitoring criteria, failure examples, and the prioritised list of what the agent must detect.
 - /Designer — Owns the agent's prompts, output schema, decision rules, and tool integrations; iterates them in versioned files.
-- /Evaluator — Builds test sets of call transcripts, runs the agent against them, and reports precision, recall, and regressions.
-- /Reviewer — Grades agent outputs as a human compliance reviewer would, tracks agreement over time, and recommends calibration changes.
+- /Evaluator — Pulls call transcripts from Fireflies for a given date, assesses them against detection criteria, and identifies breaches.
+- /Router — Receives flagged calls from the Evaluator and creates tasks in the Asana Call Monitoring project, routing to the correct department section and @-mentioning the relevant executive.
 - /compliance-wiki — Existing Karpathy-style knowledge base of Irish/EU financial-services regulation; consult before researching anything new.
 
 ## Routing
@@ -13,8 +13,8 @@ Build an AI agent that listens to customer-facing call transcripts and flags com
 |------|-------|------|
 | Define or update what the agent must detect | /Researcher | CONTEXT.md |
 | Write or revise agent prompts and output schema | /Designer | CONTEXT.md |
-| Build test sets, run evals, measure accuracy | /Evaluator | CONTEXT.md |
-| Grade live outputs, calibrate thresholds | /Reviewer | CONTEXT.md |
+| Pull Fireflies transcripts for a date and assess compliance | /Evaluator | CONTEXT.md |
+| Create Asana tasks for flagged calls | /Router | CONTEXT.md |
 | Look up a regulation, regulator, or compliance concept | /compliance-wiki | CLAUDE.md |
 
 ## Naming conventions
@@ -23,7 +23,5 @@ Build an AI agent that listens to customer-facing call transcripts and flags com
 - Prompt files (Designer): `prompt-<component>-v<n>.md` — e.g. `prompt-classifier-v3.md`
 - Agent specs (Designer): `spec-<component>.md` — e.g. `spec-output-schema.md`
 - Test sets (Evaluator): `tests-<scenario>.jsonl` — e.g. `tests-mis-selling.jsonl`
-- Eval reports (Evaluator): `eval-<YYYY-MM-DD>-<run-name>.md` — e.g. `eval-2026-05-08-baseline.md`
-- Review reports (Reviewer): `review-<YYYY-MM-DD>-batch-<NN>.md` — e.g. `review-2026-05-08-batch-01.md`
-- Calibration notes (Reviewer): `calibration-<topic>.md`
+- Routing specs (Router): `spec-<component>.md` — e.g. `spec-asana-task.md`
 - All filenames: lowercase, kebab-case, no spaces.
