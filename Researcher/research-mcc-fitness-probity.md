@@ -120,20 +120,82 @@ Three concrete consequences for `req-detection-criteria.md` and the Designer's p
 2. **Detections that are MCC-scoped behave differently for qualified vs unqualified speakers.** The same sentence ("our cash plan covers dental up to €500") is fine from an APA (PMI) holder and a breach from an unqualified rep.
 3. **New hard rules need to come from the Kota cheat sheets, not just the audit findings.** The audit catches recommendations and capability claims; it under-catches the "describing the type of cover" and "comparing plans" patterns because reviewers focus on the headline issues. The agent should enforce the cheat sheet's Don'ts directly.
 
-## The "MCC Register" gap
+## Kota's "Fitness and Probity/SMCR & MCC Register" (Google Drive)
 
-The user-referenced "Fitness and Probity / SMCR & MCC Register" is conceptually correct but not currently present in Notion as a single, structured page. What exists today:
-- `Compliance & Risk` page — qualifications matrix by product (this note's source)
-- `Hiring Process` → `Qualifications check` — confirms qualification at hire
-- PCF Hiring Process — separate process for PCF/CF roles
-- Governance Calendar — F&P board approval cadence
+Kota maintains a detailed MCC/F&P register in Google Drive ("Fitness and Probity/SMCR & MCC Register" spreadsheet) with two main sections:
+1. **PCF/CF Register** — Senior management roles (PCF = Pre-approval Controlled Function; CF = Controlled Function)
+2. **MCC-regulated customer-facing staff** — Qualifications, script pathway, supervisor, training status
 
-What the agent needs but does not have today:
-- A live register: **Person → MCC qualifications held → product scope → F&P status → role (PCF/CF/other) → effective date**
+As of the latest register snapshot (May 2026), the call monitoring agent should treat speakers as follows:
 
-The Researcher recommends this be created as a Notion database (or imported from the firm's HR/Compliance source of truth) so the agent can deterministically resolve speaker authorisation. Until then, the Designer should:
-- Maintain a stub allowlist of known QFAs / APA holders
-- Default to "unqualified" for any unrecognised speaker — fail closed, not open
+### ✅ Fully Qualified MCC Persons (Can conduct regulated activity independently)
+
+| Name | Role | Qualifications | Product Scope |
+|------|------|---|---|
+| **Trevor Gardiner** | Head of Insurance Distribution (CF7, PCF17) | QFA & APA PGI & RPA | All products (Pensions, Health, Life, General Insurance) |
+| **Patrick O'Boyle** | CTO (PCF) | APA Pensions & Insurance & APA PMI | Pensions, Health, Life |
+| **Paul O'Hanlon** | Account Executive (CF4) | QFA & APA PMI | Health Insurance (PMI), plus pursuing full QFA |
+| **Daniel McAvinue** | Benefits Co-Ordinator (CF4) | APA Pensions & Life; New Entrant for PMI | Pensions, Life (supervised for PMI) |
+| **Naoise Baker** | Benefits Co-Ordinator (CF4) | QFA & APA PMI | Health Insurance (PMI) |
+| **Colin Pon** | Expansions Lead (CF4) | APA PMI | Health Insurance (PMI) |
+| **Charlie Blake** | Benefits Sales Lead (CF4) | APA PMI | Health Insurance (PMI) |
+| **Callum Pearse** | Account Executive (CF4) | APA Pensions; New Entrant for PMI | Pensions (independent); Health (supervised) |
+
+### ⚠️ New Entrants (Do NOT meet MCC Standards; must act under immediate direction of qualified supervisor)
+
+| Name | Role | Pursuing | Supervisor | Status |
+|------|------|----------|---|---|
+| **Matthew Brennan** | GTM Lead (CF4) | QFA (Life, Pensions, Regulations) | Trevor Gardiner | Cannot supervise others; cannot conduct independent regulated activity |
+
+### ❌ Script Pathway (Unqualified; must follow prescribed script under supervision of qualified person)
+
+| Name | Role | Supervisor | Notes |
+|------|------|---|---|
+| **Henry Godson** | BDR | Trevor Gardiner | Must remain on script; script compliance must be evidenced by call recording |
+| **Katie Garry** | BDR | Trevor Gardiner | Must remain on script; script compliance must be evidenced by call recording |
+| **Will Robbins** | Growth Lead | Trevor Gardiner | Prescribed script pathway |
+| **Simon Ward** | Customer Success | Trevor Gardiner | Prescribed script pathway |
+| **Claudia Correa** | Customer Support | Trevor Gardiner | Prescribed script pathway |
+| **Karl O'Brien** | Account Executive | Trevor Gardiner | Prescribed script pathway; **unmonitored mobile phone use flagged** |
+| **Joana Crisóstomo** | CS Co-ordinator | Trevor Gardiner | Moved roles Sept 2025 |
+| **Gabriella Pistol** | (unspecified) | Trevor Gardiner | Resigned Sept 2025 |
+| **Grace Lynch** | Benefits Co-ordinator | Trevor Gardiner | Removed from register Dec 2025 |
+
+### ❌ No MCC Registration / Cannot Conduct Regulated Activity
+
+| Name | Role | Reason | Notes |
+|------|------|---|---|
+| **Kate Fullen** | CF4 | No MCC qualifications recorded | Should NOT be on customer calls regarding insurance/pensions; needs immediate action |
+| **Ceri Thomas** | (UK-only role) | No qualifications | Non-Ireland scope; no MCC entry required |
+| **Luke Mackey** | CEO | Removed Sept 2024 | Was APA Pensions; now removed from register |
+
+### Key Supervisory Chain
+- **Trevor Gardiner** (CF7, Head of Insurance Distribution) is the single MCC supervisor for all script-pathway and new-entrant staff.
+- **Concentration risk**: Trevor is sole CF7 for 12+ MCC-regulated staff.
+- **Script supervision gap**: BDRs' (Henry Godson, Katie Garry) call recordings are essential to evidence script adherence; without recordings, compliance cannot be documented.
+
+### Compliance Gaps Identified (April 2026 Action Log)
+1. **Unmonitored channels**: Karl O'Brien and Colin Pon using personal mobile phones — cannot evidence regulatory compliance
+2. **Kate Fullen**: CF4 with no MCC registration — must cease regulated activity or obtain qualification
+3. **Call recording**: BDR calls not recorded; script supervision cannot be evidenced
+4. **Script review**: All scripts require updated review and approval before deployment
+
+## Implementation for the Agent
+
+The Designer should:
+
+1. **Integrate with the MCC Register** — Import the Kota "Fitness and Probity/SMCR & MCC Register" (Google Drive spreadsheet) as a read-only lookup table. Speaker identity + product discussed → lookup qualifications and product scope.
+
+2. **Build a speaker-authorisation matrix** based on the register snapshot above:
+   - ✅ **Fully qualified** — Can discuss any aspect of their product scope (advice, information, arranging)
+   - ⚠️ **New Entrant** — Can only discuss within supervision relationship; flag any independent recommendations or statements
+   - ❌ **Script pathway** — Must match documented script; any deviation is a breach; requires call recording to evidence compliance
+   - ❌ **Unregistered** — Cannot conduct regulated activity; flag all product discussion as out-of-scope
+   - ⚠️ **Unmonitored channel** — Mobile phone communication; flag for compliance review
+
+3. **Fail-closed default** — If speaker not found in register, treat as unqualified. If product discussed not listed in speaker's scope, flag as HF-00 breach.
+
+4. **Monitor the register** — The register is updated periodically. Request new snapshots from Compliance quarterly or when new staff onboard/exit.
 
 ## Cross-references
 
