@@ -7,21 +7,31 @@ Receive flagged calls from the Evaluator and create tasks in the Asana **Call Mo
 
 **Project GID**: `1213240137041729`
 
-### Sections (map to department)
-| Department | Section name | Section GID |
+### Sections
+| Section | Used for | Section GID |
 |---|---|---|
-| GTM (Go-to-Market) | Go-to-Market | `1213240137041732` |
-| CS / CX (Customer Success) | Customer Success | `1213240137041733` |
-| Benefits | Benefits | `1213240137041734` |
+| Go-to-Market | GTM department calls | `1213240137041732` |
+| Customer Success | CS / CX department calls | `1213240137041733` |
+| Benefits | Benefits department calls | `1213240137041734` |
+| Escalated | Severe Fail and any ES-01/02/03 escalation — Simon Ellis loop-in | `1213240137041730` |
 
 ### Custom fields
-| Field | Type | GID | Options |
+| Field | Type | GID | Used for |
 |---|---|---|---|
-| Recording Consent | Enum | `1213240170325716` | Yes: `1213240170325717` · No: `1213240170325718` |
-| Call Purpose | Text | `1213240170325723` | Free text |
-| Issues | Text | `1213240170325728` | Free text — paste compliance findings |
-| Training Opportunity/Gap | Text | `1213240170325733` | Free text |
-| Actions | Text | `1213240170325738` | Free text — remediation steps |
+| Grade | Enum | `1213240170325716` | Severity rating — see options below |
+| Call Purpose | Text | `1213240170325723` | One-line description of what the call was about |
+| Issues | Text | `1213240170325728` | Criterion IDs + transcript spans, comma-separated |
+| Requirement Breached | Text | `1213240170325733` | Regulatory reference (e.g. CBI MCC 2017, CPC 2025 Part 3, FCA COBS 9) |
+| Recording Link | Text | `1213240170325738` | Fireflies recording URL |
+
+#### Grade enum options
+| Label | GID | Maps to audit grade |
+|---|---|---|
+| Pass | `1213240170325717` | Grade 2 (Pass with comments) |
+| Fail | `1214635377742249` | Grade 3 or Grade 4 |
+| Severe Fail | `1213240170325718` | Grade 5 |
+
+> No task is created for Grade 1 (clean Pass / no findings).
 
 ### Executive users
 | Name | Role | GID | Email |
@@ -33,32 +43,41 @@ Receive flagged calls from the Evaluator and create tasks in the Asana **Call Mo
 
 ## Routing logic
 
+### Section
+| Condition | Section |
+|---|---|
+| Department = GTM | Go-to-Market |
+| Department = CS / CX | Customer Success |
+| Department = Benefits | Benefits |
+| Severe Fail OR ES-01/02/03 fired | Escalated (overrides the department section) |
+
 ### Task assignee
 | Condition | Assign to |
 |---|---|
-| Department = Benefits | Trevor Gardiner |
-| Department = CS / CX | Trevor Gardiner (supervises all script-pathway CS staff) |
-| Department = GTM | Matthew Brennan |
+| Section = Go-to-Market | Matthew Brennan |
+| Section = Customer Success | Trevor Gardiner (supervises all script-pathway CS staff) |
+| Section = Benefits | Trevor Gardiner |
+| Section = Escalated | Simon Ellis |
 
 ### Followers (always add both)
-- Sola Olaniyan (`1213006028880034`) — Compliance Manager, always on all tasks
-- Trevor Gardiner (`1212984665985179`) — always on all tasks as MCC supervisor
+- Sola Olaniyan (`1213006028880034`) — Compliance Manager
+- Trevor Gardiner (`1212984665985179`) — MCC supervisor
 
-### When to @-mention Simon Ellis
+### When to @-mention Simon Ellis (in addition to followers)
 Add Simon Ellis as follower and @-mention him in the task body when **any** of:
-- Grade 4 (Fail) or Grade 5 (Severe Fail)
+- Grade = `Severe Fail`
 - Any ES-01 / ES-02 / ES-03 escalation signal is present
 - Breach involves misrepresentation of firm capability or scope (HF-03)
 - Unregistered speaker conducting regulated activity (HF-00 + Kate Fullen / unknown speaker)
 
 ## Task structure
 
-**Task name format**: `[Grade label] — [Client/Prospect name] — [YYYY-MM-DD]`
+**Task name format**: `[Grade] — [Client/Prospect name] — [YYYY-MM-DD]`
 Examples:
 - `Fail — Acme Corp — 2026-05-08`
 - `Severe Fail — TechStart Ltd — 2026-05-08`
-- `Pass with comments — GlobalHR Inc — 2026-05-08`
+- `Pass — GlobalHR Inc — 2026-05-08`
 
 **Due date**: same day as the call (so it appears in the daily view immediately)
 
-See `Router/spec-asana-task.md` for the full task body template and `html_notes` format.
+The Kota staff member's name + MCC status goes in the task **html_notes** body (no dedicated custom field), under a "Participants" section. See `AsanaQueueManager/spec-asana-task.md` for the full task body template and `html_notes` format.
