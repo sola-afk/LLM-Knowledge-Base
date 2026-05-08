@@ -26,7 +26,7 @@ Create a task for every call graded **Pass with comments (2), Fail (3), Fail w/ 
       "assignee": "<assignee GID — see routing below>",
       "due_on": "YYYY-MM-DD",
       "followers": "1213006028880034,1212984665985179",
-      "custom_fields": "{\"1213240170325716\":\"<grade option GID>\",\"1213240170325723\":\"<call purpose>\",\"1213240170325728\":\"<criterion IDs + spans>\",\"1213240170325733\":\"<regulatory reference>\",\"1213240170325738\":\"<fireflies URL>\"}",
+      "custom_fields": "{\"1213240170325716\":\"<grade option GID>\",\"1213240170325723\":\"<call purpose>\",\"1213240170325728\":\"<criterion IDs + spans>\",\"1213240170325733\":\"<regulatory reference>\",\"1213240170325738\":\"<fireflies URL>\",\"1214635377742250\":\"<kota staff name + MCC status>\",\"1214635377742252\":\"<prospect/client company name>\"}",
       "html_notes": "<body>...</body>"
     }
   ]
@@ -47,7 +47,7 @@ Create a task for every call graded **Pass with comments (2), Fail (3), Fail w/ 
 | Section | Assignee | GID |
 |---|---|---|
 | Go-to-Market | Matthew Brennan | `1214070419259752` |
-| Customer Success | Trevor Gardiner | `1212984665985179` |
+| Customer Success | Simon Ellis | `1213214965151657` |
 | Benefits | Trevor Gardiner | `1212984665985179` |
 | Escalated | Simon Ellis | `1213214965151657` |
 
@@ -84,6 +84,19 @@ If multiple regulations apply, separate with semicolons.
 ### Recording Link (`1213240170325738`) — text
 Direct Fireflies URL to the meeting recording, e.g.:
 `https://app.fireflies.ai/view/<meeting-id>`
+
+### Kota Staff (`1214635377742250`) — text
+Name and MCC/authorisation status of the Kota-side speaker(s) on the call, e.g.:
+- `Karl O'Brien (Script pathway)`
+- `Matthew Brennan (New Entrant — supervised by Trevor Gardiner)`
+- `Paul O'Hanlon (Qualified — APA PMI)`
+
+If multiple Kota staff were on the call, separate with semicolons.
+
+### Prospect/Client (`1214635377742252`) — text
+Company name of the prospect or client, e.g.:
+- `Prospect Corp Ltd`
+- `Acme HR Solutions`
 
 ## html_notes template
 
@@ -160,7 +173,7 @@ Note: when these escalation conditions fire, also place the task in the **Escala
       "assignee": "1214070419259752",
       "due_on": "2026-05-08",
       "followers": "1213006028880034,1212984665985179",
-      "custom_fields": "{\"1213240170325716\":\"1214635377742249\",\"1213240170325723\":\"PMI demo — new prospect\",\"1213240170325728\":\"HF-00 (unqualified speaker describing cover details at 06:12), HF-06 (no recording consent opener), HF-10 (cover details by script-pathway rep)\",\"1213240170325733\":\"CBI Minimum Competency Code 2017 — provision of information on retail financial product by unqualified person; CPC 2025 Part 3 — recording consent\",\"1213240170325738\":\"https://app.fireflies.ai/view/abc123\"}",
+      "custom_fields": "{\"1213240170325716\":\"1214635377742249\",\"1213240170325723\":\"PMI demo — new prospect\",\"1213240170325728\":\"HF-00 (unqualified speaker describing cover details at 06:12), HF-06 (no recording consent opener), HF-10 (cover details by script-pathway rep)\",\"1213240170325733\":\"CBI Minimum Competency Code 2017 — provision of information on retail financial product by unqualified person; CPC 2025 Part 3 — recording consent\",\"1213240170325738\":\"https://app.fireflies.ai/view/abc123\",\"1214635377742250\":\"Karl O'Brien (Script pathway)\",\"1214635377742252\":\"Prospect Corp Ltd\"}",
       "html_notes": "<body><h1>Call Details</h1><ul><li><strong>Client / Prospect:</strong> Prospect Corp Ltd</li><li><strong>Call date:</strong> 2026-05-08 10:30</li><li><strong>Duration:</strong> 24 minutes</li><li><strong>Department:</strong> GTM</li></ul><h1>Participants</h1><ul><li><strong>Kota staff:</strong> Karl O'Brien — Account Executive — Script pathway (unqualified)</li><li><strong>Customer / Prospect:</strong> Jane Smith, Prospect Corp Ltd</li></ul><h1>Compliance Findings</h1><ul><li><strong>HF-06 — No recording disclosure — 00:00</strong><br/>No consent opener given in first 60 seconds.<br/><em>Regulation:</em> CPC 2025; IDR S.I. 229/2018 Reg. 23<br/><em>Severity:</em> Medium</li><li><strong>HF-10 — Cover details by unqualified speaker — 06:12</strong><br/><em>Transcript:</em> \"The cash plan covers dental up to €500 per year and optical up to €150.\"<br/><em>Speaker:</em> Karl O'Brien (Script pathway — unqualified)<br/><em>Regulation:</em> CBI MCC 2017 — provision of information on retail financial product by unqualified person<br/><em>Severity:</em> High</li></ul><h1>Training / Gap</h1><p>Karl is on the prescribed script pathway and described specific PMI cover limits to a prospect. This is a MCC-regulated activity that requires an APA (PMI) or QFA qualification.</p><h1>Actions Required</h1><ol><li>Trevor Gardiner to review recording and confirm findings by 2026-05-09.</li><li>Karl to be reminded of script boundaries and MCC regulated activity definition.</li><li>Discuss at next MCC supervision session; document in supervision log.</li></ol><hr/><p>For action: <a data-asana-gid=\"1214070419259752\"/> (Matthew Brennan)<br/>MCC Supervisor: <a data-asana-gid=\"1212984665985179\"/> (Trevor Gardiner)</p></body>"
     }
   ]

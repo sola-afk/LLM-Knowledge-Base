@@ -23,6 +23,8 @@ Receive flagged calls from the Evaluator and create tasks in the Asana **Call Mo
 | Issues | Text | `1213240170325728` | Criterion IDs + transcript spans, comma-separated |
 | Requirement Breached | Text | `1213240170325733` | Regulatory reference (e.g. CBI MCC 2017, CPC 2025 Part 3, FCA COBS 9) |
 | Recording Link | Text | `1213240170325738` | Fireflies recording URL |
+| Kota Staff | Text | `1214635377742250` | Name and MCC status of Kota staff on the call, e.g. `Karl O'Brien (Script pathway)` |
+| Prospect/Client | Text | `1214635377742252` | Prospect or client company name |
 
 #### Grade enum options
 | Label | GID | Maps to audit grade |
@@ -55,7 +57,7 @@ Receive flagged calls from the Evaluator and create tasks in the Asana **Call Mo
 | Condition | Assign to |
 |---|---|
 | Section = Go-to-Market | Matthew Brennan |
-| Section = Customer Success | Trevor Gardiner (supervises all script-pathway CS staff) |
+| Section = Customer Success | Simon Ellis |
 | Section = Benefits | Trevor Gardiner |
 | Section = Escalated | Simon Ellis |
 
