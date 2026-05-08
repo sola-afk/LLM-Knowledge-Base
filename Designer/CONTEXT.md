@@ -8,6 +8,7 @@ Translate the Researcher's detection criteria into a working agent: a prompt (or
 * Edge cases (ambiguity, missing audio, multi-language calls, partial transcripts) have explicit fallback behaviour defined.
 * A short changelog at the top of each new prompt version explains what changed and why.
 * **Timestamps are mandatory and precise**: every finding must report the exact timestamp from the Fireflies transcript sentence data in `MM:SS` or `HH:MM:SS` format. "Mid-call", "late-call", or approximate ranges are not acceptable. The Fireflies transcript returns sentence-level timestamps — use them directly.
+  * **Important**: the `mcp__...__fireflies_get_transcript` tool may default to returning sentence text and speaker only. The agent must explicitly request `start_time` (and verify it is present in the response) before reporting timestamps. If `start_time` is missing, fail loudly rather than estimate by sentence position.
 * **Recording consent is excluded**: do not check for or flag the absence of a verbal recording disclosure at the start of a call. Pre-call consent is collected separately and is not a detection criterion. See `Researcher/req-detection-criteria.md` Conventions note.
 
 # What to avoid
