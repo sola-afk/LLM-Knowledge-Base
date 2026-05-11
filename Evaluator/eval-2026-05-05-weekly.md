@@ -5,12 +5,12 @@ type: eval
 run_type: live-fireflies
 date_range: "2026-05-05 to 2026-05-08"
 calls_reviewed: 16
-calls_flagged: 10
+calls_flagged: 9
 grade_5: 1
 grade_4: 3
-grade_3: 2
+grade_3: 1
 grade_2: 4
-grade_1: 6
+grade_1: 7
 note: "Recording consent check removed — collected pre-call. 5 calls regraded from Grade 2 to Grade 1. Timestamps in this run are approximate; future runs will report exact MM:SS from Fireflies sentence data."
 ---
 
@@ -19,11 +19,13 @@ note: "Recording consent check removed — collected pre-call. 5 calls regraded 
 ## Summary
 | Calls assessed | Customer-facing | Calls flagged | Grade 5 | Grade 4 | Grade 3 | Grade 2 | Grade 1 |
 |---|---|---|---|---|---|---|---|
-| 16 (19 not pulled) | 15 | 10 | **1 — URGENT** | 3 | 2 | 4 | 6 |
+| 16 (19 not pulled) | 15 | 9 | **1 — URGENT** | 3 | 1 | 4 | 7 |
 
 > 16 calls assessed: 6 direct transcript review + 10 via evaluation agent. 19 lower-risk calls not pulled — see "Calls Not Pulled" table. **CHM Pension Update is Grade 5 Severe Fail — requires immediate escalation to Simon Ellis.**
 >
 > **Note — recording consent removed**: Pre-call consent is collected separately; verbal disclosure at call start is no longer a detection criterion. 5 calls regraded from Grade 2 to Grade 1 (DailyPay, Frontiers, Voltalis, Gabriela, Allianz White Label).
+>
+> **Note — HF-00 scope calibration**: HF-00 only triggers when an unqualified speaker discusses regulated **products** (features, quotes, pricing, comparisons, benefits/drawbacks, cover details, underwriting, recommendations, arranging). Sales discovery, intro, scheduling, company/team info, and operational/platform topics are not regulated activity. Riot Games regraded Fail (3) → Pass (1); Simon Ward HF-00 finding on Carwow removed (call stays Grade 3 due to Dan's HF-02 breaches and ES-01/02).
 >
 > **Note — timestamps**: Timestamps for the 6 priority calls (CHM, Carwow, Jennifer Kenyon, Volta, Enrico Grande, Riot Games) are anchored to Fireflies AI-summary topic ranges (~±30s accuracy). The Fireflies `fireflies_get_summary` returns timestamped action items and topic-section ranges that map cleanly to specific moments in the call. Per-sentence `start_time` is not currently exposed by the MCP transcript tools — Designer/CONTEXT.md requires future runs to use the summary anchors and/or push for exact `start_time` exposure.
 
@@ -350,7 +352,7 @@ Trevor and Elaine consult Richard Jackson (Innovative Risk) about the framework 
 | SF-13 | Soft | ~12:31 | Dan: "if you are really sick, you know, ultimately you'd be better served under paper." — disparaging Vitality's claims capability | MCC SF-13 |
 
 #### Notes
-ES-01 and ES-02 both triggered: Idan reports active employee complaints about Vitality and a specific claims dispute (GP booklet process). Dan's three HF-02 breaches include a directional pricing claim and a comparative quality judgement presented as factual conclusions. Simon Ward's active participation in a regulated PMI renewal call is a script pathway breach.
+ES-01 and ES-02 both triggered: Idan reports active employee complaints about Vitality and a specific claims dispute (GP booklet process). Dan's three HF-02 breaches include a directional pricing claim and a comparative quality judgement presented as factual conclusions. Simon Ward's contribution (re Matthew's GM role) is about Kota's org chart, not a regulated product, so it does not trigger HF-00 under the calibrated scope.
 
 **Escalation**: Yes — ES-01 and ES-02 triggered. Task placed in Escalated section, assigned to Simon Ellis.
 
@@ -431,6 +433,9 @@ Three Grade 4 failures on solo calls in a single week is a systemic pattern. **R
 
 ### Simon Ward — Script Pathway CS Co-ordinator Conducting Independent Regulated Activity (CRITICAL)
 Simon Ward appeared on 8+ CS calls this week. In the majority, Dan McAvinue (qualified) ran the substantive content while Simon facilitated — structurally compliant. However on CHM Pension Update (01KQZFKDCM3EVJTVHZMEYJH500), Simon led the entire regulated pension administration call solo while Dan was absent. This is a Grade 5 Severe Fail. **Immediate escalation to Simon Ellis. Review all Simon Ward solo call recordings.**
+
+### Calibration — BDR/CS speakers operating within scope
+On review, Katie Garry's BDR participation on the Riot Games call and Simon Ward's reference to internal org changes on the Carwow call were both reclassified as **not** regulated activity. HF-00 only triggers when the speaker discusses regulated *products* (features, quotes, pricing, comparisons, benefits, cover details, underwriting, recommendations, arranging). Sales discovery, intro/scheduling, company-info chat, and operational/platform topics are out of scope. The eval and Asana tasks have been corrected accordingly.
 
 ### Daniel McAvinue — HF-02 Pattern on PMI Calls
 Dan McAvinue (Qualified Pensions/Life, New Entrant PMI) made multiple comparative value judgements on PMI providers in the Carwow call: directional pricing claims ("Bupa is often 10 to 15% cheaper for the exact same cover"), near-certainty pricing opinions, and quality comparisons disparaging Vitality's claims performance. While Dan is qualified, HF-02 applies regardless of qualification status — comparative value judgements in the absence of full factual basis are prohibited. **Recommend Dan review HF-02 boundaries with Trevor Gardiner.**

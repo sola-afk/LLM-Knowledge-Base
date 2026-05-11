@@ -32,6 +32,8 @@ Conventions:
 
 > **Excluded from agent detection — recording/call consent**: Kota collects recording consent from participants before each call begins (pre-call consent flow). The agent must **not** flag the absence of a verbal recording disclosure at the start of a call transcript. This is not a detection criterion.
 
+> **Scope of "regulated activity" for HF-00**: A finding only triggers when the unqualified speaker is **talking about a regulated product**. In practice this means: **product features, quotes, pricing, comparisons (Kota↔Kota or Kota↔competitor), benefits/drawbacks, cover details, excesses/limits, underwriting type, recommendations, or arranging.** A BDR or AE asking a prospect a discovery question about *the prospect's own internal structure* (e.g. "who owns renewals on your side?"), describing Kota's company/team/process, scheduling, intro/handover, or making small talk on a call where a qualified colleague will later cover the regulated content is **not** a regulated activity and must not be flagged HF-00. Same logic applies to operational topics: org chart, platform features, billing, payroll integration, HRIS — none of these are retail financial products under MCC.
+
 ---
 
 ## Tier 1 — High priority, hard rules
