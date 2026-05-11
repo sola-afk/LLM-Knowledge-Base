@@ -30,7 +30,12 @@ Conventions:
 - Where a criterion behaves differently by speaker authorisation, it is annotated **[Speaker-scoped]**.
 - Examples are anonymised paraphrases of audit excerpts, not verbatim customer transcript.
 
-> **Excluded from agent detection — recording/call consent**: Kota collects recording consent from participants before each call begins (pre-call consent flow). The agent must **not** flag the absence of a verbal recording disclosure at the start of a call transcript. This is not a detection criterion.
+> **Excluded from agent detection — recording/call consent**: Kota collects recording consent **via a booking form when prospects and customers schedule the call** — not verbally at the start of the call. The agent must **not** flag any of the following:
+> - Absence of a recording/note-taker disclosure opener at the start of the call
+> - Implied or assumed consent ("I'm assuming that's okay")
+> - Any other "the rep didn't ask permission to record" pattern
+>
+> Recording consent is a pre-call form artefact, not a transcript-detectable event. Do not assign HF-06, HF-07, or any new criterion ID to this pattern.
 
 > **Scope of "regulated activity" for HF-00**: A finding only triggers when the unqualified speaker is **talking about a regulated product**. In practice this means: **product features, quotes, pricing, comparisons (Kota↔Kota or Kota↔competitor), benefits/drawbacks, cover details, excesses/limits, underwriting type, recommendations, or arranging.** A BDR or AE asking a prospect a discovery question about *the prospect's own internal structure* (e.g. "who owns renewals on your side?"), describing Kota's company/team/process, scheduling, intro/handover, or making small talk on a call where a qualified colleague will later cover the regulated content is **not** a regulated activity and must not be flagged HF-00. Same logic applies to operational topics: org chart, platform features, billing, payroll integration, HRIS — none of these are retail financial products under MCC.
 

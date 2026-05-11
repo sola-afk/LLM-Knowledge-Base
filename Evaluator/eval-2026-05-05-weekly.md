@@ -23,7 +23,7 @@ note: "Recording consent check removed — collected pre-call. 5 calls regraded 
 
 > 16 calls assessed: 6 direct transcript review + 10 via evaluation agent. 19 lower-risk calls not pulled — see "Calls Not Pulled" table. **CHM Pension Update is Grade 5 Severe Fail — requires immediate escalation to Simon Ellis.**
 >
-> **Note — recording consent removed**: Pre-call consent is collected separately; verbal disclosure at call start is no longer a detection criterion. 5 calls regraded from Grade 2 to Grade 1 (DailyPay, Frontiers, Voltalis, Gabriela, Allianz White Label).
+> **Note — recording consent removed**: Kota collects recording consent **via a booking form** when prospects and customers schedule the call. Verbal disclosure at call start (HF-06) and implied consent (HF-07) are **not** detection criteria. 5 calls regraded from Grade 2 to Grade 1 (DailyPay, Frontiers, Voltalis, Gabriela, Allianz White Label).
 >
 > **Note — HF-00 scope calibration**: HF-00 only triggers when an unqualified speaker discusses regulated **products** (features, quotes, pricing, comparisons, benefits/drawbacks, cover details, underwriting, recommendations, arranging). Sales discovery, intro, scheduling, company/team info, and operational/platform topics are not regulated activity. Riot Games regraded Fail (3) → Pass (1); Simon Ward HF-00 finding on Carwow removed (call stays Grade 3 due to Dan's HF-02 breaches and ES-01/02).
 >

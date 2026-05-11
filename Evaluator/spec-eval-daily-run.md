@@ -79,13 +79,13 @@ Scan each Kota-side speaker's sentences against `Researcher/req-detection-criter
 | HF-03 | Misrepresented firm role / capability / regulatory status: "we go to market for best quotes", "we're global", "qualified financial advisor" |
 | HF-04 | Cross-selling / arranging regulated product without authorisation: offering to get a quote for life, IP, pension when not authorised |
 | HF-05 | Tax / AE / law conclusion applied to specific person or scenario |
-| HF-06 | No recording disclosure opener (check first 60 seconds of transcript for consent language) |
-| HF-07 | Implied or assumed recording consent: "I'm assuming that's all okay" |
 | HF-08 | Absolute certainty claim: "everything's covered", "full cover", "won't lose cover", "can be certain" |
 | HF-09 | GDPR / PII mishandling: agreement to receive personal data (PPS numbers, salary, DOB, addresses) by unprotected channel |
 | HF-10 | Unqualified speaker describing type of cover or excesses in a specific plan |
 | HF-11 | Unqualified speaker comparing two Kota plans or Kota vs competitor plans |
 | HF-12 | Unqualified speaker discussing changing or amending level of cover |
+
+> **Excluded — recording/call consent**: HF-06 (recording disclosure opener) and HF-07 (implied/assumed recording consent) are **not** detection criteria. Kota collects recording consent via a booking form when prospects and customers schedule the call. The agent must not flag the absence of a verbal recording disclosure, an implied "I'm assuming that's okay", or any related opener-script issue.
 
 **Soft signals (SF-10 through SF-15)** — note; escalate only if N≥2 or co-occurring with an HF:
 
@@ -115,7 +115,7 @@ Use the human reviewer's 1–5 rubric from `Researcher/research-call-supervision
 | 5 | Severe Fail | Customer misled on firm capability, scope, or a material fact |
 | 4 | Fail w/ referral | Repeated explicit recommendations (HF-01) or unauthorised regulated activity (HF-00, HF-04) |
 | 3 | Fail | Single clear breach of advice perimeter, MCC scope, or PII handling |
-| 2 | Pass with comments | Language hygiene (HF-08), soft signals (SF-12, SF-13, SF-14), disclosure gaps (HF-06, HF-07) |
+| 2 | Pass with comments | Language hygiene (HF-08), soft signals (SF-12, SF-13, SF-14) |
 | 1 | Pass | No findings; operational / admin call |
 
 ## Step 6 — Write the eval report
