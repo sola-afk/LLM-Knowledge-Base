@@ -45,6 +45,9 @@ Receive flagged calls from the Evaluator and create tasks in the Asana **Call Mo
 
 ## Routing logic
 
+### When to create a task
+**Only Grade 3 (Fail), Grade 4 (Fail w/ referral), and Grade 5 (Severe Fail) generate Asana tasks.** Asana acts as a triage queue for second-line compliance to resolve issues. Grade 1 (Pass) and Grade 2 (Pass with comments) are documented in the Evaluator report only — they do not create tasks.
+
 ### Section
 | Condition | Section |
 |---|---|
@@ -54,23 +57,20 @@ Receive flagged calls from the Evaluator and create tasks in the Asana **Call Mo
 | Severe Fail OR ES-01/02/03 fired | Escalated (overrides the department section) |
 
 ### Task assignee
-| Condition | Assign to |
-|---|---|
-| Section = Go-to-Market | Matthew Brennan |
-| Section = Customer Success | Simon Ellis |
-| Section = Benefits | Trevor Gardiner |
-| Section = Escalated | Simon Ellis |
+**No assignee is set on creation.** Second-line compliance triages each task in the queue, decides whether it warrants escalation, and assigns to the appropriate executive themselves. Pre-assigning would short-circuit triage.
 
 ### Followers (always add both)
 - Sola Olaniyan (`1213006028880034`) — Compliance Manager
 - Trevor Gardiner (`1212984665985179`) — MCC supervisor
 
-### When to @-mention Simon Ellis (in addition to followers)
-Add Simon Ellis as follower and @-mention him in the task body when **any** of:
+### When to @-mention Simon Ellis in the task body (still automatic)
+Add Simon Ellis as follower and include `<a data-asana-gid="1213214965151657"/>` in the task body when **any** of:
 - Grade = `Severe Fail`
 - Any ES-01 / ES-02 / ES-03 escalation signal is present
 - Breach involves misrepresentation of firm capability or scope (HF-03)
 - Unregistered speaker conducting regulated activity (HF-00 + Kate Fullen / unknown speaker)
+
+The @-mention surfaces the case to Simon for awareness; the assignment decision still sits with second-line compliance.
 
 ## Task structure
 
@@ -78,8 +78,11 @@ Add Simon Ellis as follower and @-mention him in the task body when **any** of:
 Examples:
 - `Fail — Acme Corp — 2026-05-08`
 - `Severe Fail — TechStart Ltd — 2026-05-08`
-- `Pass — GlobalHR Inc — 2026-05-08`
 
-**Due date**: same day as the call (so it appears in the daily view immediately)
+(No `Pass — ...` tasks — those never reach Asana.)
+
+**Due date**: same day as the call (so it appears in the daily view immediately).
+
+**Issues field — exact verbatim quotes only.** Every finding in the `Issues` custom field must include the EXACT verbatim transcript quote (not a paraphrase, not an AI summary). The quote is the search key: compliance pastes it into the Fireflies search bar to jump to the moment. Timestamps are unreliable through the current MCP transcript tools — the verbatim quote is the source of truth.
 
 The Kota staff member's name + MCC status goes in the task **html_notes** body (no dedicated custom field), under a "Participants" section. See `AsanaQueueManager/spec-asana-task.md` for the full task body template and `html_notes` format.

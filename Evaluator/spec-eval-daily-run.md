@@ -115,7 +115,7 @@ Use the human reviewer's 1–5 rubric from `Researcher/research-call-supervision
 | 5 | Severe Fail | Customer misled on firm capability, scope, or a material fact |
 | 4 | Fail w/ referral | Repeated explicit recommendations (HF-01) or unauthorised regulated activity (HF-00, HF-04) |
 | 3 | Fail | Single clear breach of advice perimeter, MCC scope, or PII handling |
-| 2 | Pass with comments | Language hygiene (HF-08), soft signals (SF-12, SF-13, SF-14) |
+| 2 | Pass with comments | Language hygiene (HF-08), soft signals (SF-12, SF-13, SF-14) — documented in eval report only; **no Asana task** |
 | 1 | Pass | No findings; operational / admin call |
 
 ## Step 6 — Write the eval report
