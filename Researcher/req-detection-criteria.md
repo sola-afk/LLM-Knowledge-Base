@@ -69,13 +69,16 @@ The carve-outs in MCC 2017 (pointing out where info can be found; mere general i
 
 ---
 
-### HF-01 — Explicit personal recommendation [Speaker-scoped]
-**Description**: The speaker makes an explicit recommendation to act, choose, increase/decrease, switch, or transfer in relation to a financial product (pension, PMI, life, income protection, PRSA).
-**Why High**: This is the single most common breach in the audit (≥9/13 calls). It directly crosses the regulated-advice perimeter and exposes the firm to enforcement.
-**Trigger families** (Designer to expand):
-- "I recommend…", "I'd recommend…", "what I would recommend"
-- "you should…", "the best thing to do is…", "the right choice is…"
-- "what might be best for you", "best option for your team"
+### HF-01 — Explicit or implicit personal recommendation [Speaker-scoped]
+**Description**: The speaker makes a recommendation — explicit or implicit, individual or institutional — to act, choose, increase/decrease, switch, transfer, prioritise, or sequence anything in relation to a financial product (pension, PMI, life, income protection, PRSA).
+**Why High**: This is the single most common breach in the audit (≥9/13 calls). It directly crosses the regulated-advice perimeter and exposes the firm to enforcement. **The institutional framing ("we always say…", "what we recommend is…") is just as much a recommendation as the personal form ("I recommend…").**
+**Trigger families**:
+- First-person: "I recommend…", "I'd recommend…", "what I would recommend"
+- Second-person directive: "you should…", "the best thing to do is…", "the right choice is…", "you'd be better off…"
+- Institutional / "we" framing: "we always say…", "what we recommend is…", "the standard approach is…", "we usually steer clients towards…"
+- Sequence / prioritisation: "start with private medical and pension", "I would split it down into the big four", "get those two first"
+- Strategy advice: "diversify your pension across providers", "it's better to put it towards a private pension", "tier them into healthcare and pension first"
+- Suitability framing: "what might be best for you", "best option for your team"
 **Positive example (flag)**: rep tells customer "what I would recommend is set the maximum employer contribution to 1.5%."
 **Negative example (don't flag)**: rep says "the platform allows you to set a maximum employer contribution; companies typically pick a level that suits their payroll."
 **Regulation / risk mapping**:
@@ -106,7 +109,12 @@ The carve-outs in MCC 2017 (pointing out where info can be found; mere general i
 ---
 
 ### HF-03 — Misrepresented firm role, capability, or regulatory status
-**Description**: The speaker states or implies the firm or staff member has a capability, authorisation, or scope it does not have.
+**Description**: The speaker states or implies the firm or staff member has a capability, authorisation, regulator, or scope that does not match reality. This includes **incomplete or inverted statements about Kota's regulators**.
+
+**Kota's actual regulated status (the fact box the agent must reference):**
+- **FCA-regulated** as a broker (UK activities)
+- **CBI-regulated** as an insurance intermediary (Irish activities)
+- A speaker who says only "we're regulated by the FCA" or only "we're regulated by the CBI" without context is at best imprecise and at worst misleading — both regulators apply to different activities. Stating one as the basis for the speaker's own qualification constraint (e.g. "I can't tell you more because we're regulated by the CBI") requires the activity context to be the correct one.
 **Why High**: Severe Fail Q1-26-SF-01 was graded 5/5 entirely on this basis. Misrepresentation is both a CPC "clear/fair/not misleading" breach and a potential consumer-detriment trigger.
 **Trigger families**:
 - Calling sales/CS staff "qualified financial advisors" when they are not
@@ -178,20 +186,32 @@ The carve-outs in MCC 2017 (pointing out where info can be found; mere general i
 
 ---
 
-### HF-10 — Unqualified speaker describes type of cover, excesses, or plan-specific benefits [Speaker-scoped]
-**Description**: An unqualified speaker (per HF-00) describes the **type of cover**, **excesses**, **limits**, **inclusions**, or **plan-specific benefits** of a Kota-distributed insurance or pension product, beyond high-level platform features.
-**Why High**: Direct, named breach in Kota's `Financial Product Information to Customers` cheat sheet — listed as a Don't. The audit reviewers under-flag this pattern relative to advice-style language, but the internal policy is unambiguous.
+### HF-10 — Unqualified speaker describes the mechanics, cover, or terms of a regulated product [Speaker-scoped]
+**Description**: An unqualified speaker (per HF-00) describes **any** part of how a regulated insurance or pension product works. This is broader than just cover details — it captures the full mechanics of the product:
+- **Cover / benefits / exclusions**: dental limits, mental-health inclusions, what is/isn't claimable, waiting periods
+- **Underwriting mechanics**: moratorium vs medical history disregarded (MHD), virgin schemes, pre-existing conditions handling
+- **Premium mechanics**: age-rated premiums, individual vs group pricing, claims-experience rating
+- **Pension mechanics**: contribution structures, salary sacrifice, tax relief at source, benefit-in-kind, fund composition, vesting
+- **Auto-enrolment mechanics**: minimum percentages, employer/employee split, qualifying earnings, the My Future Fund mechanism
+- **Claims/admin process**: how to claim, what evidence the insurer requires, GP referral process
+
+The rule: if a non-Benefits speaker is explaining **how the product works**, it is HF-10. Discussions of Kota's platform mechanics (HRIS sync, payroll report flow, the €9 PEPM platform fee) are not regulated and remain in scope.
+
+**Why High**: Direct, named breach in Kota's `Financial Product Information to Customers` cheat sheet. "Mechanics" is where the audit historically under-flags — reviewers spot the recommendation but miss the underlying product description.
 **Trigger families**:
-- Naming specific cover lines: "the cash plan covers dental up to €X", "PMI includes mental-health and EAP"
-- Quoting excesses, limits, deductibles, waiting periods: "no excess on optical", "6-month dental waiting period"
-- Confirming or denying coverage of a scenario: "yes that's covered", "no that wouldn't be claimable"
-**Positive example**: an unqualified rep tells a prospect "the cash plan covers dental up to €500 and includes EAP, optical, and mental health add-ons."
-**Negative example**: same rep says "the IPID and policy doc list cover details and limits — I'll send them, and our authorised benefits colleague can walk through specifics."
+- Cover/exclusions: "the cash plan covers dental up to €X", "PMI includes mental-health and EAP", "no excess on optical"
+- Underwriting: "it is moratorium", "we'll disregard your medical history", "you'd be on a virgin scheme"
+- Premium mechanics: "premiums are age-rated", "it's quoted at individual level", "BUPA is more flexible in pricing"
+- Pension mechanics: "the minimum employer contribution is 1.5%", "you get tax relief at source", "it's salary sacrifice with BIK"
+- AE mechanics: "auto-enrolment has to be 3.5%", "they'd go into My Future Fund"
+- Claims process: "you'd have to get a GP letter to support the claim"
+**Positive example**: an unqualified rep tells a prospect "premiums in the UK are age-rated and you'd be on a moratorium underwriting basis."
+**Negative example**: same rep says "the IPID and policy doc explain how cover, premiums and underwriting work — I'll send them, and our authorised benefits colleague will walk through the specifics with you."
 **Regulation / risk mapping**:
-- **MCC 2017** — "information" on a retail financial product is a regulated activity
+- **MCC 2017** — "information" on a retail financial product is a regulated activity (this includes product mechanics, not just cover)
 - **IDR S.I. 229/2018 Reg. 23(1)(e)** — disclosure of whether advice is given
 - **IDD Art. 17(2) / ICOBS 2.2.2R** — clear, fair, not misleading
-- **Kota internal**: `Financial Product Information to Customers` ("Don't provide details on the type of cover or details on excesses that is provided in a particular plan")
+- **Kota internal**: `Financial Product Information to Customers` ("Don't provide details on the type of cover or details on excesses that is provided in a particular plan" — interpreted broadly: includes mechanics)
 **Source incidents**: Q3-25-PC-03 (multiple absolute coverage statements); Q3-25-PC-01 (cash-plan/PMI feature description by unqualified rep flagged as "soft recommendation"); Q3-25-PC-02 (PMI add-ons described as "what's going to drive tangible value").
 
 ---
@@ -230,6 +250,65 @@ The carve-outs in MCC 2017 (pointing out where info can be found; mere general i
 - **IDR S.I. 229/2018 Reg. 5** — distribution authorisation
 - **CPC 2025** — advice perimeter
 - **Kota internal**: `Advice to Customers` ("do not discuss making any changes to the level of cover"; "avoid discussing alternatives")
+
+---
+
+### HF-13 — Unqualified speaker discusses pricing, premiums, or pricing trends of a regulated product [Speaker-scoped]
+**Description**: A non-Benefits speaker discusses the pricing of a regulated insurance or pension product. This includes specific premium amounts, price ranges, directional pricing claims ("prices will go down"), and comparative pricing ("X is cheaper than Y"). Stating Kota's own platform fee (e.g. €9 PEPM) is **not** in scope — that's a platform charge, not a regulated product price.
+**Why High**: Pricing is a core mechanic of a regulated product. Quoting prices or making pricing predictions creates a price expectation and crosses into regulated advice or arranging. Non-Benefits staff have no basis to commit to or predict regulated product pricing.
+**Trigger families**:
+- Specific premium amounts: "it's usually around £110 to £120 per month", "couple-level cashback under £500 annually"
+- Directional pricing: "pricing will come down", "premiums are going up", "BUPA is 10–15% cheaper", "UK pricing is more flexible and cheaper overall"
+- Comparative pricing claims: "Bupa is often 10 to 15% cheaper for the exact same cover", "Allianz is really good, but it's really expensive"
+- Group-vs-individual pricing speculation: "you'll save money on a group scheme"
+**Positive example**: an unqualified rep tells a prospect "BUPA is usually 10–15% cheaper than Vitality for the same cover."
+**Negative example**: "pricing depends on the census data and the provider — our authorised benefits colleague will run the quotes and walk you through the numbers."
+**Regulation / risk mapping**:
+- **MCC 2017** — pricing is product information; advising or informing on it is regulated
+- **CPC 2025 Part 3** — clear, fair, accurate, not misleading
+- **IDD Art. 17(2)** — fair, clear, not misleading communications
+- **Kota internal**: non-Benefits staff do not commit to or predict pricing for regulated products
+**Source incidents**: Q4-25-PC-04 ("minuscule premium impact"); 2026-05-08 Carwow (Dan: "Bupa is often 10 to 15% cheaper") — though Dan is qualified, the directional pricing claim still triggers HF-02; 2026-05-08 India Healy O Connor (Karl: "in the UK it is cheaper overall").
+
+---
+
+### HF-14 — Disclosure of confidential client, partner, or third-party information [All-speaker]
+**Description**: Speaker discloses specific, identifiable information about Kota's clients, partners, providers, or other prospects to a third party on the call. This includes: naming specific clients, describing other clients' benefits setups, sharing churn or commercial-failure information, characterising other clients' difficulty, or disparaging Kota's providers/partners.
+**Why High**: Materially breaches the duty of confidentiality owed to Kota's clients, a contractual obligation in most MSAs, and the CPC duty to act with due skill, care, and diligence. It also damages trust — a prospect who hears about another client's churn or complaints can reasonably infer their own information will be shared on the next call.
+**Trigger families**:
+- Naming a specific client and describing their setup: "we set up Client X with Aviva and Royal London"
+- Sharing churn or commercial outcomes: "we only churned two customers last year"
+- Disparaging clients: "Client X is difficult to work with"
+- Disparaging or characterising Kota's partners/providers in front of a prospect: "Smart Pension isn't the most market-leading", "Deal causes a lot of stress to work with"
+- Sharing strategic information about another client's roadmap or product preferences
+**Positive example**: rep tells a prospect "we recently set up Linear in the UK with private medical and pension as the foundation — here's how that went."
+**Negative example**: "I can't share specifics about other clients — but I can talk you through how the platform typically supports a UK setup."
+**Regulation / risk mapping**:
+- **CPC 2025 Part 3** — clear, fair, accurate, not misleading (extended to fair-dealing with all parties)
+- **Standards for Business** (S.I. 60/2011 — F&P) — act with integrity
+- **GDPR Art. 5(1)(f)** — confidentiality of personal data; even non-personal corporate info engages the duty of confidence
+- **Kota internal**: MSA confidentiality clauses; sales playbook duty not to disclose other clients' data without consent
+**Source incidents**: 2026-05-08 India Healy O Connor — Karl named Linear's UK setup, named the two churned customers, disparaged Deal as a partner.
+
+---
+
+### HF-15 — Discussion of fund or product performance / returns [Speaker-scoped]
+**Description**: A non-Benefits speaker discusses the performance, returns, or quality of a specific pension fund, insurance product, or provider. Performance statements anchor the prospect to a specific expectation and function as an inducement.
+**Why High**: Performance and return discussions are at the core of investment advice. Saying "Aviva and Zurich are the highest performing" is a directional steer that an unqualified speaker has no basis to make. This is both an HF-02 comparative value judgement and a soft recommendation (HF-01) — given how serious it is, it gets its own hard rule.
+**Trigger families**:
+- "Aviva and Zurich are the highest, most performant"
+- "Smart Pension isn't as market-leading as Cushon or Royal London"
+- "Aviva have been performing really well over the past year or two"
+- "Unum usually come back a lot more competitive" (re group risk)
+- "Vitality's rewards program is the best across all healthcare providers"
+**Positive example**: an unqualified rep tells a prospect "Aviva and Zurich have been the strongest performers in the Irish market this year."
+**Negative example**: "providers have different performance profiles — our authorised benefits colleague will walk through the fund performance data with you."
+**Regulation / risk mapping**:
+- **MCC 2017** — performance/returns is investment information, regulated activity
+- **CPC 2025 Part 3** — clear, fair, accurate, not misleading
+- **MiFID II** — investment-related communications standards (relevant for pension funds)
+- **Kota internal**: only the Benefits team may comment on provider performance; sales staff may not
+**Source incidents**: 2026-05-08 Volta (Karl: "Aviva, who have been performing really well"); 2026-05-08 Andrew Moore (Karl: "Aviva and Zurich probably are the highest, most performant").
 **Source incidents**: Q2-25-F-01 (offered to arrange life/IP quotes), Q4-25-FR-01 (recommended changing minimum employer contribution), Q4-25-PC-05 (suggested specific contribution-level changes).
 
 ---
@@ -316,14 +395,18 @@ The carve-outs in MCC 2017 (pointing out where info can be found; mere general i
 **Regulation / risk mapping**: CPC 2025 Part 3; CBI Standards for Business (act fairly, professionally); FCA COBS 4.2 (financial promotions)
 **Source incidents**: Q4-25-PC-02, Q4-25-PC-04
 
-### SF-13 — Disparagement of competitors / unsupported comparative claims
-**Description**: Unsupported negative claims about a competitor's processes, service, or governance.
-**Why Soft**: Borderline; reviewers flag the assertion-without-evidence pattern, not comparison itself.
-**Trigger families**: "their service falls down", "traditional broker nature can leave it open to mistakes"
-**Positive example**: "where they fall down is service — traditional broker nature leaves it open to mistakes."
-**Negative example**: "some customers tell us competitor service can feel renewal-led; we can show how our model differs."
-**Regulation / risk mapping**: CPC 2025 Part 3; FCA COBS 4.2.4R (clear, fair, not misleading promotions)
-**Source incidents**: Q4-25-PC-01
+### SF-13 — Disparagement of competitors, partners, providers, or clients
+**Description**: Unsupported negative claims about a competitor's, partner's, provider's, or client's processes, service, governance, or commercial conduct. Scope is **not limited to competitors** — disparaging Kota's own partners (Deal, Remote, Employment Hero, etc.), Kota's pension/insurance providers (Smart Pension, Aviva, Vitality, etc.), or Kota's clients in front of a third party all qualify. Disparaging a client is also a confidentiality concern — see HF-14 — and should be cross-flagged when it occurs.
+**Why Soft**: Borderline; reviewers flag the assertion-without-evidence pattern, not comparison itself. Becomes Hard when paired with HF-14 (named client/partner disclosure).
+**Trigger families**:
+- Competitor: "their service falls down", "traditional broker nature can leave it open to mistakes"
+- Partner: "Deal causes a lot of stress to work with", "Remote is difficult"
+- Provider: "Smart Pension isn't market-leading", "Vitality's claims process is appalling"
+- Client: "Client X is difficult to work with", "we lost Y because they were unreasonable"
+**Positive example**: "Smart Pension isn't the most market-leading — Royal London and Cushon perform better."
+**Negative example**: "providers have different strengths — our benefits team can walk through fund performance with you."
+**Regulation / risk mapping**: CPC 2025 Part 3; FCA COBS 4.2.4R (clear, fair, not misleading promotions); CBI Standards for Business — act with integrity; Kota MSA confidentiality clauses (when a client is named)
+**Source incidents**: Q4-25-PC-01; 2026-05-08 Volta (Karl disparaged Smart Pension); 2026-05-08 India Healy O Connor (Karl: "Deal in particular are incredibly difficult to work with")
 
 ### SF-14 — Discouraging regulated advice
 **Description**: The speaker tells the customer they don't need to consult an authorised adviser.

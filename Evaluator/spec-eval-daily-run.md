@@ -81,9 +81,12 @@ Scan each Kota-side speaker's sentences against `Researcher/req-detection-criter
 | HF-05 | Tax / AE / law conclusion applied to specific person or scenario |
 | HF-08 | Absolute certainty claim: "everything's covered", "full cover", "won't lose cover", "can be certain" |
 | HF-09 | GDPR / PII mishandling: agreement to receive personal data (PPS numbers, salary, DOB, addresses) by unprotected channel |
-| HF-10 | Unqualified speaker describing type of cover or excesses in a specific plan |
+| HF-10 | Unqualified speaker describing **mechanics, cover, or terms** of a regulated product — cover, excesses, **underwriting (moratorium / MHD / virgin scheme), premium mechanics (age-rated), pension mechanics (contributions, BIK, fund composition), claims process** |
 | HF-11 | Unqualified speaker comparing two Kota plans or Kota vs competitor plans |
 | HF-12 | Unqualified speaker discussing changing or amending level of cover |
+| HF-13 | Unqualified speaker discussing pricing, premiums, or pricing trends of a regulated product (specific amounts, "X is cheaper", "prices will go down"). Kota's own platform fee (€9 PEPM) is **not** in scope. |
+| HF-14 | Disclosure of confidential client, partner, or third-party information — naming clients, sharing their setup, churn, complaints, or disparaging Kota's partners/providers in front of a prospect |
+| HF-15 | Unqualified speaker discussing fund or product performance / returns — "Aviva and Zurich are the highest performing", "Smart Pension isn't market-leading" |
 
 > **Excluded — recording/call consent**: HF-06 (recording disclosure opener) and HF-07 (implied/assumed recording consent) are **not** detection criteria. Kota collects recording consent via a booking form when prospects and customers schedule the call. The agent must not flag the absence of a verbal recording disclosure, an implied "I'm assuming that's okay", or any related opener-script issue.
 
