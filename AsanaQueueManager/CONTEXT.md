@@ -1,7 +1,7 @@
 # Asana Call Monitoring Queue Manager — Context
 
 ## Role
-Receive flagged calls from the Evaluator and create tasks in the Asana **Call Monitoring** project. Each task captures who was on the call, the client/prospect, the department involved, when the breach occurred in the call, the exact regulatory requirement breached, and @-mentions the relevant executive for follow-up.
+Receive flagged calls from the Evaluator and create tasks in the Asana **Call Monitoring** project. Each task captures who was on the call, the client/prospect, the department involved, when the breach occurred in the call, and the exact regulatory requirement breached. Followers are set to surface the right people — the agent does **not** @-mention individuals in the task body.
 
 ## Asana — Call Monitoring Project
 
@@ -64,14 +64,16 @@ Receive flagged calls from the Evaluator and create tasks in the Asana **Call Mo
 - Sola Olaniyan (`1213006028880034`) — Compliance Manager
 - Trevor Gardiner (`1212984665985179`) — MCC supervisor
 
-### When to @-mention Simon Ellis in the task body (still automatic)
-Add Simon Ellis as follower and include `<a data-asana-gid="1213214965151657"/>` in the task body when **any** of:
+### When to add Simon Ellis as a follower (escalation triggers)
+Add Simon Ellis (`1213214965151657`) to the **followers** list when **any** of:
 - Grade = `Severe Fail`
 - Any ES-01 / ES-02 / ES-03 escalation signal is present
 - Breach involves misrepresentation of firm capability or scope (HF-03)
 - Unregistered speaker conducting regulated activity (HF-00 + Kate Fullen / unknown speaker)
 
-The @-mention surfaces the case to Simon for awareness; the assignment decision still sits with second-line compliance.
+Simon is notified via the followers list — the agent does **not** @-mention him (or anyone else) inside the task body. No "MCC Supervisor: @Trevor Gardiner", "Compliance: @Sola Olaniyan", or "Escalated to: @Simon Ellis" footer. The followers list does the same job without the visual clutter or extra notification ping.
+
+The assignment decision still sits with second-line compliance.
 
 ## Task structure
 

@@ -154,19 +154,14 @@ Construct as valid XML with a single `<body>` root.
 <ol>
   <li>[Specific action, owner, deadline]</li>
 </ol>
-
-<hr/>
-<p>
-  For action: <a data-asana-gid="[ASSIGNEE GID]"/><br/>
-  MCC Supervisor: <a data-asana-gid="1212984665985179"/> (Trevor Gardiner)
-  [If escalation applies:] <br/>Escalated to: <a data-asana-gid="1213214965151657"/> (Simon Ellis)
-</p>
 </body>
 ```
 
-## Escalation: when to @-mention Simon Ellis
+> **Do not @-mention individuals in the task body.** No "MCC Supervisor: @Trevor Gardiner", "Compliance: @Sola Olaniyan", "Escalated to: @Simon Ellis" footers. The followers list (set on the task) already notifies the right people; in-body tags only add notification noise and visual clutter.
 
-Add `1213214965151657` as a follower and include `<a data-asana-gid="1213214965151657"/>` in the html_notes when **any** of:
+## Escalation: when to add Simon Ellis as a follower
+
+Add `1213214965151657` to the **followers** list when **any** of the following fires:
 - Grade = `Severe Fail` (Asana option `1213240170325718`)
 - ES-01 (customer distress / complaint)
 - ES-02 (claim or coverage dispute)
@@ -174,7 +169,7 @@ Add `1213214965151657` as a follower and include `<a data-asana-gid="12132149651
 - HF-03 (firm capability or regulatory status misrepresented)
 - HF-00 triggered for an **unregistered** speaker (Kate Fullen, or any unrecognised name)
 
-Note: when these escalation conditions fire, also place the task in the **Escalated** section (`1213240137041730`) instead of the department section.
+Also place the task in the **Escalated** section (`1213240137041730`) instead of the department section. Simon receives notifications via the follower list — no in-body @-mention required.
 
 ## Full worked example
 
@@ -191,10 +186,10 @@ Note: when these escalation conditions fire, also place the task in the **Escala
       "due_on": "2026-05-08",
       "followers": "1213006028880034,1212984665985179",
       "custom_fields": "{\"1213240170325716\":\"1214635377742249\",\"1213240170325723\":\"PMI demo — new prospect\",\"1213240170325728\":\"HF-10 (unqualified speaker describing cover details): \\\"The cash plan covers dental up to €500 per year and optical up to €150.\\\"\",\"1213240170325733\":\"CBI Minimum Competency Code 2017 — provision of information on retail financial product by unqualified person\",\"1213240170325738\":\"https://app.fireflies.ai/view/abc123\",\"1214635377742250\":\"Karl O'Brien (Script pathway)\",\"1214635377742252\":\"Prospect Corp Ltd\"}",
-      "html_notes": "<body><h1>Call Details</h1><ul><li><strong>Client / Prospect:</strong> Prospect Corp Ltd</li><li><strong>Call date:</strong> 2026-05-08 10:30</li><li><strong>Duration:</strong> 24 minutes</li><li><strong>Department:</strong> GTM</li></ul><h1>Participants</h1><ul><li><strong>Kota staff:</strong> Karl O'Brien — Account Executive — Script pathway (unqualified)</li><li><strong>Customer / Prospect:</strong> Jane Smith, Prospect Corp Ltd</li></ul><h1>Compliance Findings</h1><ul><li><strong>HF-10 — Cover details by unqualified speaker</strong><br/><em>Verbatim transcript quote (paste into Fireflies search):</em> \"The cash plan covers dental up to €500 per year and optical up to €150.\"<br/><em>Speaker:</em> Karl O'Brien (Script pathway — unqualified)<br/><em>Regulation:</em> CBI MCC 2017 — provision of information on retail financial product by unqualified person<br/><em>Severity:</em> High</li></ul><h1>Training / Gap</h1><p>Karl is on the prescribed script pathway and described specific PMI cover limits to a prospect. This is a MCC-regulated activity that requires an APA (PMI) or QFA qualification.</p><hr/><p>MCC Supervisor: <a data-asana-gid=\"1212984665985179\"/> (Trevor Gardiner)</p></body>"
+      "html_notes": "<body><h1>Call Details</h1><ul><li><strong>Client / Prospect:</strong> Prospect Corp Ltd</li><li><strong>Call date:</strong> 2026-05-08 10:30</li><li><strong>Duration:</strong> 24 minutes</li><li><strong>Department:</strong> GTM</li></ul><h1>Participants</h1><ul><li><strong>Kota staff:</strong> Karl O'Brien — Account Executive — Script pathway (unqualified)</li><li><strong>Customer / Prospect:</strong> Jane Smith, Prospect Corp Ltd</li></ul><h1>Compliance Findings</h1><ul><li><strong>HF-10 — Cover details by unqualified speaker</strong><br/><em>Verbatim transcript quote (paste into Fireflies search):</em> \"The cash plan covers dental up to €500 per year and optical up to €150.\"<br/><em>Speaker:</em> Karl O'Brien (Script pathway — unqualified)<br/><em>Regulation:</em> CBI MCC 2017 — provision of information on retail financial product by unqualified person<br/><em>Severity:</em> High</li></ul><h1>Training / Gap</h1><p>Karl is on the prescribed script pathway and described specific PMI cover limits to a prospect. This is a MCC-regulated activity that requires an APA (PMI) or QFA qualification.</p></body>"
     }
   ]
 }
 ```
 
-**Severe Fail variant**: same call but graded 5 (e.g. customer was misled on firm capability) — change `section_id` to `1213240137041730` (Escalated) and the Grade option GID to `1213240170325718`. Add Simon Ellis to the followers list and @-mention him in the body. Assignee still omitted.
+**Severe Fail variant**: same call but graded 5 (e.g. customer was misled on firm capability) — change `section_id` to `1213240137041730` (Escalated) and the Grade option GID to `1213240170325718`. Add Simon Ellis (`1213214965151657`) to the followers list. Assignee still omitted. Do not @-mention individuals in the body.
