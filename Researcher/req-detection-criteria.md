@@ -156,6 +156,12 @@ The carve-outs in MCC 2017 (pointing out where info can be found; mere general i
 
 Both forms are Red. The first is "advising outside authorisation"; the second is "giving customers inaccurate regulatory information" — which is materially worse because the customer relies on the statement.
 
+**Severity ladder (from 2026-05-15 calibration)** — distinguish:
+- **HF-05 confirmed**: wrong number, wrong rule, wrong eligibility threshold, wrong phasing year. The customer has been told a specific fact that contradicts the source-of-truth. Triggers Simon Ellis escalation if the breach meets the spec criteria.
+- **HF-05 light**: right principle, wrong terminology (e.g. "taxable income" vs "gross earnings"); minor inaccuracy on a mechanic that doesn't change the customer's takeaway. Documented for coaching, doesn't auto-escalate on its own.
+
+**Before flagging an AE statement (R2 — charitable-interpretation pass)**: compare the speaker's quote against **all** relevant sections of `Researcher/source-of-truth-ae-myfuturefund.md` — including the AE Year 1–3 contribution split AND the Pensions Authority occupational-scheme exemption standard (both use a 3.5% figure but mean different things). If any section makes the statement correct under a reasonable reading, do not flag.
+
 **Why High**: Outside the firm's authorisation, and — for the second form — directly misleads the customer on a public-law rule that affects them.
 **Trigger families**:
 - Applied-to-scenario: "If she's married she'll be sharing tax credits with her husband", "She won't be included in auto-enrolment because she's on unpaid leave"
