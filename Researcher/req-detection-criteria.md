@@ -206,10 +206,11 @@ The rule: if a non-Benefits speaker is explaining **how the product works**, it 
 
 **Auto-enrolment is discussable by any speaker, qualified or not** — it is public-policy information, not Kota product information. However, statements about Irish AE must **exactly match the official government source-of-truth**:
 
-- **Authoritative source**: https://www.gov.ie/en/department-of-social-protection/publications/auto-enrolment-retirement-savings-system-for-employees/ (Department of Social Protection, "Auto-enrolment retirement savings system for employees" / *My Future Fund*, administered by NAERSA).
-- A speaker who paraphrases AE rules **incorrectly** — wrong eligibility threshold, wrong contribution percentages, wrong phasing schedule, wrong opt-out mechanics, wrong contribution base — triggers **HF-05** (incorrect public-law conclusion applied to a specific scenario), **not** HF-10. The topic is in scope; the inaccuracy is the breach.
-- A speaker who paraphrases AE rules **accurately** does not trigger HF-10 or HF-05. The carve-out applies even when the speaker is unqualified.
-- Internal Kota AE-script alignment: Kota maintains an internal AE script vetted against gov.ie. The agent should treat material deviations from that script as the surface signal of an HF-05 breach; Compliance owns the comparison to the gov.ie source.
+- **Source-of-truth file** the agent reads at runtime: `Researcher/source-of-truth-ae-myfuturefund.md` — this is the comparison baseline. It contains the verbatim gov.ie wording (pasted by Compliance) on eligibility, contribution percentages, phasing, opt-out, and the My Future Fund mechanics.
+- **Upstream source**: https://www.gov.ie/en/department-of-social-protection/publications/auto-enrolment-retirement-savings-system-for-employees/ (Department of Social Protection, "Auto-enrolment retirement savings system for employees" / *My Future Fund*, administered by NAERSA).
+- A speaker who paraphrases AE rules **incorrectly** — wrong eligibility threshold, wrong contribution percentages, wrong phasing schedule, wrong opt-out mechanics, wrong contribution base — triggers **HF-05** (incorrect public-law statement), **not** HF-10. The topic is in scope; the inaccuracy is the breach.
+- A speaker who paraphrases AE rules **accurately** (matching the source-of-truth file) does not trigger HF-10 or HF-05. The carve-out applies even when the speaker is unqualified.
+- **If the source-of-truth file is empty** for the relevant section: the agent must flag any AE statement on that topic as HF-05 with the note "AE source-of-truth missing — Compliance to verify against gov.ie". Fail closed when the baseline is unknown.
 
 The carve-out is **only** for the public AE mechanics (eligibility, contribution percentages, phasing, opt-out, the My Future Fund product itself). It does **not** extend to:
 - Specific occupational scheme contribution mechanics (still HF-10)
