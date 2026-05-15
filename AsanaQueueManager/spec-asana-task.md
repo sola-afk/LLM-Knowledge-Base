@@ -51,6 +51,8 @@ Every finding listed in the `Issues` custom field must include the **EXACT verba
 | Department = CS / CX | Customer Success | `1213240137041733` |
 | Department = Benefits | Benefits | `1213240137041734` |
 
+**Archive lane**: a fifth section, **Resolved** (`1214800663325965`), exists for tasks that compliance has actioned and closed. The agent does **not** create new tasks in Resolved — compliance moves tasks into it when the underlying issue has been addressed. Tasks in Resolved retain their custom fields and `html_notes` for the audit trail.
+
 ## Followers (always set)
 
 - Sola Olaniyan (`1213006028880034`) — Compliance Manager

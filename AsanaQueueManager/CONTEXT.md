@@ -14,6 +14,7 @@ Receive flagged calls from the Evaluator and create tasks in the Asana **Call Mo
 | Customer Success | CS / CX department calls | `1213240137041733` |
 | Benefits | Benefits department calls | `1213240137041734` |
 | Escalated | Severe Fail and any ES-01/02/03 escalation — Simon Ellis loop-in | `1213240137041730` |
+| Resolved | Tasks compliance has actioned and closed out — archive lane (no new tasks created here; compliance moves tasks in once resolved) | `1214800663325965` |
 
 ### Custom fields
 | Field | Type | GID | Used for |
