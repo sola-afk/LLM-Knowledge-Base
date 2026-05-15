@@ -78,10 +78,10 @@ Scan each Kota-side speaker's sentences against `Researcher/req-detection-criter
 | HF-02 | Comparative value judgement: "so superior", "much better than", "98% of clients do this" |
 | HF-03 | Misrepresented firm role / capability / regulatory status: "we go to market for best quotes", "we're global", "qualified financial advisor" |
 | HF-04 | Cross-selling / arranging regulated product without authorisation: offering to get a quote for life, IP, pension when not authorised |
-| HF-05 | Tax / AE / law conclusion applied to specific person or scenario |
+| HF-05 | Tax / AE / public-law conclusion applied to specific scenario, **OR misstating the public-law rules** — including any Irish auto-enrolment percentage / eligibility / phasing / opt-out claim that diverges from https://www.gov.ie/en/department-of-social-protection/publications/auto-enrolment-retirement-savings-system-for-employees/ |
 | HF-08 | Absolute certainty claim: "everything's covered", "full cover", "won't lose cover", "can be certain" |
 | HF-09 | GDPR / PII mishandling: agreement to receive personal data (PPS numbers, salary, DOB, addresses) by unprotected channel |
-| HF-10 | Unqualified speaker describing **mechanics, cover, or terms** of a regulated product — cover, excesses, **underwriting (moratorium / MHD / virgin scheme), premium mechanics (age-rated), pension mechanics (contributions, BIK, fund composition), claims process** |
+| HF-10 | Unqualified speaker describing **mechanics, cover, or terms** of a regulated product — cover, excesses, **underwriting (moratorium / MHD / virgin scheme), premium mechanics (age-rated), non-AE pension mechanics (occupational contributions, BIK, fund composition), claims process**. **Auto-enrolment is carved out** — any speaker may discuss AE, but statements must match the gov.ie source (deviations are HF-05, not HF-10). |
 | HF-11 | Unqualified speaker comparing two Kota plans or Kota vs competitor plans |
 | HF-12 | Unqualified speaker discussing changing or amending level of cover |
 | HF-13 | Unqualified speaker discussing pricing, premiums, or pricing trends of a regulated product (specific amounts, "X is cheaper", "prices will go down"). Kota's own platform fee (€9 PEPM) is **not** in scope. |

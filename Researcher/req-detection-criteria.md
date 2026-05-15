@@ -149,21 +149,27 @@ The carve-outs in MCC 2017 (pointing out where info can be found; mere general i
 
 ---
 
-### HF-05 — Tax, social-welfare, or pensions-law guidance to a specific person/scenario [Speaker-scoped]
-**Description**: The speaker gives a conclusion about how tax, auto-enrolment eligibility, or other public-law rules apply to a named individual or specific scenario.
-**Why High**: Outside the firm's authorisation; reviewers consistently mark these as Red.
+### HF-05 — Tax, social-welfare, or pensions-law guidance to a specific person/scenario, OR incorrect public-law statement [Speaker-scoped]
+**Description**: The speaker either:
+1. Gives a tax / social-welfare / pensions-law conclusion applied to a named individual or specific scenario, OR
+2. **Misstates the public-law rules themselves** — e.g. paraphrases Irish auto-enrolment, P11D, BIK, or tax-relief rules in a way that diverges from the official source.
+
+Both forms are Red. The first is "advising outside authorisation"; the second is "giving customers inaccurate regulatory information" — which is materially worse because the customer relies on the statement.
+
+**Why High**: Outside the firm's authorisation, and — for the second form — directly misleads the customer on a public-law rule that affects them.
 **Trigger families**:
-- "If she's married she'll be sharing tax credits with her husband"
-- "She won't be included in auto-enrolment because she's on unpaid leave"
-- "There's no P11D anymore very soon"
-**Positive example**: rep tells customer "if she's married, tax credits work like X."
-**Negative example**: "tax treatment depends on personal circumstances — best to confirm with the customer's tax adviser or Revenue."
+- Applied-to-scenario: "If she's married she'll be sharing tax credits with her husband", "She won't be included in auto-enrolment because she's on unpaid leave"
+- Incorrect AE statement: any AE percentage, eligibility threshold, phasing schedule, opt-out rule, or contribution-base claim that does not match https://www.gov.ie/en/department-of-social-protection/publications/auto-enrolment-retirement-savings-system-for-employees/
+- Incorrect tax statement: "There's no P11D anymore very soon" (when the legislation says otherwise)
+- Incorrect occupational pension legal rule: stating contribution minimums that don't match Irish/UK pension legislation
+**Positive example**: rep tells customer "the AE employer minimum is 1.5%" when the official source says something different at the time of the call.
+**Negative example**: "I'll send you the gov.ie auto-enrolment page — it has the full rules on contributions, eligibility, and opt-out. Our benefits team can walk you through it."
 **Regulation / risk mapping**:
-- CPC 2025 — advice perimeter
+- CPC 2025 — advice perimeter; clear/fair/not misleading
 - Tax legislation — only Tax Advisers / appropriately qualified persons may advise
-- Auto-Enrolment Retirement Savings Act 2024 (Ireland) — eligibility determined in legislation, not by intermediary
+- Automatic Enrolment Retirement Savings Act 2024 (Ireland) and the My Future Fund scheme — eligibility, contributions, and phasing are determined in legislation; reps must defer to the gov.ie source
 - QFA requirement (Ireland) for pension advice
-**Source incidents**: Q4-25-PC-04, Q4-25-PC-05 (auto-enrolment exemption claim), Q4-25-NF-02 (P11D claim)
+**Source incidents**: Q4-25-PC-04, Q4-25-PC-05 (auto-enrolment exemption claim), Q4-25-NF-02 (P11D claim); 2026-05-08 Karl O'Brien (India and Andrew Moore calls — incorrect AE percentages); 2026-05-12+ Simon Ward (LearnUpon, capeMBX Health, LearnUpon #2 — AE rule statements need to be checked against the gov.ie wording)
 
 ---
 
@@ -191,19 +197,32 @@ The carve-outs in MCC 2017 (pointing out where info can be found; mere general i
 - **Cover / benefits / exclusions**: dental limits, mental-health inclusions, what is/isn't claimable, waiting periods
 - **Underwriting mechanics**: moratorium vs medical history disregarded (MHD), virgin schemes, pre-existing conditions handling
 - **Premium mechanics**: age-rated premiums, individual vs group pricing, claims-experience rating
-- **Pension mechanics**: contribution structures, salary sacrifice, tax relief at source, benefit-in-kind, fund composition, vesting
-- **Auto-enrolment mechanics**: minimum percentages, employer/employee split, qualifying earnings, the My Future Fund mechanism
+- **Pension mechanics**: contribution structures (beyond the AE carve-out below), salary sacrifice, tax relief at source, benefit-in-kind, fund composition, vesting
 - **Claims/admin process**: how to claim, what evidence the insurer requires, GP referral process
 
 The rule: if a non-Benefits speaker is explaining **how the product works**, it is HF-10. Discussions of Kota's platform mechanics (HRIS sync, payroll report flow, the €9 PEPM platform fee) are not regulated and remain in scope.
+
+#### Auto-enrolment carve-out (My Future Fund)
+
+**Auto-enrolment is discussable by any speaker, qualified or not** — it is public-policy information, not Kota product information. However, statements about Irish AE must **exactly match the official government source-of-truth**:
+
+- **Authoritative source**: https://www.gov.ie/en/department-of-social-protection/publications/auto-enrolment-retirement-savings-system-for-employees/ (Department of Social Protection, "Auto-enrolment retirement savings system for employees" / *My Future Fund*, administered by NAERSA).
+- A speaker who paraphrases AE rules **incorrectly** — wrong eligibility threshold, wrong contribution percentages, wrong phasing schedule, wrong opt-out mechanics, wrong contribution base — triggers **HF-05** (incorrect public-law conclusion applied to a specific scenario), **not** HF-10. The topic is in scope; the inaccuracy is the breach.
+- A speaker who paraphrases AE rules **accurately** does not trigger HF-10 or HF-05. The carve-out applies even when the speaker is unqualified.
+- Internal Kota AE-script alignment: Kota maintains an internal AE script vetted against gov.ie. The agent should treat material deviations from that script as the surface signal of an HF-05 breach; Compliance owns the comparison to the gov.ie source.
+
+The carve-out is **only** for the public AE mechanics (eligibility, contribution percentages, phasing, opt-out, the My Future Fund product itself). It does **not** extend to:
+- Specific occupational scheme contribution mechanics (still HF-10)
+- Tax relief at source / BIK / P11D mechanics (still HF-05)
+- A comparison between AE and an occupational scheme that frames one as "more advantageous" (still HF-02 / HF-11)
+- Pension provider performance or returns (still HF-15)
 
 **Why High**: Direct, named breach in Kota's `Financial Product Information to Customers` cheat sheet. "Mechanics" is where the audit historically under-flags — reviewers spot the recommendation but miss the underlying product description.
 **Trigger families**:
 - Cover/exclusions: "the cash plan covers dental up to €X", "PMI includes mental-health and EAP", "no excess on optical"
 - Underwriting: "it is moratorium", "we'll disregard your medical history", "you'd be on a virgin scheme"
 - Premium mechanics: "premiums are age-rated", "it's quoted at individual level", "BUPA is more flexible in pricing"
-- Pension mechanics: "the minimum employer contribution is 1.5%", "you get tax relief at source", "it's salary sacrifice with BIK"
-- AE mechanics: "auto-enrolment has to be 3.5%", "they'd go into My Future Fund"
+- Pension mechanics (non-AE): "the minimum employer contribution into the occupational scheme is 5%", "you get tax relief at source", "it's salary sacrifice with BIK"
 - Claims process: "you'd have to get a GP letter to support the claim"
 **Positive example**: an unqualified rep tells a prospect "premiums in the UK are age-rated and you'd be on a moratorium underwriting basis."
 **Negative example**: same rep says "the IPID and policy doc explain how cover, premiums and underwriting work — I'll send them, and our authorised benefits colleague will walk through the specifics with you."
