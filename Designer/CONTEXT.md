@@ -47,6 +47,13 @@ See `Evaluator/calibration-2026-05-15-false-positives.md` for the full analysis.
 
   This tracks the agent's false-positive rate explicitly and feeds the next calibration round.
 
+* **R6 — Verify qualifications against the canonical register**: Before applying any speaker-scoped hard rule (HF-00, HF-10, HF-11, HF-12, HF-13, HF-15) the agent must check the speaker's actual qualifications against `Researcher/research-mcc-fitness-probity.md` (the "Fully Qualified MCC Persons" table). Rules of interpretation:
+  * **QFA holder** → all retail product topics in scope (pensions, life, PMI, general insurance). Includes Trevor Gardiner, Paul O'Hanlon, Naoise Baker.
+  * **APA Pensions + New Entrant PMI** (Callum Pearse, Daniel McAvinue) → both product areas discussable per Kota's New Entrant interpretation; Trevor's active presence on the call is **not** required.
+  * **APA PMI only** (Charlie Blake, Colin Pon) → PMI in scope; pensions / life / tax-relief out of scope.
+  * **Script pathway** (Karl, Simon Ward, Henry Godson, Katie Garry, Claudia Correa) → no regulated product discussion in scope.
+  * **Unrecognised** (any name not on the register, e.g. John Hayes) → fail closed, flag HF-00 by unregistered speaker, escalate to Simon Ellis.
+
 # What to avoid
 * Don't invent detection criteria the Researcher hasn't specified — push back and ask, don't paper over the gap.
 * Don't ship a prompt without a defined output schema — unstructured outputs break the Evaluator.

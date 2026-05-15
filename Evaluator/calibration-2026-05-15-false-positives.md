@@ -23,6 +23,9 @@ This note captures every false positive surfaced across the May 2026 eval runs, 
 | 5 | 13 calls (2026-05-05 week) | HF-06 | "no recording disclosure opener in first 60 seconds" | Kota collects recording consent via the **pre-call booking form**, not verbally during the call. Criterion removed from the spec entirely. 5 Grade 2 calls regraded to Grade 1; 5 Asana tasks deleted. |
 | 6 | Karl/India + Karl/Andrew Moore | HF-10 | Karl: *"3.5%... at a minimum the employer has to offer 1.5%"* | Ambiguous: matches gov.ie's Pensions Authority occupational-scheme exemption standard, but also overlaps with AE total. Reclassified HF-05 borderline rather than HF-10. |
 | 7 | Simon AE "taxable income" (LearnUpon #1, #2) | HF-10 | Simon Ward: *"3.5% of total taxable pay" / "based on their total taxable income"* | Principle correct (gross-earnings-based contribution with €80k cap), but used "taxable income" — a different figure under Irish tax law. Reclassified HF-05 light rather than HF-10. |
+| 8 | 365 Finance (2026-05-12) | HF-05 (×2) | Paul O'Hanlon discussing private-pension tax relief and 40% relief at €45k | Paul holds **QFA** (covers all retail products in Ireland) plus APA PMI. The agent was applying "APA PMI only" status. Both findings withdrawn. |
+| 9 | Forest x Kota (2026-05-14) | HF-10, HF-11, HF-13 (Grade 3) | Callum Pearse discussing PMI anti-selection, cash-plan vs PMI comparison, PMI provider pricing | Callum holds APA Pensions + New Entrant PMI. Per Kota's interpretation of New Entrant arrangements, he can discuss PMI products. All three speaker-scoped findings withdrawn; call regraded Grade 3 → Grade 1; task deleted. |
+| 10 | Digilab (2026-05-14) | HF-05, HF-10, HF-13 (Grade 3) | Callum Pearse on PMI salary-sacrifice, BIK / P11D, pension cost-saving percentages | Same issue as #9 — Callum qualified for pensions + PMI. All three findings withdrawn; call regraded Grade 3 → Grade 1; task deleted. |
 
 ## Root causes — 5 patterns
 
@@ -56,6 +59,14 @@ Multiple Irish AE statements (Karl's "3.5%", Paul's "3.5% between employer and e
 "Wrong rule entirely" (Simon's *"2% employee contribution mandate"* — gov.ie says 1.5%) and "right principle, wrong terminology" (Simon's *"taxable income"* — should be "gross earnings") were both stamped HF-05 at the same severity. Compliance treats these very differently in practice — the first is a customer-misled-on-material-fact issue, the second is a wording-clarity issue.
 
 **Cost**: Compliance triage time is wasted on light findings that are flagged at the same level as confirmed errors.
+
+### Pattern 6: Qualification register out of sync with reality
+The agent's input register for speaker qualifications had two errors that led to false-positive flags:
+
+- **Paul O'Hanlon** was treated as "APA PMI only" — in reality he holds **QFA & APA PMI**. QFA covers all retail product advice in Ireland, so Paul is qualified to discuss pensions, life, PMI, and tax-relief topics independently. The agent had been flagging his pension and tax-relief content as out-of-scope.
+- **Callum Pearse** was treated as "Pensions independent; Health (supervised)" with the supervised qualifier interpreted as "Trevor must be on the call". In reality Callum holds APA Pensions + New Entrant PMI, and **Kota's interpretation of his New Entrant arrangement permits him to discuss PMI products** under the supervision relationship with Trevor (not strictly "Trevor on the call"). The agent had been flagging his PMI discussions as Grade 3 breaches.
+
+**Cost**: 365 Finance dropped from 4 findings to 1 (HF-03 only); Forest x Kota and Digilab both regraded Grade 3 → Grade 1 with tasks deleted. **5 false-positive findings withdrawn in total across these three calls.**
 
 ## Refinements going into the agent
 
@@ -94,6 +105,17 @@ Every eval report includes a "Findings withdrawn after reassessment" section lis
 | Call | Original finding | Why withdrawn | Reassessment date |
 |---|---|---|---|
 ```
+
+### R6 — Verify qualifications against the canonical register before applying speaker-scoped flags
+Before applying any speaker-scoped hard rule (HF-00, HF-10, HF-11, HF-12, HF-13, HF-15) or making a qualification-based judgement, the agent **must** check the speaker's actual qualifications against `Researcher/research-mcc-fitness-probity.md` (the "Fully Qualified MCC Persons" table).
+
+Rules of interpretation:
+- **QFA holder** → all retail product topics in scope (pensions, life, PMI, general insurance). Do not flag a QFA holder for "out of scope" on any retail product.
+- **APA Pensions + New Entrant PMI** (or similar combination) → both product areas discussable per Kota's interpretation of the New Entrant arrangement. Trevor's active presence on the call is **not** required.
+- **APA PMI only** → PMI in scope; pensions / life / tax-relief out of scope.
+- **Script pathway** → no regulated product discussion in scope (the original HF-00 rule).
+
+The register is the source of truth. If qualifications are unclear or stale, the agent flags the speaker as "unrecognised" rather than guessing.
 
 ## Acceptance criteria for the next eval run
 

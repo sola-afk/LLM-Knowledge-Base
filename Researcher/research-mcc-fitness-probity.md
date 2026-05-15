@@ -134,12 +134,12 @@ As of the latest register snapshot (May 2026), the call monitoring agent should 
 |------|------|---|---|
 | **Trevor Gardiner** | Head of Insurance Distribution (CF7, PCF17) | QFA & APA PGI & RPA | All products (Pensions, Health, Life, General Insurance) |
 | **Patrick O'Boyle** | CTO (PCF) | APA Pensions & Insurance & APA PMI | Pensions, Health, Life |
-| **Paul O'Hanlon** | Account Executive (CF4) | QFA & APA PMI | Health Insurance (PMI), plus pursuing full QFA |
-| **Daniel McAvinue** | Benefits Co-Ordinator (CF4) | APA Pensions & Life; New Entrant for PMI | Pensions, Life (supervised for PMI) |
-| **Naoise Baker** | Benefits Co-Ordinator (CF4) | QFA & APA PMI | Health Insurance (PMI) |
+| **Paul O'Hanlon** | Account Executive (CF4) | QFA & APA PMI | **All products** (QFA covers Pensions, Life, PMI; APA PMI confirms Health Insurance specifically) |
+| **Daniel McAvinue** | Benefits Co-Ordinator (CF4) | APA Pensions & Life; New Entrant for PMI | Pensions, Life (independent); PMI (under New Entrant supervision by Trevor Gardiner) |
+| **Naoise Baker** | Benefits Co-Ordinator (CF4) | QFA & APA PMI | All products (QFA covers Pensions, Life, PMI) |
 | **Colin Pon** | Expansions Lead (CF4) | APA PMI | Health Insurance (PMI) |
 | **Charlie Blake** | Benefits Sales Lead (CF4) | APA PMI | Health Insurance (PMI) |
-| **Callum Pearse** | Account Executive (CF4) | APA Pensions; New Entrant for PMI | Pensions (independent); Health (supervised) |
+| **Callum Pearse** | Account Executive (CF4) | APA Pensions; New Entrant for PMI | Pensions (independent); **PMI (under New Entrant arrangements with Trevor Gardiner — Callum may discuss PMI products)** |
 
 ### ⚠️ New Entrants (Do NOT meet MCC Standards; must act under immediate direction of qualified supervisor)
 
