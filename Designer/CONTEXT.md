@@ -49,10 +49,21 @@ See `Evaluator/calibration-2026-05-15-false-positives.md` for the full analysis.
 
 * **R6 — Verify qualifications against the canonical register**: Before applying any speaker-scoped hard rule (HF-00, HF-10, HF-11, HF-12, HF-13, HF-15) the agent must check the speaker's actual qualifications against `Researcher/research-mcc-fitness-probity.md` (the "Fully Qualified MCC Persons" table). Rules of interpretation:
   * **QFA holder** → all retail product topics in scope (pensions, life, PMI, general insurance). Includes Trevor Gardiner, Paul O'Hanlon, Naoise Baker.
+  * **APA Pensions + APA Life + New Entrant PMI** (Matthew Brennan, as of 2026-05-26) → pensions and life in scope independently; PMI in scope under New Entrant arrangement (Trevor's call presence not required).
   * **APA Pensions + New Entrant PMI** (Callum Pearse, Daniel McAvinue) → both product areas discussable per Kota's New Entrant interpretation; Trevor's active presence on the call is **not** required.
   * **APA PMI only** (Charlie Blake, Colin Pon) → PMI in scope; pensions / life / tax-relief out of scope.
   * **Script pathway** (Karl, Simon Ward, Henry Godson, Katie Garry, Claudia Correa) → no regulated product discussion in scope.
-  * **Unrecognised** (any name not on the register, e.g. John Hayes) → fail closed, flag HF-00 by unregistered speaker, escalate to Simon Ellis.
+  * **Unrecognised** (any name not on the register, e.g. John Hayes) → fail closed by default, BUT see R7 — only flag if the unrecognised speaker is actually advising/informing the customer about a regulated product. Self-introductions about role, product research, and observer participation are not regulated activity.
+
+* **R7 — Distinguish learner/observer capacity from adviser capacity**: HF-00 only fires when an unqualified or unrecognised speaker is **advising/informing the customer about a regulated product**. The following are **NOT** HF-00 triggers, even from unqualified or unrecognised speakers:
+  * **Self-introductions about role** (e.g. "I'm responsible for benefits integration") — this is a job-title statement, not a regulated activity.
+  * **Asking questions to learn about the customer's setup** — e.g. a product manager asking "what salary sacrifice platform are you using?" is research, not advice.
+  * **Product research / competitive intel gathering** — Kota staff exploring a product space to understand market behaviour.
+  * **Observer participation** — Kota staff sitting in on calls where a qualified colleague is leading the regulated content; the observer doesn't advise.
+
+  The HF-00 test is: did the speaker *advise the customer on a regulated product*, or *give the customer information that would help them choose / configure / arrange a regulated product*? If yes → flag. If they only asked questions, observed, or stated their job title → do not flag.
+
+  Calibration source: Gorilla x Kota Salary Sacrifice (2026-05-11) — Slav Stankov (unrecognised) was flagged HF-00 for self-introducing as "responsible for benefits integration related to health and salary sacrifices" and for saying "we were also exploring" the salary-sacrifice space. Both quotes are job-title / product-research statements, not advice to the customer. Sola Olaniyan flagged the call as a false positive on 2026-05-26. Task deleted.
 
 # What to avoid
 * Don't invent detection criteria the Researcher hasn't specified — push back and ask, don't paper over the gap.

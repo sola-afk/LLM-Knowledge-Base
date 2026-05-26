@@ -26,6 +26,8 @@ This note captures every false positive surfaced across the May 2026 eval runs, 
 | 8 | 365 Finance (2026-05-12) | HF-05 (×2) | Paul O'Hanlon discussing private-pension tax relief and 40% relief at €45k | Paul holds **QFA** (covers all retail products in Ireland) plus APA PMI. The agent was applying "APA PMI only" status. Both findings withdrawn. |
 | 9 | Forest x Kota (2026-05-14) | HF-10, HF-11, HF-13 (Grade 3) | Callum Pearse discussing PMI anti-selection, cash-plan vs PMI comparison, PMI provider pricing | Callum holds APA Pensions + New Entrant PMI. Per Kota's interpretation of New Entrant arrangements, he can discuss PMI products. All three speaker-scoped findings withdrawn; call regraded Grade 3 → Grade 1; task deleted. |
 | 10 | Digilab (2026-05-14) | HF-05, HF-10, HF-13 (Grade 3) | Callum Pearse on PMI salary-sacrifice, BIK / P11D, pension cost-saving percentages | Same issue as #9 — Callum qualified for pensions + PMI. All three findings withdrawn; call regraded Grade 3 → Grade 1; task deleted. |
+| 11 | GA Agency (2026-05-11) | HF-00, HF-00/HF-13, HF-10 (Grade 3) | Matthew Brennan discussing regulated product scope, PMI premium ranges, group-scheme mechanics without Trevor on call | Matthew has been **upgraded** — he now holds APA Pensions + APA Life + New Entrant PMI (was previously New Entrant only). Same level as Callum/Dan. All three findings withdrawn; call regraded Grade 3 → Grade 1; task deleted. Flagged by Sola Olaniyan 2026-05-26. |
+| 12 | Gorilla (2026-05-11) | HF-00 (Grade 3 + ES-03 escalation) | Slav Stankov (unrecognised) self-introducing as "responsible for benefits integration" and saying "we were also exploring" the salary-sacrifice space | Slav was on the call in a **learning / product-research capacity**, not advising the customer. Self-introductions about role and product research are not regulated activity. New pattern; new rule (R7) added. Call regraded Grade 3 → Grade 1; task deleted. Flagged by Sola Olaniyan 2026-05-26. |
 
 ## Root causes — 5 patterns
 
@@ -61,12 +63,24 @@ Multiple Irish AE statements (Karl's "3.5%", Paul's "3.5% between employer and e
 **Cost**: Compliance triage time is wasted on light findings that are flagged at the same level as confirmed errors.
 
 ### Pattern 6: Qualification register out of sync with reality
-The agent's input register for speaker qualifications had two errors that led to false-positive flags:
+The agent's input register for speaker qualifications had errors that led to false-positive flags:
 
-- **Paul O'Hanlon** was treated as "APA PMI only" — in reality he holds **QFA & APA PMI**. QFA covers all retail product advice in Ireland, so Paul is qualified to discuss pensions, life, PMI, and tax-relief topics independently. The agent had been flagging his pension and tax-relief content as out-of-scope.
-- **Callum Pearse** was treated as "Pensions independent; Health (supervised)" with the supervised qualifier interpreted as "Trevor must be on the call". In reality Callum holds APA Pensions + New Entrant PMI, and **Kota's interpretation of his New Entrant arrangement permits him to discuss PMI products** under the supervision relationship with Trevor (not strictly "Trevor on the call"). The agent had been flagging his PMI discussions as Grade 3 breaches.
+- **Paul O'Hanlon** was treated as "APA PMI only" — in reality he holds **QFA & APA PMI**. QFA covers all retail product advice in Ireland, so Paul is qualified to discuss pensions, life, PMI, and tax-relief topics independently.
+- **Callum Pearse** was treated as "Pensions independent; Health (supervised)" with the supervised qualifier interpreted as "Trevor must be on the call". In reality Callum holds APA Pensions + New Entrant PMI, and Kota's interpretation of his New Entrant arrangement permits him to discuss PMI products without Trevor on the call.
+- **Matthew Brennan** was treated as "New Entrant only — pursuing QFA, cannot conduct independent regulated activity" — in reality he now holds **APA Pensions + APA Life + New Entrant PMI** (upgraded 2026-05-26). Same scope as Callum and Dan: qualified for pensions and life independently, PMI under New Entrant arrangement.
 
-**Cost**: 365 Finance dropped from 4 findings to 1 (HF-03 only); Forest x Kota and Digilab both regraded Grade 3 → Grade 1 with tasks deleted. **5 false-positive findings withdrawn in total across these three calls.**
+**Cost**: 365 Finance dropped from 4 findings to 1; Forest x Kota and Digilab regraded G3 → G1; **GA Agency regraded G3 → G1 (Matthew upgrade); 8 false-positive findings withdrawn in total across four calls.**
+
+### Pattern 7: Speaker on call in learner / observer / research capacity, not advisory
+HF-00 was firing on speakers who appeared on calls in non-advisory capacities. The current HF-00 test is "unqualified speaker discussing a regulated product" — but "discussing" was being interpreted to include things that are not advice:
+
+- **Self-introductions about role** ("I'm responsible for benefits integration related to health and salary sacrifices") — this is a job-title statement, not regulated activity.
+- **Product research / competitive intel** ("we were also exploring [salary-sacrifice provider] X") — Kota learning what the customer uses or what the market does.
+- **Observer participation** — staff sitting in on a call where a qualified colleague is leading the regulated content.
+
+**Example**: Slav Stankov (unrecognised) on the Gorilla call was flagged HF-00 for his self-introduction and product-research statements. Sola Olaniyan flagged this as a false positive — Slav was learning, not advising.
+
+**Cost**: 1 false positive on the Gorilla call (Grade 3 task deleted; the entire ES-03 → Simon Ellis escalation was unwarranted).
 
 ## Refinements going into the agent
 
@@ -110,12 +124,25 @@ Every eval report includes a "Findings withdrawn after reassessment" section lis
 Before applying any speaker-scoped hard rule (HF-00, HF-10, HF-11, HF-12, HF-13, HF-15) or making a qualification-based judgement, the agent **must** check the speaker's actual qualifications against `Researcher/research-mcc-fitness-probity.md` (the "Fully Qualified MCC Persons" table).
 
 Rules of interpretation:
-- **QFA holder** → all retail product topics in scope (pensions, life, PMI, general insurance). Do not flag a QFA holder for "out of scope" on any retail product.
-- **APA Pensions + New Entrant PMI** (or similar combination) → both product areas discussable per Kota's interpretation of the New Entrant arrangement. Trevor's active presence on the call is **not** required.
+- **QFA holder** → all retail product topics in scope.
+- **APA Pensions + APA Life + New Entrant PMI** (Matthew Brennan from 2026-05-26) → pensions + life independent; PMI in scope under New Entrant arrangement.
+- **APA Pensions + New Entrant PMI** (Callum Pearse, Dan McAvinue) → both product areas discussable; Trevor's call presence not required.
 - **APA PMI only** → PMI in scope; pensions / life / tax-relief out of scope.
-- **Script pathway** → no regulated product discussion in scope (the original HF-00 rule).
+- **Script pathway** → no regulated product discussion in scope.
 
-The register is the source of truth. If qualifications are unclear or stale, the agent flags the speaker as "unrecognised" rather than guessing.
+The register is the source of truth. If qualifications are unclear or stale, the agent treats the speaker as "unrecognised" — but per R7, "unrecognised" only triggers HF-00 if the speaker is actually advising on a regulated product.
+
+### R7 — Distinguish learner / observer capacity from adviser capacity
+HF-00 only fires when an unqualified or unrecognised speaker is **advising / informing the customer about a regulated product**. The following are **NOT** HF-00 triggers:
+
+- **Self-introductions about role** ("I'm responsible for benefits integration") — a job-title statement, not regulated activity.
+- **Asking questions to learn about the customer's setup** ("what salary sacrifice platform are you using?") — research, not advice.
+- **Product research / competitive intel** ("we were also exploring [provider X]") — Kota learning market behaviour.
+- **Observer participation** — sitting in on calls where a qualified colleague leads the regulated content; observer doesn't advise.
+
+The HF-00 test is: did the speaker *advise the customer on a regulated product*, or *give the customer information that would help them choose / configure / arrange a regulated product*? If yes → flag. If they only asked questions, observed, or stated their job title → do not flag.
+
+This is the principal nuance the agent missed on the Gorilla x Kota call (2026-05-11). Slav was on the call to learn about Gorilla's salary-sacrifice platform choice; he was not advising Gorilla.
 
 ## Acceptance criteria for the next eval run
 

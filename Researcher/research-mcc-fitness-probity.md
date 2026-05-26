@@ -140,12 +140,13 @@ As of the latest register snapshot (May 2026), the call monitoring agent should 
 | **Colin Pon** | Expansions Lead (CF4) | APA PMI | Health Insurance (PMI) |
 | **Charlie Blake** | Benefits Sales Lead (CF4) | APA PMI | Health Insurance (PMI) |
 | **Callum Pearse** | Account Executive (CF4) | APA Pensions; New Entrant for PMI | Pensions (independent); **PMI (under New Entrant arrangements with Trevor Gardiner — Callum may discuss PMI products)** |
+| **Matthew Brennan** | GTM Lead (CF4) | APA Pensions & Life; New Entrant for PMI | Pensions, Life (independent); **PMI (under New Entrant arrangements with Trevor Gardiner — Matthew may discuss PMI products)** *Upgraded 2026-05-26 from New Entrant only.* |
 
 ### ⚠️ New Entrants (Do NOT meet MCC Standards; must act under immediate direction of qualified supervisor)
 
 | Name | Role | Pursuing | Supervisor | Status |
 |------|------|----------|---|---|
-| **Matthew Brennan** | GTM Lead (CF4) | QFA (Life, Pensions, Regulations) | Trevor Gardiner | Cannot supervise others; cannot conduct independent regulated activity |
+| *(none currently — Matthew Brennan moved to Fully Qualified on 2026-05-26 with APA Pensions + APA Life)* | | | | |
 
 ### ❌ Script Pathway (Unqualified; must follow prescribed script under supervision of qualified person)
 
