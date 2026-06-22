@@ -8,10 +8,11 @@ calls_assessed: 6
 calls_flagged: 4
 grade_5: 0
 grade_4: 0
-grade_3: 3
-grade_2: 1
+grade_3: 2
+grade_2: 2
 grade_1: 2
 excluded: 1
+revised: 2026-06-22 — Creature Comforts re-graded 3→2 after Compliance confirmed Barbara Murray is on the MCC register (CF4); the HF-10/HF-13 findings rested on a fail-closed unregistered treatment that no longer applies.
 ---
 
 # Daily Compliance Eval — 2026-06-19
@@ -19,12 +20,14 @@ excluded: 1
 ## Summary
 | Calls assessed | Customer-facing | Calls flagged | Grade 5 | Grade 4 | Grade 3 | Grade 2 | Grade 1 |
 |---|---|---|---|---|---|---|---|
-| 6 | 6 | 4 | 0 | 0 | 3 | 1 | 2 |
+| 6 | 6 | 4 | 0 | 0 | 2 | 2 | 2 |
 
-> Six customer-facing calls reviewed (one further meeting — "Planhat x Kota Catchup" — excluded as out-of-scope; see Excluded section). No Severe Fails or Grade-4 referrals today, but **three Grade-3 single-breach calls**:
+> **Revised 2026-06-22:** Creature Comforts re-graded 3→2 after Compliance confirmed **Barbara Murray is on the MCC register (CF4)**. The original HF-10/HF-13 findings depended on the fail-closed "unregistered → unqualified" rule; with Barbara registered, her pension salary-sacrifice and PMI-positioning statements are in-scope benefits-consulting and no longer hard-rule breaches. Only Callum's soft signals (SF-13/SF-15) remain → Grade 2 (no Asana task). The register snapshot in `research-mcc-fitness-probity.md` has been updated; her exact APA/QFA product scope is still to be recorded by Compliance.
+
+> Six customer-facing calls reviewed (one further meeting — "Planhat x Kota Catchup" — excluded as out-of-scope; see Excluded section). No Severe Fails or Grade-4 referrals today. **Two Grade-3 single-breach calls** (post-revision):
 > - **Onboard Retail** — Simon Ward (Customer Success, **script pathway, unqualified**) describing the IP deferred-period choice and the occupational-pension tax-relief/"best thing you could possibly do" framing on a launch call where the qualified colleague (Dan) is not present (HF-10 / HF-01).
-> - **Creature Comforts** — **Barbara Murray** (barbara@kota.io — **not on the MCC register; fail-closed unqualified**) describing pension salary-sacrifice mechanics and characterising AXA on price, plus a co-occurring competitor-platform disparagement by Callum (HF-10 / HF-13 / SF-13).
 > - **Entegro bi-weekly** — Simon Ward (script/unqualified) agreeing to send a pension contribution file **containing matched PPS numbers as a Gmail attachment** (HF-06 unsecured PII handoff).
+> - **Creature Comforts** — originally Grade 3 (Barbara Murray treated fail-closed unqualified); **re-graded to Grade 2** after the register correction — see that section and the revision note above.
 > The **Vinted** call (Callum, pensions/PMI-qualified) is Grade 2 — one AE-mechanics statement ("40 days") that is not supported by the gov.ie source-of-truth (HF-05 light). The **Antony Harding (Germany)** and **Peacocks** calls are operational/non-IE and graded Pass.
 
 ---
@@ -93,35 +96,40 @@ Net: the "40 days" specific is a wrong/unsupported number on a public-law mechan
 ---
 
 ### Kota <> Lorraine Wood — 01KVAJNBNDASEX5GKK8NGRKBZN — 2026-06-19 10:00
-**Kota speaker(s)**: Callum Pearse — Account Executive — **✅ Qualified APA Pensions; PMI under New Entrant arrangements.** | Barbara Murray (barbara@kota.io) — **❌ NOT on the MCC register → fail-closed unqualified.**
+**Kota speaker(s)**: Callum Pearse — Account Executive — **✅ Qualified APA Pensions; PMI under New Entrant arrangements.** | Barbara Murray (barbara@kota.io) — **✅ On the MCC register (CF4) — confirmed by Compliance 2026-06-22; benefits-consulting content treated as in-scope.**
 **External / Client**: Creature Comforts (veterinary group) — Lorraine Wood (lorraine.wood@creaturecomforts.co.uk), HR Director
 **Department**: GTM / Benefits (UK benefits discovery / EVP)
 **Duration**: ~30 min
-**Grade**: **3 — Fail**
+**Grade**: **2 — Pass with comments** *(revised 2026-06-22 from 3 — Fail; see note)*
 **Fireflies**: https://app.fireflies.ai/view/01KVAJNBNDASEX5GKK8NGRKBZN
 
 #### Findings
+> **Revised 2026-06-22.** The two hard-rule findings below (HF-10, HF-13) were raised **only** because Barbara Murray was absent from the register snapshot and treated fail-closed as unqualified. Compliance has since confirmed she is on the MCC register (CF4), so her pension salary-sacrifice explanation and PMI-positioning are **in-scope benefits-consulting** — the HF-10/HF-13 hard rules are **withdrawn**. They are retained here (struck through) for the audit trail. Only the two soft signals remain, which place the call at Grade 2.
+
 | Criterion | Severity | Speaker (status) | Timestamp | Transcript span | Regulation |
 |---|---|---|---|---|---|
-| HF-10 | High | Barbara Murray (unregistered → unqualified) | ~14:00 | "do you salary, salary sacrifice your pension at the moment? … because that's, that's a real good way to unlock some budget from your national insurance savings." | MCC 2017 (non-AE pension mechanics — salary sacrifice / NI); Kota "Financial Product Information to Customers" |
-| HF-13 | Medium | Barbara Murray (unregistered → unqualified) | ~05:30 | "our health insurance is with axa." / "Okay, yeah, that. Yeah, Premium brand for in terms of cost." — characterising a PMI provider on price | MCC 2017; CPC 2025 Part 3; HF-13 (pricing of a regulated product) |
+| ~~HF-10~~ *(withdrawn — speaker in scope)* | — | Barbara Murray (✅ CF4, registered) | ~14:00 | "do you salary, salary sacrifice your pension at the moment? … because that's, that's a real good way to unlock some budget from your national insurance savings." | In-scope pensions benefits-consulting; no breach |
+| ~~HF-13~~ *(withdrawn — speaker in scope)* | — | Barbara Murray (✅ CF4, registered) | ~05:30 | "our health insurance is with axa." / "Okay, yeah, that. Yeah, Premium brand for in terms of cost." | In-scope PMI benefits-consulting; no breach |
 | SF-13 | Low | Callum Pearse (qualified Pensions/PMI) | ~24:00 | "since they were bought by Eden Bread, yeah, it's massively slowed down" / "they don't manage your private medical … there's big, big chunks of benefits that are missing from them" — disparaging Reward Gateway (competitor platform) | CPC 2025 Part 3; FCA COBS 4.2.4R; SF-13 |
 | SF-15 | Low | Callum Pearse (qualified) | ~16:00 | "I talk to people every day about benefits. So I see … what lots of people are doing." — social-proof anchoring (co-occurs with the tiering pitch) | CPC 2025; SF-15 |
 
 #### Notes
 A UK benefits-discovery call. Callum (pensions-qualified, PMI New-Entrant) carries most of the regulated content within scope: health-cash-plan tiering, EAP bolt-ons, the broker/platform model, and the £9→£5 PEPM pricing for the **Kota platform fee** (explicitly out of HF-13 scope). The platform/admin/HRIS/payroll-2027/P11D material is operational and not flagged.
 
-The flags cluster on **Barbara Murray**, who speaks substantively but is **not present on the MCC/F&P register** in `research-mcc-fitness-probity.md` — under the fail-closed rule she is treated as **unqualified**:
-- **HF-10**: she initiates and explains a **pension salary-sacrifice mechanic** ("a real good way to unlock some budget from your national insurance savings") — non-AE pension mechanics by an unqualified speaker. (Callum then affirms it within his scope, but Barbara's statement stands as the breach.)
-- **HF-13**: she characterises **AXA as a "Premium brand … in terms of cost"** — a pricing/positioning statement about a regulated PMI provider by an unqualified speaker.
+The original hard-rule flags clustered on **Barbara Murray**, who speaks substantively on pension salary-sacrifice and PMI positioning. At the time of the first pass she was **absent from the register snapshot** in `research-mcc-fitness-probity.md`, so the fail-closed rule treated her as unqualified and raised HF-10/HF-13.
 
-Two soft signals also fire (insufficient alone, logged for context):
+**Revised 2026-06-22:** Compliance (Sola Olaniyan) confirmed **Barbara Murray is on the MCC register as a CF4**. With Barbara registered:
+- The **pension salary-sacrifice mechanic** ("a real good way to unlock some budget from your national insurance savings") is **in-scope benefits-consulting** — HF-10 **withdrawn**.
+- The **AXA "Premium brand … in terms of cost"** positioning is **in-scope PMI consulting** — HF-13 **withdrawn**.
+The register file has been updated to include her (CF4); her exact APA/QFA product-scope detail is still to be recorded by Compliance.
+
+Two soft signals remain (Callum), insufficient for a hard finding but co-occurring → they set the residual grade:
 - **SF-13 (Callum)**: sustained disparagement of **Reward Gateway** ("massively slowed down … big chunks of benefits missing … since … Eden Bread"). Reward Gateway is a benefits-platform competitor rather than a regulated insurance product/provider, so this is SF-13 tone, not HF-14 — but it is the assertion-without-evidence pattern reviewers flag.
 - **SF-15 (Callum)**: light social-proof anchoring.
 
-**Grade rationale**: Grade 3 — a clear single-class perimeter breach: an **unregistered/unqualified Kota speaker (Barbara) describing pension salary-sacrifice mechanics and pricing-positioning a PMI provider** on a customer-facing call. The driver here is the **register gap**, not volume — Barbara is not on the register at all, so any regulated-product description by her is out of scope by default. Open question for the Designer below.
+**Grade rationale (revised)**: **Grade 2 — Pass with comments.** With Barbara's register status confirmed, no hard rule stands; the call carries two co-occurring soft signals from Callum (SF-13 + SF-15), which is Grade 2 territory — documented for coaching, **no Asana task** per the queue rules. *(Originally graded 3 — Fail on the fail-closed unqualified treatment of Barbara, now withdrawn.)*
 
-**Escalation**: No ES trigger. **HF-00 fires structurally** (unregistered speaker conducting regulated activity). Recommend Compliance confirm Barbara Murray's MCC status — if she is in fact a qualified benefits consultant, the register must be updated; if not, she should not be describing product mechanics on calls.
+**Escalation**: No. The earlier "HF-00 fires structurally" reasoning is **withdrawn** — Barbara is registered, not an unregistered speaker. Coaching note for Callum on the competitor disparagement (SF-13) stands.
 
 ---
 
@@ -208,14 +216,14 @@ Operational items correctly not flagged: change-report headcount sense-check (Ma
 ## Cross-Call Patterns
 
 - **Script-pathway speaker (Simon Ward) on two of today's flagged calls.** Onboard Retail (HF-10/HF-01 on IP/pension) and Entegro (HF-06 PII). Simon repeatedly operates on regulated/sensitive content where a qualified colleague exists (Dan/Paul). On Entegro, Dan **was present and carried the pension content correctly** — the residual breach was purely Simon's PII-handoff intent; on Onboard Retail, Dan/Paul were **not** on the call and Simon stepped onto IP/pension himself. Reinforces the 2026-06-12 recommendation: route regulated content to the qualified attendee, and never run product confirmation solo.
-- **Register gap — Barbara Murray (barbara@kota.io).** She speaks substantively on two calls and is **not on the MCC/F&P register snapshot**. Under fail-closed she is unqualified, which drove the Creature Comforts Grade-3. This is most likely a **register-completeness problem** (she presents as a senior benefits consultant) rather than a true unqualified-on-calls scenario — needs Compliance confirmation and a register update either way. (See Open Questions.)
+- **Register gap — Barbara Murray (barbara@kota.io) — RESOLVED 2026-06-22.** She spoke substantively on two calls and was absent from the register snapshot; fail-closed drove the initial Creature Comforts Grade-3. Compliance (Sola) confirmed she **is** on the MCC register as a **CF4**; the register file has been updated and Creature Comforts re-graded 3→2. Outstanding: record her exact APA/QFA product scope in the register so the agent can scope-check future calls (e.g. a future PMI/pension/life boundary). This confirms the value of an explicit "register-miss → confirm status" flag rather than silently grading unqualified (see Open Questions #1).
 - **AE "specific number" risk.** Callum's "40 days" (Vinted) repeats the long-running pattern of reps attaching a precise figure to an AE mechanic that the gov.ie source does not state. Same coaching point as the prior Karl O'Brien / Simon Ward AE findings.
 - **Fireflies mis-transcriptions preserved verbatim.** "COTA/Coda/Cosa/kosher" for Kota, "Boop/PUPA" not seen today; "hysterical life policy" = (Irish Life) "group life policy"; "his/HIS" = HRIS; "Integra/Integro" = Entegro; "John" used interchangeably for Dan in one Entegro turn. Quotes above are left as transcribed.
 
 ## Asana
 
 - **Onboard Retail (01KVFE2THW428J1KFVT1YB7BC6)** — Grade 3 → create Asana task, route to **CS-CX / Benefits**, @-mention the relevant executive. HF-10 (IP deferred period), HF-01 (pension recommendation).
-- **Creature Comforts / Lorraine Wood (01KVAJNBNDASEX5GKK8NGRKBZN)** — Grade 3 → create Asana task, route to **GTM / Benefits**; flag the **register gap for Barbara Murray** for Compliance. HF-10 (pension salary sacrifice), HF-13 (AXA pricing positioning).
+- **Creature Comforts / Lorraine Wood (01KVAJNBNDASEX5GKK8NGRKBZN)** — **revised 2026-06-22 to Grade 2 → no Asana task.** Original HF-10/HF-13 withdrawn after Compliance confirmed Barbara Murray is on the MCC register (CF4); residual SF-13/SF-15 (Callum) are coaching-only. Register snapshot updated.
 - **Entegro bi-weekly (01KV8GATQXPZ0JAQCCY76Q1RCW)** — Grade 3 → create Asana task, route to **CS-CX**; HF-06 PII handoff. Verify/remediate the Gmail send.
 - **Vinted (01KVFKQT85ZGAN2BT8HMT74RR2)** — Grade 2 → **no Asana task** (coaching note only): HF-05-light AE "40 days".
 - **Antony Harding (01KVD7JG0XWXG69ZQJAKGER8AV)** — Grade 1 → no task.

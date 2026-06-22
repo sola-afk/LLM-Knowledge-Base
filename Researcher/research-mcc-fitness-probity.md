@@ -141,6 +141,7 @@ As of the latest register snapshot (May 2026), the call monitoring agent should 
 | **Charlie Blake** | Benefits Sales Lead (CF4) | APA PMI | Health Insurance (PMI) |
 | **Callum Pearse** | Account Executive (CF4) | APA Pensions; New Entrant for PMI | Pensions (independent); **PMI (under New Entrant arrangements with Trevor Gardiner — Callum may discuss PMI products)** |
 | **Matthew Brennan** | GTM Lead (CF4) | APA Pensions & Life; New Entrant for PMI | Pensions, Life (independent); **PMI (under New Entrant arrangements with Trevor Gardiner — Matthew may discuss PMI products)** *Upgraded 2026-05-26 from New Entrant only.* |
+| **Barbara Murray** | Benefits Consultant (CF4) | On MCC/F&P register (CF4) *(added per Compliance 2026-06-22)* | **Product scope to be confirmed by Compliance** — pending the exact APA/QFA detail. Treat pensions/PMI benefits-consulting content as in-scope until Compliance records otherwise; do **not** fail-closed her as unqualified. |
 
 ### ⚠️ New Entrants (Do NOT meet MCC Standards; must act under immediate direction of qualified supervisor)
 
