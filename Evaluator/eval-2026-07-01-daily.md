@@ -18,6 +18,8 @@ excluded: 7
 
 # Daily Compliance Eval — 2026-07-01
 
+> **Script-based re-grading — 2026-07-06.** **Life Scientific (Grade 3 → conduct findings withdrawn; ES-02 retained):** Simon Ward's "minimum combined threshold / My Future Fund exemption" statements are within the approved Irish Life Pension script plus platform operation, so the HF-10 conduct findings are withdrawn. The Asana task stays open in Escalated solely for the **ES-02 ~€300k Aviva over-contribution / duplicate-scheme employer liability**. See `Researcher/research-prescribed-scripts.md`. Original findings below retained for audit.
+
 ## Summary
 | Calls assessed | Customer-facing | Calls flagged | Grade 5 | Grade 4 | Grade 3 | Grade 2 | Grade 1 | Out-of-scope |
 |---|---|---|---|---|---|---|---|---|

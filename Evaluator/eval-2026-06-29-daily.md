@@ -16,6 +16,8 @@ excluded: 0
 
 # Daily Compliance Eval — 2026-06-29
 
+> **Script-based re-grading — 2026-07-06.** After Compliance supplied the approved script register (`Researcher/research-prescribed-scripts.md`), three flagged calls were revised: **Gaelvert (Grade 4 → withdrawn)** and **Asora (Grade 3 → withdrawn)** — Simon Ward's pension statements (3.5% combined minimum / state-scheme exemption) are within the approved Irish Life Pension script and the setup was operational onboarding; the only residual (2-year vesting / claw-back detail) is Grade-2 coaching. Their Asana tasks were moved to Resolved. **Smart Media (Grade 4 → Grade 3, held)** — the group-life multiples are scripted factual content, but Callum/Barbara offering to *arrange* a life-assurance quote (HF-04, out of authorised scope) still stands. Original findings below are retained for audit.
+
 ## Summary
 | Calls assessed | Customer-facing | Calls flagged | Grade 5 | Grade 4 | Grade 3 | Grade 2 | Grade 1 |
 |---|---|---|---|---|---|---|---|

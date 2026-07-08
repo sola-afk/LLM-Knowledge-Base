@@ -16,6 +16,8 @@ excluded: 2
 
 # Daily Compliance Eval — 2026-07-02
 
+> **Script-based re-grading — 2026-07-06.** **Swarco (Grade 3, held):** stating group-life multiples factually would be within the approved MetLife/Irish Life Group Life script, but advising the employer to *restructure* the standard cover level (6x → 4x with a voluntary top-up) is a Benefits-Team referral item ("recommend a specific level of cover") and Callum is not Life-authorised — the finding holds. See `Researcher/research-prescribed-scripts.md`.
+
 ## Summary
 | Calls assessed | Customer-facing | Calls flagged | Grade 5 | Grade 4 | Grade 3 | Grade 2 | Grade 1 |
 |---|---|---|---|---|---|---|---|

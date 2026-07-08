@@ -96,3 +96,4 @@ Issues encountered that require prompt or schema updates.
 - `Researcher/req-detection-criteria.md` — full detection criteria (HF-00 through SF-15, ES-01–ES-03)
 - `Researcher/research-mcc-fitness-probity.md` — MCC register snapshot (who is qualified for which product)
 - `Researcher/research-call-supervision-audit.md` — historical breach patterns and reviewer rubric
+- `Researcher/research-prescribed-scripts.md` — register of approved provider/product scripts; a script-pathway speaker delivering approved scripted factual content is **not** breaching. Consult before flagging any script-pathway speaker (see run-spec Step 3.5).

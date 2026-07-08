@@ -16,6 +16,8 @@ excluded: 0
 
 # Daily Compliance Eval — 2026-07-03
 
+> **Script-based re-grading — 2026-07-06.** **Onboard Retail (Grade 4 → Grade 3, narrowed):** the tax-relief, default-fund-strategy, group-life 4x, income-protection 66%/26-week, PMI "cover varies by plan" and €170 employer-budget statements are all within the approved scripts and are withdrawn; what stands is **HF-05** (the auto-enrolment figure told to employees omits the 0.5% State top-up) and **HF-01** (the "best investment you can make" recommendation). The urgent AE-correction action before the 17 July enrolment deadline is unchanged. **Entegro (Grade 3, held):** pension transfer/consolidation + fund fees/performance are explicit script referral items. See `Researcher/research-prescribed-scripts.md`.
+
 ## Summary
 | Calls assessed | Customer/partner-facing | Calls flagged | Grade 5 | Grade 4 | Grade 3 | Grade 2 | Grade 1 |
 |---|---|---|---|---|---|---|---|

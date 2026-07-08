@@ -17,6 +17,8 @@ revised: 2026-06-22 — Creature Comforts re-graded 3→2 after Compliance confi
 
 # Daily Compliance Eval — 2026-06-19
 
+> **Script-based re-grading — 2026-07-06.** **Onboard Retail (Grade 3 → withdrawn):** the income-protection deferred-period (13 vs 26 weeks) and occupational-pension tax-relief statements are within the approved Irish Life scripts; the only residual is the "best thing you could possibly do" recommendation = Grade-2 coaching. Asana task moved to Resolved. See `Researcher/research-prescribed-scripts.md`. (The Entegro HF-09 PPS-over-Gmail finding on this day is unaffected — PII handling is not a script matter.)
+
 ## Summary
 | Calls assessed | Customer-facing | Calls flagged | Grade 5 | Grade 4 | Grade 3 | Grade 2 | Grade 1 |
 |---|---|---|---|---|---|---|---|

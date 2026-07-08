@@ -65,6 +65,15 @@ For each Kota-side speaker, resolve their authorisation status from the MCC regi
 | Kate Fullen | ❌ Unregistered | Cannot conduct regulated activity |
 | Any unrecognised speaker | ❌ Unqualified (default) | None |
 
+## Step 3.5 — Resolve the prescribed-script carve-out (script-pathway speakers)
+
+Before applying the criteria to a **script-pathway / "Prescripted Functions"** speaker (Simon Ward, Henry Godson, Katie Garry, Will Robbins, Claudia Correa, or any other prescripted-function rep), consult `Researcher/research-prescribed-scripts.md` (the register of approved provider/product scripts, sourced from the Notion "Scripts per Product and Provider" database).
+
+- If the speaker's utterance **matches the Section-2 scripted factual content** for a script that exists for that product/provider (e.g. the pension 3.5% combined minimum / state-scheme exemption, tax-relief "€100 costs €60", default-fund-strategy at a high level, group-life "2x/4x, up to 8x with employee top-up", income-protection "66% / 13–26–52-week deferred period", the IE health "employer budget, employee pays the difference" model, community rating, TRS) → this is **authorised delivery, NOT a breach**. Do not raise HF-10/HF-13; note "within approved script: <provider/product>".
+- Still flag, regardless of any script: **recommendations/opinions** that influence a decision (HF-01/HF-02), recommending a specific level/plan/contribution/cover multiple/deferred period, **plan comparisons / pricing beyond the published "from" line / quotes** (HF-11/HF-13), **renewals** and specific-member circumstances/claims, **transfers & pension consolidation** (HF-10/HF-12), **fund performance/selection / AVCs** (HF-10/HF-15), **arranging or offering to source a quote** (HF-04), **detailed AE-exemption mechanics** and any **AE figure that diverges from `source-of-truth-ae-myfuturefund.md`** (HF-05), and detailed individual tax. These are the scripts' own Section-3 "refer to Benefits Team" items.
+- The script register governs **script-pathway factual delivery only**. It does **not** cure a **qualified** speaker giving advice/arranging on a product **outside their APA scope** (e.g. Callum Pearse on Life Assurance) — that remains HF-00/HF-04.
+- Sign-off caveat: the register's scripts are not yet formally marked "Signed off"; note this on any borderline finding.
+
 ## Step 4 — Apply detection criteria
 
 Scan each Kota-side speaker's sentences against `Researcher/req-detection-criteria.md`.
