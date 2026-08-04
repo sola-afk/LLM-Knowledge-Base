@@ -82,7 +82,7 @@ Recorded so they are visible as decisions rather than oversights:
 | Template analogue | HubSpot template / sequence | **Saved replies / macros**, plus **Fin content sources** (help-centre Articles) |
 | Automation | Sequences (HF-18) | **Fin AI agent** — answers rather than merely sends, which is a different and larger risk |
 | Footer / signature | Present (HF-20) | Largely absent in chat; present on email-delivered replies. HF-20 applies only to the latter |
-| Free metadata | Little | Rich — `ticket_type`, `state`, `sla_applied`, `PL: Issue Type`, `BenOps: Topic`, `ai_agent_resolution_state`. **Much of the triage is free** |
+| Free metadata | Little | Rich — `ticket_type`, `state`, `sla_applied`, `PL: Issue Type`, `PL:Topic`, `Provider`, `Type of user`, `ai_agent_resolution_state`. **Much of the triage is free** |
 
 ### Metadata is a first-class input
 Unlike Fireflies or Gmail, Intercom hands over structured classification with every
@@ -300,7 +300,7 @@ require. It is an evidencing failure as much as a conduct one, and it is invisib
 review because the finding is a *negative*: something that never happened.
 
 **Trigger logic**:
-- Filter conversations on a regulated-product topic (use `BenOps: Topic` / `Suptopic` where set).
+- Filter conversations on a regulated-product topic (use `PL:Topic` and `Provider` where set — e.g. `ER: Benefit - General` with a named provider; exclude `EE: Technical Issues`).
 - Check whether any participating `admin` is qualified for that product per the register.
 - Resolution state `resolved` **and** no qualified participant → flag.
 - Escalation to a qualified human → not a finding. Escalation to an unqualified human → HF-00 on

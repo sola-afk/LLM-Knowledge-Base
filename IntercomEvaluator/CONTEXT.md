@@ -29,7 +29,7 @@ this workspace modifies the call or email pipelines.
 ## Status — buildable now
 
 Unlike the email channel, this one is **not blocked on access**. The Intercom integration is
-app-level rather than a personal mailbox grant, and reads the BenOps inbox today.
+app-level rather than a personal mailbox grant, and reads the CX inbox today.
 
 Four things still gate a *grading* run:
 1. **Complaints deadlines unverified** — HF-24 carries `{{TO VERIFY}}` placeholders and HF-23
