@@ -34,8 +34,19 @@ Read in this order: `req-detection-criteria.md` (the base) → `req-email-detect
 
 **Both source types are in scope**: `source_type: conversation` (in-app chat) and
 `source_type: email` (mail to `support@kota.io`). They land in the same `PL-CX` ticket type and are
-the same conduct in two media — filtering by brand and team is what scopes this channel, not
-source type.
+the same conduct in two media — brand and team scope this channel, not source type.
+
+> [!warning] Precedence rule — these attributes disagree
+> The dry run found a conversation tagged `Brand: Kota: BenOps` while carrying
+> `ticket_type: PL-CX: Customer Ticket` on the CX team. **`team_assignee_id` and `ticket_type`
+> govern; `Brand` is advisory.** Where they conflict, treat the conversation as CX and note the
+> discrepancy — a mis-branded conversation is still CX conduct, and excluding on brand alone would
+> drop real traffic.
+
+> [!warning] `PL:Topic` is unreliable — fail closed
+> Unset on 3 of 10 sampled conversations. Any topic-based filter (notably HF-26's regulated-topic
+> gate) must **assess** when the topic is unknown, never skip. An absent topic is missing metadata,
+> not evidence that a conversation is unregulated.
 
 **BenOps / Embed is explicitly out of scope** (Compliance direction, 2026-08-04). It is the
 larger population — 31,483 email-sourced conversations against 3,523 for CX — but it is a
@@ -111,17 +122,30 @@ by `sending_tool: intercom-macro`.
 
 The email preprocessing steps apply, with three changes:
 
-1. **Quoted history** is less of a problem — `conversation_parts` are already separated by
-   author, so attribution is structural rather than inferred. This removes the dominant email
-   false-positive family. **Still verify `part.author.type`** (`admin` / `user` / `bot`) before
-   attributing any quote.
-2. **Ticket-body scraping** — the initial message often arrives as a structured form dump
-   (client ticket ID, country, provider, product, free-text details). Parse the **free-text
-   detail field** separately from the form fields; the form fields are not authored prose and
-   must not be assessed as such.
-3. **Author-type routing is mandatory** — every finding must record whether the author was
-   `admin` (Kota staff), `bot` (Fin), or `user` (customer/partner). This determines which
-   criteria apply at all.
+1. **Split on `part_type` before anything else** — `comment` is customer-facing, `note` is an
+   internal teammate note. **Only `comment` parts are graded.** Confirmed working on live data
+   2026-08-04. Ignore the remaining part types (`assignment`, `close`, `snoozed`,
+   `conversation_attribute_updated_by_admin`, `operator_workflow_event`, and similar) — they are
+   state changes, not communication.
+
+   **But `note` parts must still be *read* as context.** The strongest finding in the dry run —
+   an HF-05 confirmed — was only visible by comparing an unsent internal draft against the sent
+   reply. Excluding notes from grading is correct; excluding them from reading would have hidden
+   it. See HF-27.
+
+2. **Resolve identity by email domain, not by `author.type`.** Kota staff appear as
+   `author.type: user` when they are recorded as a contact — the dry run found conversations
+   authored by `user / paul.ohanlon@kota.io` and `user / simon@kota.io`, and Paul O'Hanlon is a
+   registered QFA holder. **Treating `admin` as the only Kota conduct silently skips staff
+   content.** Rule: any `@kota.io` author is Kota conduct regardless of `author.type`; `bot` is
+   always unqualified; everyone else is the customer.
+
+3. **Ticket-body scraping** — the initial message may arrive as a structured form dump (ticket ID,
+   country, provider, product, free-text details). Parse the **free-text detail field** separately;
+   form fields are not authored prose.
+
+4. **Author-type routing is mandatory** — every finding records `admin` / `bot` / `user`, plus the
+   resolved MCC status for Kota authors.
 
 ---
 
@@ -237,12 +261,15 @@ Delegated Reg. 2017/2358 Art. 10.
 
 ## New — Automated agent (Fin) conduct
 
-> [!note] Dormant in CX on current evidence
-> Sampled CX Platform conversations show `ai_agent_participated: false` and `ai_agent: null` —
-> Fin appears not to operate in this lane, though it is active in BenOps (now out of scope).
-> These criteria are defined so they fire automatically if Fin is ever enabled for CX, which is
-> the kind of change that otherwise ships without a compliance review. Confirm Fin's actual CX
-> coverage rather than inferring zero from two conversations.
+> [!important] Live in CX — corrected 2026-08-04
+> An earlier draft marked these dormant on the basis of two chat conversations showing
+> `ai_agent_participated: false`. **That did not generalise.** The 10-conversation email dry run
+> found `ai_agent_participated: true` on **10/10**, with the bot ("Kota AI") authoring
+> customer-facing `comment` parts including case-closure assertions. HF-25 and HF-26 are live
+> criteria in this channel, not contingency ones.
+>
+> "Kota AI" is not on the MCC register and cannot be. Every regulated-product answer it gives is
+> unqualified by construction.
 
 ### HF-25 — Automated agent providing regulated-product information or advice
 **Priority: High**
@@ -331,6 +358,55 @@ Promotes to **hard** (HF-25) where the pre-escalation answer contained regulated
 precedes the escalation. Distinguish from escalation via a workflow rule with no answer given —
 the sampled conversations show `source_type: workflow` escalations that gave no answer at all, and
 those are clean.
+
+---
+
+## New — proposed from the 2026-08-04 dry run
+
+Both emerged from a single conversation. Researcher to confirm before they grade; see
+`IntercomEvaluator/eval-intercom-2026-08-04-daily.md` for the source evidence.
+
+### HF-27 — Draft/sent divergence on a regulated-product fact
+**Priority: High** · *proposed*
+
+**Description**: An internal draft (`note`) and the sent reply (`comment`) state materially
+different facts about the same regulated matter.
+
+**Why High**: worse than a simple error. The record shows the firm held the correct position
+internally and communicated the incorrect one — so it is not a knowledge gap but a control failure,
+and it is far harder to defend to a regulator.
+
+**Trigger logic**: diff `note` content against subsequent `comment` content by the same author on
+the same regulated fact. Flag material divergence — eligibility, figures, entitlement, timing.
+Ignore tone and length differences.
+
+**Observed instance**: draft stated a member had been enrolled "just over three years" and was
+therefore **not** eligible for a short-service contribution refund; the sent reply stated they had
+been enrolled "less than two years" and **were** eligible. See the eval report for verbatim.
+
+**Regulation / risk mapping**: CPC 2025 Part 3 (clear, fair, accurate, not misleading); MCC 2017;
+CBI Standards for Business — due skill, care and diligence.
+
+### HF-28 — Regulated content reviewed by an unqualified colleague
+**Priority: Medium-High** · *proposed*
+
+**Description**: A request for review or sign-off on regulated-product content, directed to someone
+who is script-pathway, unregistered, or absent from the register.
+
+**Why Medium-High**: creates the appearance of supervision without its substance. In the observed
+instance the review request did not catch a material contradiction, because the reviewer was no more
+qualified than the author. Under MCC the supervisory relationship only means something if the
+supervisor holds the relevant qualification.
+
+**Trigger logic**: detect review/sign-off requests in `note` parts ("can you check", "please
+review", "@name thoughts?"), resolve the named colleague against the register, flag if they are not
+qualified for the product in question.
+
+**Observed instance**: an unregistered author asked a script-pathway colleague to check a reply
+containing pension transfer and refund-eligibility content.
+
+**Regulation / risk mapping**: MCC 2017 — supervision requirements for script-pathway staff;
+Fitness & Probity (S.I. 60/2011 + IAF 2024) — competence and capability; FCA SYSC 28.
 
 ---
 

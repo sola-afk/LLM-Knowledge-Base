@@ -31,16 +31,17 @@ this workspace modifies the call or email pipelines.
 Unlike the email channel, this one is **not blocked on access**. The Intercom integration is
 app-level rather than a personal mailbox grant, and reads the CX inbox today.
 
-Four things still gate a *grading* run:
-1. **Complaints deadlines unverified** — HF-24 carries `{{TO VERIFY}}` placeholders and HF-23
-   needs the regulatory complaint definition. Researcher task.
-2. **Internal notes vs customer replies** — if the API does not distinguish them, internal
-   candour would be graded as customer communication. Must be confirmed before any run.
-3. **MCC register coverage for CX / CS staff** — the register is oriented to GTM and Benefits. If
-   CX teammates are absent, fail-closed makes every conversation a finding, which is noise
-   rather than signal.
-4. **CX / CS team ID list** — needed to scope the pull and to route output to the right Asana
-   department section.
+Three things still gate a *grading* run:
+1. **Complaints deadlines unverified — the top blocker.** HF-24 carries `{{TO VERIFY}}`
+   placeholders and HF-23 needs the regulatory complaint definition. The dry run surfaced a live
+   `Complaint / Escalation` with `sla_status: missed` that could not be graded. Researcher task.
+2. ~~**Internal notes vs customer replies**~~ — **RESOLVED 2026-08-04.** `part_type` is `note`
+   (internal) vs `comment` (customer-facing). Reliable on live data.
+3. **MCC register coverage for CX / CS staff** — **confirmed as a real gap.** The dry run's only
+   Kota author was absent from the register entirely. Until Compliance adds CX staff, every CX
+   conversation fails closed, which is noise rather than signal.
+4. **CX / CS team ID list** — partially resolved: `5690482` = `PL: CX Platform- Customer`. Other
+   CS / Customer Success teams still unenumerated.
 
 Everything else can be built and dry-run against live data now.
 
@@ -61,28 +62,40 @@ reliable gate. Filter to CX/CS teams and exclude `BenOps: *`. Verify against `Br
 `get_conversation(id)` for each. The search response carries only the opening message; findings
 need the full `conversation_parts` history.
 
+> [!warning] Payload size is a real constraint
+> A 10-conversation search returned 93KB; a single 51-part conversation returned 65KB. Sampled
+> conversations run to 117 parts. The runtime **must** project out the needed fields
+> (`part_type`, `author`, `body`, `id`) rather than loading whole conversations into context.
+
 ### Step 3 — Apply exclusions
 - **BenOps brand / teams** — belt and braces on the Step 1 filter
 - Intercom platform notifications and system-generated conversations
-- Conversations with no `admin`-authored part (nothing for Kota to be accountable for)
+- Conversations with no `@kota.io`-authored and no `bot`-authored `comment` (nothing for Kota to be
+  accountable for). Note: keyed on author **domain**, not `author.type` — see Step 4.2
 - Test and internal-only conversations
 
 Record excluded counts by reason.
 
 ### Step 4 — Preprocess
-1. **Split parts by `author.type`** — `admin` (Kota staff), `bot` (Fin), `user` (customer or
-   partner). This determines which criteria apply at all, and it is structural rather than
-   inferred — a real advantage over the email channel.
-2. **Separate the ticket form dump from free-text prose.** Opening messages often arrive as a
+1. **Split on `part_type` first** — `comment` is customer-facing and **graded**; `note` is an
+   internal teammate note and is **read as context but never graded**. All other part types
+   (`assignment`, `close`, `snoozed`, `operator_workflow_event`, attribute updates) are state
+   changes, not communication. Verified on live data 2026-08-04.
+   **Read the notes.** The strongest finding in the dry run was only visible by diffing an unsent
+   draft against the sent reply (HF-27).
+2. **Resolve identity by email domain, not `author.type`.** Kota staff appear as
+   `author.type: user` when recorded as a contact — the dry run found conversations authored by
+   `user / paul.ohanlon@kota.io` (a registered QFA holder). Any `@kota.io` author is Kota conduct
+   whatever their `author.type`; `bot` is always unqualified; everyone else is the customer.
+3. **Separate the ticket form dump from free-text prose.** Opening messages often arrive as a
    structured header (client ticket ID, country, provider, product) plus a free-text detail
    field. Only the free text is authored prose. The header is not a statement by anyone.
-3. **Identify internal notes** and exclude them from customer-facing assessment — see gate 2 above.
 4. **Extract and parse attachments.**
 
 ### Step 5 — Assign lane
 | Condition | Lane |
 |---|---|
-| `bot`-authored substantive answer present | `1-fin` |
+| `bot`-authored substantive `comment` present | `1-fin` — **common**, see below |
 | `admin` reply hash-matches an approved macro | `2-macro` |
 | Free-text `admin` reply | `3-bespoke` |
 
@@ -239,6 +252,12 @@ enumerable through the connector today.
 - Don't treat platform support as product discussion. Much CX traffic is genuinely technical —
   login failures, sync errors, missing access. A `Provider` attribute on the conversation does not
   make a technical exchange regulated.
+- Don't assume `author.type: admin` is the only Kota conduct — staff appear as `user`.
+- Don't exclude BenOps on `Brand` alone. `team_assignee_id` + `ticket_type` govern; brand can
+  disagree with both.
+- Don't skip a conversation because `PL:Topic` is unset — unset is missing metadata, not evidence
+  that the conversation is unregulated. Fail closed and assess.
+- Don't grade `note` parts — but don't ignore them either. Draft-vs-sent divergence is HF-27.
 - Don't assess the structured ticket header as authored prose.
 - Don't grade internal notes as customer communication.
 - Don't substitute `sla_status` for a regulatory deadline.
