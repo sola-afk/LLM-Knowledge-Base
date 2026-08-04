@@ -1,6 +1,8 @@
 # LLM Knowledge Base
 
-Project workspace for building communications monitoring agents — calls (live), email (in design), and Intercom (in design) — plus a compliance knowledge base they draw on.
+Project workspace for building communications monitoring agents — calls (live), sales email (in design), and customer service / CX (in design) — plus a compliance knowledge base they draw on.
+
+Monitoring focus is the customer-facing functions: sales, customer service, customer success. BenOps / Embed is out of scope.
 
 ## Root files
 - `CLAUDE.md` — Project goal, workspace map, routing table, and naming conventions. Claude reads this first.
@@ -11,7 +13,7 @@ Project workspace for building communications monitoring agents — calls (live)
 - `Designer/` — Builds the agents. Produces versioned prompts, output schemas, and decision rules. Calibration rules R1–R7 live here and apply to both channels.
 - `Evaluator/` — **Calls.** Pulls customer-facing call transcripts from Fireflies for a given date and assesses each call against the detection criteria; produces a daily eval report.
 - `EmailEvaluator/` — **Email.** Pulls customer-facing mail for a given date, splits it into templated (Lane 1) and bespoke (Lane 2) populations, and assesses Lane 2 against the email criteria. Also runs the template-library audit. **Not yet runnable** — blocked on domain-scope mailbox access and a documented lawful basis.
-- `IntercomEvaluator/` — **Intercom.** Pulls support conversations for a given date, splits them into Fin / macro / bespoke lanes, and assesses each. Owns complaints-handling detection (HF-23/24) and automated-agent conduct (HF-25/26), plus the help-centre content audit. **Access already works** — app-level integration, not a mailbox grant — so this channel is unblocked where email is not.
+- `IntercomEvaluator/` — **Customer Service / CX.** Pulls CX conversations for a given date — in-app chat plus mail to `support@kota.io` — splits them into Fin / macro / bespoke lanes, and assesses each. Owns complaints-handling detection (HF-23/24) and automated-agent conduct (HF-25/26, currently dormant), plus the help-centre content audit. **Access already works** — app-level integration, not a mailbox grant — so this channel is unblocked where sales email is not. Excludes BenOps / Embed.
 - `AsanaQueueManager/` — Routes flagged calls into the Asana Call Monitoring project, applying section/assignee routing and writing structured custom fields plus a full task body.
 - `compliance-wiki/` — Existing Karpathy-style wiki of Irish/EU financial-services regulation. Has its own `CLAUDE.md` and an internal `raw/`, `wiki/`, `output/` layout. Used as a research source by the Researcher workspace.
 

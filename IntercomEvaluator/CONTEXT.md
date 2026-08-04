@@ -1,10 +1,26 @@
 # Intercom Evaluator — Context
 
 ## Current Project
-Pull Intercom conversations for a given date, split them into the three assessment lanes, and
-assess against `Researcher/req-intercom-detection-criteria.md` and the MCC register in
-`Researcher/research-mcc-fitness-probity.md`. Produce a daily eval report and a periodic
-content-governance audit over help-centre Articles and Fin content sources.
+Pull **Customer Service / CX** conversations from Intercom for a given date, split them into the
+three assessment lanes, and assess against `Researcher/req-intercom-detection-criteria.md` and the
+MCC register in `Researcher/research-mcc-fitness-probity.md`. Produce a daily eval report and a
+periodic content-governance audit over help-centre Articles.
+
+## Population — CX only, BenOps excluded
+
+| Attribute | In scope | Out of scope |
+|---|---|---|
+| `Brand` | `Kota` | `Kota: BenOps` |
+| Team | `PL: CX Platform- Customer` and other `PL:` CX/CS teams | `BenOps: *` |
+| Ticket type | `PL-CX: Customer Ticket` | `BenOps: Client, Customer & Provider` |
+| Route in | `support@kota.io` + in-app chat | `benops@kota.io` |
+
+**BenOps / Embed is out of scope** by Compliance direction (2026-08-04) — the larger population
+(31,483 vs 3,523) but a specialist operations function. Monitoring priority is the customer-facing
+functions: sales, customer service, customer success.
+
+`support@kota.io` routes into Intercom rather than Gmail, so **customer service email is this
+channel**. `EmailEvaluator/` is effectively the sales/GTM channel.
 
 Third channel alongside `/Evaluator` (calls) and `/EmailEvaluator` (email). Shares the criteria
 ID space, the MCC register, the AE source-of-truth, and the template/macro register. Nothing in
@@ -15,14 +31,16 @@ this workspace modifies the call or email pipelines.
 Unlike the email channel, this one is **not blocked on access**. The Intercom integration is
 app-level rather than a personal mailbox grant, and reads the BenOps inbox today.
 
-Three things still gate a *grading* run:
+Four things still gate a *grading* run:
 1. **Complaints deadlines unverified** — HF-24 carries `{{TO VERIFY}}` placeholders and HF-23
    needs the regulatory complaint definition. Researcher task.
 2. **Internal notes vs customer replies** — if the API does not distinguish them, internal
    candour would be graded as customer communication. Must be confirmed before any run.
-3. **MCC register coverage for BenOps staff** — the register is oriented to GTM and Benefits. If
-   support teammates are absent, fail-closed makes every conversation a finding, which is noise
+3. **MCC register coverage for CX / CS staff** — the register is oriented to GTM and Benefits. If
+   CX teammates are absent, fail-closed makes every conversation a finding, which is noise
    rather than signal.
+4. **CX / CS team ID list** — needed to scope the pull and to route output to the right Asana
+   department section.
 
 Everything else can be built and dry-run against live data now.
 
@@ -30,17 +48,21 @@ Everything else can be built and dry-run against live data now.
 
 ### Step 1 — Pull conversations
 `search_conversations` with `created_at` or `updated_at` bounded to the target date. Paginate via
-`pages.next.starting_after` until exhausted — the population is large (31,483 email-sourced
-conversations at time of writing), so **do not** assume one page is the day's full set.
+`pages.next.starting_after` until exhausted — **do not** assume one page is the day's full set.
 
-Start with `source_type: email`. Chat (`source_type: conversation`) is out of scope for v1 but
-uses the same criteria — revisit immediately after.
+**Both source types are in scope**: `source_type: conversation` (in-app chat) and `email` (mail to
+`support@kota.io`). They land in the same `PL-CX` ticket type and are the same conduct in two media.
+
+Scope by **brand and team, not by source type** — the connector's `team_assignee_id` filter is the
+reliable gate. Filter to CX/CS teams and exclude `BenOps: *`. Verify against `Brand` and
+`ticket_type` on each result, since team assignment can change mid-conversation.
 
 ### Step 2 — Fetch full conversations
 `get_conversation(id)` for each. The search response carries only the opening message; findings
 need the full `conversation_parts` history.
 
 ### Step 3 — Apply exclusions
+- **BenOps brand / teams** — belt and braces on the Step 1 filter
 - Intercom platform notifications and system-generated conversations
 - Conversations with no `admin`-authored part (nothing for Kota to be accountable for)
 - Test and internal-only conversations
@@ -210,9 +232,13 @@ enumerable through the connector today.
 - Clean conversations are documented as negatives.
 
 ## What to avoid
-- Don't attribute a partner support desk's words to Kota staff. The sampled conversations are
-  opened by a partner's team about Kota products — external author, Kota subject matter. **This is
-  the dominant false-positive risk in this channel.**
+- Don't attribute a customer's words to Kota staff. CX conversations are opened by employers and
+  employees who describe their own cover and speculate about eligibility. **This is the dominant
+  false-positive risk in this channel.** Only `admin` parts are Kota conduct.
+- Don't pull BenOps traffic. Filter on brand and team, and verify per result.
+- Don't treat platform support as product discussion. Much CX traffic is genuinely technical —
+  login failures, sync errors, missing access. A `Provider` attribute on the conversation does not
+  make a technical exchange regulated.
 - Don't assess the structured ticket header as authored prose.
 - Don't grade internal notes as customer communication.
 - Don't substitute `sla_status` for a regulatory deadline.

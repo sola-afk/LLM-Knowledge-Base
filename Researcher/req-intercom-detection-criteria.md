@@ -20,24 +20,45 @@ defined for calls and email.
 Read in this order: `req-detection-criteria.md` (the base) → `req-email-detection-criteria.md`
 (written-medium rules) → this document.
 
-## Why this channel is a priority rather than a v2
+## Population in scope
 
-Established by direct inspection of the connector on 2026-08-04:
+**Customer Service / CX only.** Established by direct inspection of the connector on 2026-08-04:
 
-- **Access is already available.** The Intercom integration is app-level, not a personal
-  mailbox grant. It reads the BenOps inbox now. The domain-delegation blocker that stops the
-  email channel **does not apply here**, so this channel is buildable while email waits.
-- **31,483 conversations** with `source_type: email` alone; chat is additional.
-- **The content is squarely regulated-product territory** — cover and eligibility questions,
-  provider mechanics, claims and EAP access, dependent additions, policy documentation.
-- **The staff answering are the least likely to hold MCC qualifications.** BenOps Associate is
-  an operations role; the register in `research-mcc-fitness-probity.md` should be checked before
-  assuming otherwise.
-- **Complaints and vulnerability signals land here first**, not on calls or in GTM email.
-- **An automated agent (Fin) participates.** `ai_agent_participated: true` on every sampled
-  conversation.
+| Attribute | In scope | Out of scope |
+|---|---|---|
+| `Brand` | `Kota` | `Kota: BenOps` |
+| Team | `PL: CX Platform- Customer` (and other `PL:` CX/CS teams) | `BenOps: *` |
+| Ticket type | `PL-CX: Customer Ticket` | `BenOps: Client, Customer & Provider` |
+| Route in | `support@kota.io` + in-app live chat | `benops@kota.io` |
+| Product line | Platform (`PL`) | Embed |
 
-On this evidence Intercom is plausibly the highest-risk written population in the firm.
+**Both source types are in scope**: `source_type: conversation` (in-app chat) and
+`source_type: email` (mail to `support@kota.io`). They land in the same `PL-CX` ticket type and are
+the same conduct in two media — filtering by brand and team is what scopes this channel, not
+source type.
+
+**BenOps / Embed is explicitly out of scope** (Compliance direction, 2026-08-04). It is the
+larger population — 31,483 email-sourced conversations against 3,523 for CX — but it is a
+specialist operations function dealing with partner support desks, and monitoring priority sits
+with the customer-facing functions instead.
+
+### Why CX is the right target
+
+- **Access already works.** App-level integration, not a personal mailbox grant. The
+  domain-delegation blocker that stops the email channel does not apply, so this channel is
+  buildable now.
+- **`support@kota.io` routes here, not into Gmail.** Customer service email *is* this channel.
+  `EmailEvaluator/` is therefore effectively the sales/GTM channel.
+- **Direct retail-customer contact.** Sampled authors include an employer contact and an
+  individual employee on a personal address, with `Type of user: Employer | Employee`. No
+  partner intermediary. These are Kota's retail customers, so the MCC perimeter applies without
+  qualification — see Resolved question 1 below.
+- **Regulated-product subject matter, already classified.** `PL:Topic: "ER: Benefit - General"`,
+  `Provider: Irish Life`. The platform's own topic taxonomy identifies the regulated
+  conversations for free.
+- **CX staff are unlikely to hold MCC qualifications**, and they are answering product questions
+  from customers directly. Check the register rather than assuming.
+- **Complaints and vulnerability signals land here first**, not on calls or in sales email.
 
 ## Scope decisions taken
 
@@ -45,10 +66,11 @@ Recorded so they are visible as decisions rather than oversights:
 
 | Decision | Rationale |
 |---|---|
+| **CX / CS only; BenOps excluded** | Compliance direction. Monitoring priority is the customer-facing functions — sales, customer service, customer success |
 | **Complaints handling is in scope** — new criteria below | Complaints arrive here and there is no existing detection for them in any channel |
-| **Automated-agent conduct is in scope** — new criteria below | Fin is live and cannot hold an MCC qualification |
-| **No dedicated special-category-data criterion** | HF-06 already covers personal data including health, and applies here unchanged. Health data is *routine* rather than exceptional in this channel, so HF-06 will fire often — that is the intended behaviour, not a gap |
-| **No partner-mediated-communication criterion** | Criteria attribute conduct to the **Kota-side author** regardless of who the counterparty is (client, partner support desk, or end employee). Simpler and sufficient for v1 |
+| **Automated-agent criteria retained but dormant** | `ai_agent_participated: false` on sampled CX conversations — Fin appears **not** to operate in this lane, unlike BenOps. HF-25/26 stay defined so they fire if Fin is ever enabled here, but they are not expected to produce findings on day one. Confirm coverage before assuming zero |
+| **No dedicated special-category-data criterion** | HF-06 already covers personal data including health, and applies here unchanged |
+| **No partner-mediated-communication criterion** | Conduct attributes to the **Kota-side author** regardless of counterparty. Largely moot now that BenOps is out of scope — CX contact is direct |
 | **Intercom platform notifications remain excluded** | Transactional noise — unchanged from the email criteria |
 
 ## What is structurally different from email
@@ -75,9 +97,9 @@ platform already asserts.
 
 | Lane | Population | Assessment |
 |---|---|---|
-| `1-fin` | Fin answered or partially answered | Assess the **Fin turn** against HF-25/HF-26 — a permanently unqualified speaker |
+| `1-fin` | Fin answered or partially answered | Assess the **Fin turn** against HF-25/HF-26 — a permanently unqualified speaker. **Expected to be empty in CX** on current evidence; retained so it fires if Fin is enabled |
 | `2-macro` | Reply matches an approved saved reply / macro | Documented pass on hash match; delta → Lane 3 (HF-16 applies unchanged) |
-| `3-bespoke` | Free-text human reply | Full detection run |
+| `3-bespoke` | Free-text human reply | Full detection run. **The main lane for this channel** |
 
 Lane 2 reuses the email template-register mechanism and normalisation rules verbatim
 (`research-approved-email-templates.md`). Macros are registered in the same file, distinguished
@@ -215,6 +237,13 @@ Delegated Reg. 2017/2358 Art. 10.
 
 ## New — Automated agent (Fin) conduct
 
+> [!note] Dormant in CX on current evidence
+> Sampled CX Platform conversations show `ai_agent_participated: false` and `ai_agent: null` —
+> Fin appears not to operate in this lane, though it is active in BenOps (now out of scope).
+> These criteria are defined so they fire automatically if Fin is ever enabled for CX, which is
+> the kind of change that otherwise ships without a compliance review. Confirm Fin's actual CX
+> coverage rather than inferring zero from two conversations.
+
 ### HF-25 — Automated agent providing regulated-product information or advice
 **Priority: High**
 
@@ -349,14 +378,18 @@ Predicted; confirm against the first live runs and write up as
 
 1. **Form-dump fields assessed as authored prose** — the structured ticket header (provider,
    product, country) is not a statement by anyone. Preprocessing step 2.
-2. **Partner support staff mistaken for Kota staff.** The sampled conversations are authored by a
-   partner's support desk (`author.type: lead`, external domain) while concerning a Kota product.
-   Only `admin`-authored parts are Kota conduct. This is the dominant risk in this channel and the
-   direct analogue of email's quoted-history problem.
+2. **Customer statements attributed to Kota.** CX conversations are opened by employers and
+   employees who describe their own cover, quote figures back, and speculate about eligibility.
+   `user` parts are **never** Kota conduct. This is the dominant risk in this channel — the direct
+   analogue of email's quoted-history problem, though `conversation_parts` make it structurally
+   avoidable.
 3. **Provider quotes relayed by Kota staff** — a teammate quoting the insurer's answer verbatim is
    pass-through, closer to the MCC brochure carve-out than to advice. Needs a calibration rule;
    expect to get this wrong initially.
-4. **Customer's own product statements** flagged as breaches — `user` parts are never Kota conduct.
+4. **Platform support answered as product questions.** A large share of CX traffic is genuinely
+   technical — login failures, sync errors, missing access (`PL:Topic: "EE: Technical Issues"`).
+   Platform mechanics are not regulated. Do not let a `Provider` attribute on the conversation
+   pull a technical exchange into product scope.
 5. **Fin workflow escalations with no answer given** — clean, per SF-19.
 6. **Internal notes** — Intercom notes are teammate-to-teammate, not customer-facing. Confirm the
    API distinguishes notes from replies before assessing any part; if it does not, that is a
@@ -366,8 +399,8 @@ Predicted; confirm against the first live runs and write up as
 
 ## Out of scope for v1
 
-- **Chat / in-app messenger** — `source_type: conversation`. Same criteria apply in principle;
-  deferred only to keep the first build to one source type. Revisit immediately after.
+- **BenOps / Embed** — `Brand: Kota: BenOps`, `benops@kota.io`, `BenOps: *` teams. The larger
+  population, deliberately excluded. Criteria would apply if it is ever brought in scope.
 - **Phone, SMS, WhatsApp, social** source types.
 - **Inbound content as a graded population** — assessed for ES-01/ES-02 and context only.
 - **Attachment contents beyond text extraction** — an unparseable attachment is an evidencing gap,
@@ -398,8 +431,9 @@ As for email, plus:
 |---|---|---|---|
 | 1 | **Complaints-handling deadlines** — the `{{TO VERIFY}}` placeholders in HF-24, and the regulatory complaint definition for HF-23 | Researcher | **Yes — HF-23/24 cannot grade without them** |
 | 2 | **Does the API distinguish internal notes from customer-facing replies?** If not, internal candour would be graded as customer communication | Designer | **Yes** |
-| 3 | **MCC register coverage for BenOps and support teammates.** The existing register is oriented to GTM and Benefits; support staff may be absent entirely, in which case fail-closed makes every conversation a finding | Researcher + Compliance | **Yes** |
-| 4 | **Who owns Fin's configuration and content sources?** ES-05 routing has no destination without a named owner | Compliance | Yes, before first HF-25 |
+| 3 | **MCC register coverage for CX / CS teammates.** The existing register is oriented to GTM and Benefits; CX staff may be absent entirely, in which case fail-closed makes every conversation a finding — noise rather than signal | Researcher + Compliance | **Yes** |
+| 4 | **CX / CS team ID list**, mapped to Asana department sections. Needed to scope the pull and route the output | Researcher + CS Ops | **Yes** |
+| 5 | **Who owns Fin's configuration and content sources?** ES-05 routing has no destination without a named owner. Not urgent while Fin is dormant in CX | Compliance | No |
 | 5 | **Macro / saved-reply inventory** — Lane 2 gate | GTM Ops / CS Ops | No — degrades to all-Lane-3 |
 | 6 | **Lawful basis.** Lighter than mailbox monitoring (this is a firm system of record for customer service, not personal correspondence), but the monitoring notice should still cover it | Compliance | Confirm before live run |
 | 7 | **Asana destination** — same open question as email | Compliance | Yes, to file tasks |
@@ -409,16 +443,29 @@ Shared and **read-only** from this workspace: `research-mcc-fitness-probity.md`,
 
 ---
 
+## Resolved
+
+1. **Retail-customer perimeter — resolved in favour of full MCC application.** CX conversations are
+   between Kota and its own customers directly: employer contacts and individual employees, the
+   latter on personal email addresses (`Type of user: Employer | Employee`). No partner
+   intermediary. An employee asking about their own pension or health cover is a retail customer
+   receiving information about a retail financial product, so the HF-00 family applies without
+   qualification. This was an open question while BenOps was in scope; excluding BenOps removes it.
+
 ## Open questions
 
-1. **Fin's regulated-topic perimeter.** Cleanest control is preventing Fin from answering on
-   regulated-product topics at all, rather than detecting bad answers after the fact. Worth asking
-   whether that is configurable before investing in detection — a prevention control beats a
-   monitoring control.
-2. **Is the BenOps population within the MCC perimeter as Kota currently reads it?** Embed serves
-   EOR clients' employees via partners. If Kota's position is that these are not its retail
-   customers, HF-00-family criteria may apply differently. This needs a clear answer early — it
-   affects the majority of the population in this channel.
-3. **Retrospective scope.** 31,483 conversations exist. Does monitoring start from go-live, or is
-   there a backward-looking review? Unlogged complaints and unactioned vulnerability signals may be
-   sitting in the closed set.
+1. **Which teams beyond `PL: CX Platform- Customer` count as CS / Customer Success?** The Asana
+   project has separate Go-to-Market, Customer Success, and Benefits sections, so the department
+   split already exists downstream. The Intercom team list needs enumerating and mapping to those
+   sections, or routing will guess.
+2. **Is Fin enabled anywhere in CX, or configured to be?** Sampled conversations say no. HF-25/26
+   are dormant but defined, so enabling Fin later triggers detection automatically rather than
+   silently expanding the unqualified-speaker population.
+3. **Retrospective scope.** 3,523 CX conversations exist, many long-running and still open (sampled
+   conversations ran to 54 and 90 parts). Does monitoring start from go-live, or is there a
+   backward-looking review? Unlogged complaints and unactioned vulnerability signals may be sitting
+   in the open and closed sets.
+4. **Are sales conversations also in Intercom?** The `SDR Success Counted` custom attribute appears
+   on CX conversations, which suggests some sales-qualified traffic passes through. If inbound sales
+   conversations land here rather than only in HubSpot, part of the sales population is reachable
+   now instead of waiting on mailbox access. Worth checking before investing in the email channel.

@@ -3,15 +3,19 @@ Build AI agents that monitor customer-facing communications and flag compliance 
 
 Three channels, sharing one criteria ID space and one MCC register:
 - **Calls** (live) — `/Evaluator` assesses Fireflies transcripts.
-- **Email** (in design) — `/EmailEvaluator` assesses customer-facing mail. Blocked on mailbox access and lawful basis; see `Researcher/req-email-detection-criteria.md` § Dependencies.
-- **Intercom** (in design, unblocked) — `/IntercomEvaluator` assesses support conversations. Access already works; gated only on complaints-deadline research and register coverage. See `Researcher/req-intercom-detection-criteria.md` § Dependencies.
+- **Sales email** (in design) — `/EmailEvaluator` assesses GTM / sales mail. Blocked on mailbox access and lawful basis; see `Researcher/req-email-detection-criteria.md` § Dependencies.
+- **Customer Service / CX** (in design, unblocked) — `/IntercomEvaluator` assesses Intercom conversations: in-app chat and mail to `support@kota.io`. Access already works; gated on complaints-deadline research, register coverage, and the CX team list. See `Researcher/req-intercom-detection-criteria.md` § Dependencies.
+
+Monitoring focus is the **customer-facing functions**: sales, customer service, customer success. **BenOps / Embed is out of scope** — it is the larger Intercom population but a specialist operations function dealing with partner support desks.
+
+Note: `support@kota.io` routes into Intercom, not Gmail. Customer service email is therefore the Intercom channel, and `/EmailEvaluator` is effectively sales/GTM only.
 
 ## Workspaces
 - /Researcher — Gathers regulations, monitoring criteria, failure examples, and the prioritised list of what the agents must detect. Serves all channels; the MCC register and AE source-of-truth are shared and channel-agnostic.
 - /Designer — Owns the agents' prompts, output schema, decision rules, and tool integrations; iterates them in versioned files. Calibration rules R1–R7 live here and apply to all channels.
 - /Evaluator — **Calls.** Pulls call transcripts from Fireflies for a given date, assesses them against detection criteria, and identifies breaches.
-- /EmailEvaluator — **Email.** Pulls customer-facing mail for a given date, splits it into templated and bespoke lanes, and assesses the bespoke lane. Also runs the template-library audit.
-- /IntercomEvaluator — **Intercom.** Pulls support conversations for a given date, splits them into Fin / macro / bespoke lanes, and assesses each. Owns complaints-handling and automated-agent detection, plus the help-centre content audit.
+- /EmailEvaluator — **Sales / GTM email.** Pulls customer-facing mail for a given date, splits it into templated and bespoke lanes, and assesses the bespoke lane. Also runs the template-library audit.
+- /IntercomEvaluator — **Customer Service / CX.** Pulls CX conversations for a given date (chat + `support@kota.io`), splits them into Fin / macro / bespoke lanes, and assesses each. Owns complaints-handling detection, plus the help-centre content audit. Excludes BenOps.
 - /AsanaQueueManager — Asana Call Monitoring Queue Manager. Receives flagged calls from the Evaluator and creates tasks in the Asana Call Monitoring project, routing to the correct department section and @-mentioning the relevant executive.
 - /compliance-wiki — Existing Karpathy-style knowledge base of Irish/EU financial-services regulation; consult before researching anything new.
 
