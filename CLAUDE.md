@@ -22,7 +22,7 @@ Note: `support@kota.io` routes into Intercom, not Gmail. Customer service email 
 ## Criterion IDs are shared across channels
 `HF-01` means the same thing in an email as on a call. Every criterion carries `applies_to: call | email | intercom | both`. Channel is an attribute of the finding, not of the rule — so Compliance can query "all HF-01 breaches this quarter, all channels" without reconciling three taxonomies. Never redefine, renumber, or retire an existing ID.
 
-Allocation so far: **HF-00–HF-15** base (calls), **HF-16–HF-22** email-only, **HF-23–HF-26** Intercom-only, **SF-10–SF-15** base, **SF-16–SF-17** email, **SF-18–SF-19** Intercom, **ES-01–ES-03** base, **ES-04–ES-05** cross-channel, **LIB-01–LIB-06** email template library, **LIB-07–LIB-12** Intercom content layer. Continue the sequence; never reuse.
+Allocation so far: **HF-00–HF-15** base (calls), **HF-16–HF-22** email-only, **HF-23–HF-26** Intercom-only, **SF-10–SF-15** base, **SF-16–SF-17** email, **SF-18–SF-20** Intercom, **ES-01–ES-03** base, **ES-04–ES-05** cross-channel, **LIB-01–LIB-06** email template library, **LIB-07–LIB-12** Intercom content layer. Continue the sequence; never reuse.
 
 ## Routing
 | Task | Go to | Read |

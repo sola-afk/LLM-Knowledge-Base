@@ -1,14 +1,14 @@
 ---
 title: Detection Criteria — Intercom Monitoring Agent v1
 created: 2026-08-04
-updated: 2026-08-04
+updated: 2026-08-05
 type: requirements
 channel: intercom
 derived_from:
   - Researcher/req-detection-criteria.md
   - Researcher/req-email-detection-criteria.md
   - Researcher/research-mcc-fitness-probity.md
-status: draft
+status: active
 ---
 
 # Detection Criteria — Intercom Monitoring Agent v1
@@ -79,7 +79,7 @@ Recorded so they are visible as decisions rather than oversights:
 |---|---|
 | **CX / CS only; BenOps excluded** | Compliance direction. Monitoring priority is the customer-facing functions — sales, customer service, customer success |
 | **Complaints handling is in scope** — new criteria below | Complaints arrive here and there is no existing detection for them in any channel |
-| **Automated-agent criteria retained but dormant** | `ai_agent_participated: false` on sampled CX conversations — Fin appears **not** to operate in this lane, unlike BenOps. HF-25/26 stay defined so they fire if Fin is ever enabled here, but they are not expected to produce findings on day one. Confirm coverage before assuming zero |
+| **Automated-agent conduct is in scope and live** | Corrected 2026-08-04. An earlier draft called it dormant off two chat conversations; the 10-conversation email sample shows `ai_agent_participated: true` on **10/10**, with the bot ("Kota AI") authoring customer-facing replies including case closures. HF-25/26 are live criteria |
 | **No dedicated special-category-data criterion** | HF-06 already covers personal data including health, and applies here unchanged |
 | **No partner-mediated-communication criterion** | Conduct attributes to the **Kota-side author** regardless of counterparty. Largely moot now that BenOps is out of scope — CX contact is direct |
 | **Intercom platform notifications remain excluded** | Transactional noise — unchanged from the email criteria |
@@ -108,7 +108,7 @@ platform already asserts.
 
 | Lane | Population | Assessment |
 |---|---|---|
-| `1-fin` | Fin answered or partially answered | Assess the **Fin turn** against HF-25/HF-26 — a permanently unqualified speaker. **Expected to be empty in CX** on current evidence; retained so it fires if Fin is enabled |
+| `1-fin` | Fin authored a substantive `comment` | Assess the **Fin turn** against HF-25/HF-26 — a permanently unqualified speaker. **Common in CX** — present in 10/10 sampled conversations |
 | `2-macro` | Reply matches an approved saved reply / macro | Documented pass on hash match; delta → Lane 3 (HF-16 applies unchanged) |
 | `3-bespoke` | Free-text human reply | Full detection run. **The main lane for this channel** |
 
@@ -169,14 +169,11 @@ written for HubSpot sequences.
 
 ## New — Complaints handling
 
-> [!warning] Citations to verify before first live run
-> No complaints-handling page exists in `/compliance-wiki` — the `compliance/complaints` tag is
-> reserved but unpopulated. The **frameworks** below are grounded; the **specific deadlines** are
-> deliberately left as placeholders. Researcher must populate them from the source text before
-> these criteria can grade. Do not invent figures.
->
-> Suggested first research task: `research-complaints-handling.md`, covering CPC 2025 complaints
-> provisions and FCA DISP, and creating `wiki/concepts/complaints.md`.
+> [!note] Deadlines now populated — `research-complaints-handling.md` (2026-08-04)
+> HF-23 and HF-24 are gradeable. Day counts are sourced from CBI guidance, firms' published CPC
+> complaints procedures, and the FCA Handbook, and are consistent across independent sources.
+> **Not yet line-checked against the CPC 2025 statutory text (S.I. 81/2025)** — see that note's
+> confidence caveat before any regulator-facing escalation.
 
 ### HF-23 — Complaint not recognised or logged as a complaint
 **Priority: High**
@@ -229,12 +226,23 @@ needed (`first_admin_reply_at`, `last_admin_reply_at`, `first_close_at`) plus it
 **Trigger logic**:
 - For any conversation classified as a complaint (by the platform or by HF-23), compute elapsed
   time to acknowledgement, to each update, and to final response.
-- Compare against the regulatory deadlines — **`{{TO VERIFY: acknowledgement window}}`,
-  `{{TO VERIFY: update interval}}`, `{{TO VERIFY: final-response deadline}}`**.
-- Flag any breach. Report the platform's own `sla_status` alongside, but **do not substitute it**
-  — an internal SLA is a commercial target and may be tighter or looser than the regulatory
-  deadline. They are different measures and conflating them will produce both false positives
-  and false negatives.
+- Compare against the regulatory deadlines:
+
+  | Stage | Ireland (CPC) | UK (FCA DISP) |
+  |---|---|---|
+  | Written acknowledgement | **5 business days** | **Prompt** (no fixed count) |
+  | Electronic complaint (chat / email) | **Immediate**, same medium | — |
+  | Regular written update | every **20 business days** from receipt | keep complainant informed |
+  | Final response / resolution | **40 business days** | **8 weeks** |
+  | Ombudsman signposting | FSPO, on final response | FOS, on final response |
+
+- Flag any breach. Route by activity: Irish activity → CPC clock; UK activity → DISP clock. Where
+  the applicable regime is unclear, apply the **stricter** deadline and note the ambiguity.
+- Report the platform's own `sla_status` alongside, but **never substitute it**. The sampled CX SLA
+  (`FRT 8h / NRT 8h / TTR 24h`) is far tighter than the CPC deadlines, so `missed` does **not**
+  imply a regulatory breach — and `hit` does **not** imply compliance, because the SLA measures
+  first response, not acknowledgement-as-a-complaint or final response. **This is the most likely
+  source of HF-24 false positives.**
 
 **Positive example**: complaint acknowledged well outside the required window, `sla_status: missed`.
 **Negative example**: acknowledged within the window, updates issued on schedule.
@@ -363,11 +371,13 @@ those are clean.
 
 ## New — proposed from the 2026-08-04 dry run
 
-Both emerged from a single conversation. Researcher to confirm before they grade; see
-`IntercomEvaluator/eval-intercom-2026-08-04-daily.md` for the source evidence.
+Both emerged from a single conversation in the 2026-08-04 dry run; see
+`IntercomEvaluator/eval-intercom-2026-08-04-daily.md` for the source evidence. **Live as of
+2026-08-05** — grounded in observed conduct rather than hypothesised risk, which is the same
+evidentiary basis as the HF-00–HF-15 series.
 
 ### HF-27 — Draft/sent divergence on a regulated-product fact
-**Priority: High** · *proposed*
+**Priority: High**
 
 **Description**: An internal draft (`note`) and the sent reply (`comment`) state materially
 different facts about the same regulated matter.
@@ -388,7 +398,7 @@ been enrolled "less than two years" and **were** eligible. See the eval report f
 CBI Standards for Business — due skill, care and diligence.
 
 ### HF-28 — Regulated content reviewed by an unqualified colleague
-**Priority: Medium-High** · *proposed*
+**Priority: Medium-High**
 
 **Description**: A request for review or sign-off on regulated-product content, directed to someone
 who is script-pathway, unregistered, or absent from the register.
@@ -407,6 +417,51 @@ containing pension transfer and refund-eligibility content.
 
 **Regulation / risk mapping**: MCC 2017 — supervision requirements for script-pathway staff;
 Fitness & Probity (S.I. 60/2011 + IAF 2024) — competence and capability; FCA SYSC 28.
+
+### SF-20 — Customer attributes advice or a recommendation to Kota staff
+**Soft signal** · *added from the 2026-08-05 run*
+
+**Description**: A `user`-authored part states that a Kota staff member advised, suggested, or
+recommended something on a regulated-product matter.
+
+**Why Soft, and why it matters anyway**: this is **not a finding against the staff member** — R1
+requires that a finding cite Kota-authored text, and a customer's characterisation is not that.
+But it is strong evidence that regulated conduct occurred **somewhere the agent cannot see**: a
+call, a linked conversation, or direct email. Without this signal that conduct is invisible.
+
+**Trigger families**: "as you suggested", "as advised", "you recommended", "you told me to",
+"per your advice", "[name] said I should" — naming a Kota staff member, on a regulated-product
+matter.
+
+**Observed instance** (`215475247328292`): customer wrote "Claudia has reviewed the Clonbio Group
+contributions, and I have made the necessary changes to Kota for August **as she suggested**".
+Claudia Correa is script-pathway. Contribution changes are HF-12 territory, but the underlying
+communication is not in the assessed artefact.
+
+**Action**: "Refer to compliance" for a cross-channel look — check calls and email for the same
+staff member and customer in the surrounding period. Escalate if the named person is unqualified
+for the product. **Never** coach on the customer's wording alone.
+
+**Regulation / risk mapping**: MCC 2017; CPC 2025 Part 3. Evidentiary rather than substantive —
+it establishes that a regulated activity may have occurred, not that it breached.
+
+---
+
+## Linked and split conversations
+
+> [!warning] Open gap — a Pass on a fragment is provisional
+> CX conversations get cross-referenced and handling moves between them. The 2026-08-05 run found a
+> conversation whose internal note read "This is managed here: 119503246" — the substantive handling
+> had moved elsewhere, so the assessment graded a **fragment** and returned Pass.
+>
+> Two mechanisms, neither yet implemented:
+> 1. **`linked_objects`** — structured, present on the conversation object. Follow it.
+> 2. **Free-text conversation-ID references in notes** — unstructured. Parse notes for bare
+>    conversation IDs and follow them.
+>
+> Until both exist, a Pass on a conversation containing an outbound reference must be reported as
+> **Pass-with-comments — linked set not assessed**, never a clean Pass. Assess a linked set as one
+> unit once implemented.
 
 ---
 
@@ -505,11 +560,11 @@ As for email, plus:
 
 | # | Dependency | Owner | Blocking? |
 |---|---|---|---|
-| 1 | **Complaints-handling deadlines** — the `{{TO VERIFY}}` placeholders in HF-24, and the regulatory complaint definition for HF-23 | Researcher | **Yes — HF-23/24 cannot grade without them** |
-| 2 | **Does the API distinguish internal notes from customer-facing replies?** If not, internal candour would be graded as customer communication | Designer | **Yes** |
+| 1 | ~~Complaints-handling deadlines~~ — **RESOLVED 2026-08-04**, see `research-complaints-handling.md`. Residual: line-check against S.I. 81/2025 before regulator-facing escalation | Researcher | No |
+| 2 | ~~Internal notes vs customer-facing replies~~ — **RESOLVED 2026-08-04**. `part_type` is `note` vs `comment`, verified on live data | Designer | No |
 | 3 | **MCC register coverage for CX / CS teammates.** The existing register is oriented to GTM and Benefits; CX staff may be absent entirely, in which case fail-closed makes every conversation a finding — noise rather than signal | Researcher + Compliance | **Yes** |
 | 4 | **CX / CS team ID list**, mapped to Asana department sections. Needed to scope the pull and route the output | Researcher + CS Ops | **Yes** |
-| 5 | **Who owns Fin's configuration and content sources?** ES-05 routing has no destination without a named owner. Not urgent while Fin is dormant in CX | Compliance | No |
+| 5 | **Who owns Fin's configuration and content sources?** ES-05 routing has no destination without a named owner. **Now urgent** — Fin is active in CX and authoring customer-facing replies | Compliance | **Yes, before first HF-25** |
 | 5 | **Macro / saved-reply inventory** — Lane 2 gate | GTM Ops / CS Ops | No — degrades to all-Lane-3 |
 | 6 | **Lawful basis.** Lighter than mailbox monitoring (this is a firm system of record for customer service, not personal correspondence), but the monitoring notice should still cover it | Compliance | Confirm before live run |
 | 7 | **Asana destination** — same open question as email | Compliance | Yes, to file tasks |
@@ -534,9 +589,10 @@ Shared and **read-only** from this workspace: `research-mcc-fitness-probity.md`,
    project has separate Go-to-Market, Customer Success, and Benefits sections, so the department
    split already exists downstream. The Intercom team list needs enumerating and mapping to those
    sections, or routing will guess.
-2. **Is Fin enabled anywhere in CX, or configured to be?** Sampled conversations say no. HF-25/26
-   are dormant but defined, so enabling Fin later triggers detection automatically rather than
-   silently expanding the unqualified-speaker population.
+2. **What is Fin actually permitted to answer in CX?** Resolved that it *is* active (10/10 sampled).
+   Open question is its topic perimeter: the cleanest control is preventing Fin from answering on
+   regulated-product topics at all rather than detecting bad answers afterwards. Establish whether
+   that is configurable before investing further in HF-25 detection.
 3. **Retrospective scope.** 3,523 CX conversations exist, many long-running and still open (sampled
    conversations ran to 54 and 90 parts). Does monitoring start from go-live, or is there a
    backward-looking review? Unlogged complaints and unactioned vulnerability signals may be sitting
