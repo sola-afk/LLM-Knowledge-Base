@@ -91,3 +91,10 @@ status: active
 - Created: wiki/concepts/data-retention.md
 - Updated: wiki/index.md
 - Notes: CPC 2025 sets 12-month retention for non-customer records (quote-only) — reduced from 6 years. 6 years retained for active customers. 12 months is consent-based. GDPR Art.5(1)(e) overlay — DPC suggests ~21-day cooling-off for abandoned quotes. Effective 24 March 2026.
+
+## [2026-08-12] monitoring | Embed Call Monitoring review — Q2 2026
+- Source: Google Drive "Monitoring and Testing / Embed Call Monitoring" (5 recordings, June 2026)
+- Created: output/embed-call-monitoring-2026-q2.md
+- Reviewed: 1 of 5 calls (Kota X Smart, Pilot Cohort & Success Criteria, 10/06/2026) — overall PC, 6 findings
+- Not reviewed: 4 of 5 — audio-only mp3s, no transcript available to Compliance and files above the 10 MB retrieval limit
+- Notes: Findings are pre-contractual design gaps — no consent to record (3rd consecutive quarter), volume-linked rev share with no conflicts assessment, target market not applied to cohort design, data-sharing scope widened on second-hand privacy clearance, partner's perimeter status undetermined, success criteria carry no customer-outcome measure. Programme-level gap G1: Compliance cannot reach 80% of the Embed call population. Register rows drafted for Call Monitoring 2026 — cannot be written to the Sheet from here.
