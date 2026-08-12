@@ -98,3 +98,11 @@ status: active
 - Reviewed: 1 of 5 calls (Kota X Smart, Pilot Cohort & Success Criteria, 10/06/2026) — overall PC, 6 findings
 - Not reviewed: 4 of 5 — audio-only mp3s, no transcript available to Compliance and files above the 10 MB retrieval limit
 - Notes: Findings are pre-contractual design gaps — no consent to record (3rd consecutive quarter), volume-linked rev share with no conflicts assessment, target market not applied to cohort design, data-sharing scope widened on second-hand privacy clearance, partner's perimeter status undetermined, success criteria carry no customer-outcome measure. Programme-level gap G1: Compliance cannot reach 80% of the Embed call population. Register rows drafted for Call Monitoring 2026 — cannot be written to the Sheet from here.
+
+## [2026-08-12] monitoring | Embed Call Monitoring Q2 2026 — Call 2 added
+- Source: transcript for "John / Rachna Regroup" (11/06/2026) supplied directly by the Head of Compliance
+- Updated: output/embed-call-monitoring-2026-q2.md — added Call 2 review (Rivermate / Hightekers, EOR benefits partnership), repeat-themes section, register row, actions A10–A15
+- Coverage now 2 of 5; 3 recordings still audio-only
+- Call 2 rating: PC with one NC. NC is the disclosure of a named partner's plan size and revenue to a prospect with no NDA in place — third disclosure finding of this type in two quarters.
+- Notes: Both reviewed calls are unscripted partner-facing calls. Q1 remediation targeted customer-facing sales calls and has held there — neither call gave advice to a consumer — but the same failure modes (confidentiality, "broker" outside the UK, unverified product/market claims, evaluative comparisons) have reappeared on partner calls run by senior staff. Recommend extending the Q1 control package to partner-facing conversations.
+- Gap for lint: [[Minimum Competency Code]] is referenced across the register and this review but has no concept page.
