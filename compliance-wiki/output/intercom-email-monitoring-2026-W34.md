@@ -75,7 +75,8 @@ were advised sales. Retained in the template for parity with call monitoring.
 | **Channel** | Intercom email |
 | **Population** | 434 conversations |
 | **Total emails monitored** | 9 |
-| **Grade distribution** | 1 = Pass: 3 · 2 = Pass with comments: 4 · 3 = Fail: 2 · 4 = Fail with referral: 0 · 5 = Severe Fail: 0 |
+| **Grade distribution** | 1 = Pass: 3 · 2 = Pass with comments: 4 · 3 = Fail: 1 · 4 = Fail with referral: 1 · 5 = Severe Fail: 0 |
+| **Note** | Ctrl Alt upgraded from 3 to 4 following the script cross-reference below. |
 
 ### What we did right
 
@@ -107,6 +108,105 @@ were advised sales. Retained in the template for parity with call monitoring.
 | 2 | Financial promotion approval scope for renewal campaign templates | Compliance / IRL | 28 Aug |
 | 3 | Regulatory footer missing on CX platform and campaign outbound | Support ops | 31 Aug |
 | 4 | Lawful basis for pre-enrolment special category health data | Compliance / DPO | 31 Aug |
+
+## Script Cross-Reference — Escalated Items
+
+Both escalated items were checked against Kota's approved product content to
+establish whether the wording was on-script. The results change both findings.
+
+### Sources checked
+
+| Source | Location |
+|---|---|
+| "How to manage your Irish pension scheme on Kota" (art. 14470927, published, updated Apr 2026) | Intercom Help Centre |
+| "AutoEnrolment in Ireland — What Employers Need to Know" | Notion |
+| "Health Insurance Renewals SOP" (CS SOPs database, scope CSuccess + Benefits) | Notion |
+| "Renewals checklist" (Jul 2026) | Notion |
+| Approved script library — UK Auto Enrolment, IE Health, Vitality | Notion, under MCC Supervision |
+
+### Ctrl Alt — the answers are not on script
+
+| Question | Answer given | On script? |
+|---|---|---|
+| INED eligible to join the Kota scheme | "Yes." | **No.** Both sources address "employees" only. Master Trust eligibility question, not a Help Centre one. |
+| Does joining Kota exempt the employment | "Yes, but... a month of overlapping contributions" | **Contradicted.** Art. 14470927: "Employees under 23, over 60, or **earning less than €20,000/yr are automatically exempt regardless of contribution levels**." Deirdre is on €18,000 through Ctrl Alt. The threshold is never mentioned. |
+| NAERSA notification / refund mechanics | Must action MyFutureFund directly for a refund | **No.** Neither source mentions refunds or exit mechanics. |
+| Contribution overlap handling | "Handled through MyFutureFund" | **No.** Unsourced deflection. |
+| Re-enrolment if she stops contributing | "likely within their **13-week look-back period**" | **Directly contradicts** the Notion page: "They'll be **re-enrolled every 2 years** if still eligible." No 13-week look-back exists in either source. |
+
+**The approved answer that was available and not used.** Article 14470927 sets
+out the actual exemption test — 1.5% minimum employer contribution (or
+€1,200/yr) and 3.5% minimum total (or €2,800/yr), assessed on gross pay — and
+documents the **"Allow Kota to keep you exempt"** product toggle built for this
+exact situation. A product question was answered as a regulatory one.
+
+> [!warning] Grade upgraded
+> **3 = Fail → 4 = Fail with referral.** The original grade rested on advice
+> given without qualification. The cross-reference shows the content also
+> departs from approved material and rests on a premise our own article
+> contradicts.
+
+An unresolved substantive question falls out of this: **does the €20,000
+threshold apply per employment or to aggregate earnings across employments?**
+Deirdre holds a second INED role. Neither approved source addresses
+multi-employment. Article 14470927 needs updating either way.
+
+### Healthcare Renewal — on script for mechanics, off script for content
+
+The SOP covers this case explicitly. For Ireland (ILH): *"A notification email
+should be triggered from Intercom to the customer, based on this template
+(Intercom outbound email 42771939). A duplicate of that template should be
+created. The copy in the body should be kept the same."*
+
+**Matches the SOP:** timing (sent 33 days ahead against a 30-day requirement)
+and channel.
+
+**Departs from the SOP:** the SOP states the purpose is to inform the customer
+of the renewal *"and the new prices"*. The email does not give the customer
+their renewal price — it says the price "may have increased" and links to
+generic plan pricing. The SOP also frames the email as informational (*"A reply
+is not required"*); the email instead pushes a booking call to action.
+
+**Fails Kota's own compliance checklist.** The Renewals checklist lists, as a
+compliance requirement, *"Clear disclaimer that the policy auto-renews unless
+actioned"* — unticked. The SOP confirms the fact: *"If we don't hear back from
+the customer, the renewal will be processed automatically."* The email tells
+the customer changes "can only be made before renewal" but never that inaction
+means auto-renewal, potentially at a higher price. Cooling-off is not mentioned
+either, though the SOP records a 14-day post-renewal period.
+
+> [!important] The defect is systemic, not individual
+> The SOP instructs staff to duplicate the approved template and keep the copy
+> unchanged. If that was done, these omissions sit in the **template and SOP**,
+> not in Simon Ward's handling — and every ILH renewal customer this year
+> received them. The finding should be raised against the template owner.
+>
+> **Not yet verified:** whether the email sent is in fact a duplicate of
+> template 42771939. Check in Intercom Outbound before putting this to anyone.
+
+Also noted: the SOP is marked **Status: In progress** and is incomplete — the
+UK (Freedom) section reads "?" and the IPMI (Allianz) section is an unanswered
+question. Its risk level is set to Low.
+
+### Consequences for the recommended actions
+
+| # | Revised action | Owner | By |
+|---|---|---|---|
+| 1 | Verify the sent renewal email against Intercom template 42771939; if it matches, quantify how many ILH customers received it | Support ops | 26 Aug |
+| 2 | Correct Ctrl Alt on the 13-week statement and the exemption premise | BenOps / Compliance | 26 Aug |
+| 3 | Resolve whether the €20,000 AE threshold is per-employment or aggregate; update art. 14470927 | Compliance | 31 Aug |
+| 4 | Add approved wording for INED eligibility, MyFutureFund exit/refund mechanics, and re-enrolment timing — the three questions with no script | Compliance + Benefits | 31 Aug |
+| 5 | Add regulatory footer, actual renewal price, and auto-renewal disclaimer to the ILH renewal template | Template owner | 31 Aug |
+| 6 | Close out the SOP's open sections and re-rate its risk level | CS / Benefits | 31 Aug |
+
+### A note on where email monitoring already lives
+
+The Notion **MCC Supervision** page already contains a **📩 Email Audit**
+database, with the same schema as Call Supervision Audit (Customer Name, Date,
+Person, Findings, Period, and the 1–5 grade). Alongside it sits a **📒
+Documentation Audit** database carrying Factfind and SOS checkboxes. The new
+Asana project and this Notion database now cover overlapping ground — worth
+deciding which is the record before both accumulate entries.
 
 ## Method and Limitations
 
