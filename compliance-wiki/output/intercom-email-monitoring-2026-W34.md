@@ -1,243 +1,125 @@
 ---
-title: "Intercom Email Monitoring — Week 34 (17–21 Aug 2026)"
+title: "Email Monitoring — Intercom — Week 34 (17–21 Aug 2026)"
 type: source
 tags:
   - compliance/conduct
-  - compliance/complaints
-  - compliance/risk-management
-  - process/incident
+  - compliance/fitness-probity
   - regulation/cbi
+  - process/audit
 created: 2026-08-21
 updated: 2026-08-21
 status: active
-source_file: Intercom (support@kota.io shared inbox, email channel)
+source_file: Intercom email channel (support@kota.io / benops@kota.io)
 ---
 
-# Intercom Email Monitoring — Week 34 (17–21 Aug 2026)
+# Email Monitoring — Intercom — Week 34 (17–21 Aug 2026)
 
-Monitoring sweep of the Intercom email channel for the week beginning Monday
-17 August 2026. Scope: all conversations with `source.type = email` created
-between 2026-08-17 00:00 UTC and 2026-08-21 12:37 UTC.
+Email supervision applying the **same assessment criteria as the Call Monitoring
+programme** (`Call Monitoring 2026` sheet + `☎️ Call Supervision Audit` Notion
+database) to customer-facing email in Intercom.
 
-**Population: 434 conversations (complete — 5 pages, all retrieved, no sampling).**
+## Criteria Applied
 
-> [!note] Scope note
-> Gmail was also swept for correspondence *from* Intercom as a vendor
-> (`intercom.io`, `send.intercom.com`, `hq.intercom.com`, `intercom-mail.com`).
-> **Nil returns for the last 21 days.** No vendor notices, no DPA or
-> sub-processor change notifications, no security advisories. The last
-> substantive vendor item remains the 17 March 2026 note from the Intercom
-> account manager moving Insights out of beta into the paid "Performance Pro"
-> add-on.
+Carried across unchanged from call monitoring:
 
-## Key Takeaways
-
-1. **SLA performance is the dominant finding — 164 of 283 SLA-tracked
-   conversations were missed (58%).** The Embed P0 tier (1-hour first response)
-   missed 97 of 117 (83%). The 30-minute Urgent tier missed 14 of 19 (74%).
-2. **71 conversations remain open with an already-missed SLA**, 53 of them on
-   Urgent or Embed P0 tiers. These are live, not historic.
-3. **Three provider complaints ran through the channel this week** (CM-143628,
-   CM-143362, CM-143443). Two received final response letters.
-4. **Both final response letters signpost the UK Financial Ombudsman Service**,
-   not the Irish FSPO. Raised below as an open question, not a finding.
-5. **A confirmed fraud case** (Allianz, three policies) is in a 7-day appeal
-   window that expires **24 August 2026**.
-6. **25 automated "employee was deleted by their Employer" alerts** in five
-   days — a material data-retention and deletion-trigger volume.
-7. **87 conversations tagged `wrong-team-redirect` (20%)** — one in five inbound
-   emails reaches the wrong queue first.
-
-## Volume and Distribution
-
-| Day | Conversations |
+| Call monitoring field | Email equivalent |
 |---|---|
-| Mon 17 Aug | 81 |
-| Tue 18 Aug | 87 |
-| Wed 19 Aug | 96 |
-| Thu 20 Aug | 69 |
-| Fri 21 Aug (to 12:37) | 101 |
-| **Total** | **434** |
+| Date of compliance review | Same |
+| Date of call | Date of email |
+| Kota attendees | Kota handler(s) |
+| Client/Prospect | Same |
+| Call purpose | Email purpose |
+| **Recording consent** | **Regulatory disclosure** — footer present on outbound (the email-channel data-protection/disclosure check; consent-to-record has no email analogue) |
+| Issues | Same |
+| Training opportunity/gap | Same |
+| Actions | Same |
+| Responses from management | Same (to be completed) |
+| FactFind done and sent | Same |
+| SOS done and sent | Same |
 
-**State:** 247 closed · 141 open · 46 snoozed
-**Fin (AI agent) participated:** 257 of 434 (59%)
-**Unassigned:** 0 — every conversation reached a team or admin.
+**Grading scale** (unchanged, from Call Supervision Audit):
+`1 = Pass` · `2 = Pass with comments` · `3 = Fail` · `4 = Fail with referral` · `5 = Severe Fail`
 
-**Counterparties (top senders):** kota.io internal/automated 178 ·
-Allianz (`e.allianz.com`) 101 · Deel 34 · Irish Life (incl. `cbcomms`) 37 ·
-Remote 18 · Irish Life Health 12 · Bupa 7 · Zurich 5 · Vitality 5.
+**Risk categories** (unchanged): Consumer Protection Code · Minimum Competency
+Code · Data Protection
 
-**By user type:** Provider 155 · Client (Embed) 66 · Internal 41 · Employer 24 ·
-Employee 8 · New Customer 2 · unclassified 138.
+## Sample
 
-**By provider:** General/none 114 · Allianz 106 · Irish Life 75 · Sanitas 12 ·
-Vitality 8 · Zurich 6 · Bupa 6 · ONVZ 4 · Freedom 4 · Smart Pension 3 · DSS 3.
+Population: 434 email conversations created 17–21 Aug 2026. Assessed sample:
+**9 customer-facing threads** where a Kota person communicated substantively
+with an employer, employee, prospect or new customer — the population the call
+programme targets. Provider back-office and automated traffic excluded.
 
-## SLA Performance
+## Monitoring Log
 
-| Tier | Hit | Missed | Active | Cancelled | Miss rate |
-|---|---|---|---|---|---|
-| EM: P0 — Embed (FRT 1h / NRT 1h / TTR 8h) | 10 | **97** | 9 | 1 | **83%** |
-| All: Urgent (FRT 30m / NRT 30m / TTR 2h) | 5 | **14** | 0 | 0 | **74%** |
-| BenOps: P1 — Operational (FRT 8h / TTR 16h) | 23 | 39 | 13 | 3 | 63% |
-| PL: P3 — Tier 3 SME (FRT 8h / TTR 24h) | 50 | 13 | 4 | 0 | 21% |
-| PL: P2 — Tier 2 SME | 1 | 0 | 0 | 0 | 0% |
-| All: P1 — BO Internal | 0 | 1 | 0 | 0 | 100% |
-| **Total (SLA applied)** | **89** | **164** | **26** | **4** | **58%** |
+| Date of review | Date of email | Kota handler | Client/Prospect | Email purpose | Reg. disclosure | Issues | Training opportunity/gap | Actions | Grade |
+|---|---|---|---|---|---|---|---|---|---|
+| 21/08/2026 | 19/08/2026 | Michael Nikeenok | Ctrl Alt (Klaudia Haluszka) | Pension / MyFutureFund eligibility for an INED | No | Answered five questions on statutory auto-enrolment obligations definitively and without qualification — eligibility, whether Kota membership exempts the employment from MyFutureFund, NAERSA notification mechanics, contribution-overlap refunds, and re-enrolment timing ("likely within their 13-week look-back period"). Stated as fact. No disclaimer, no signpost to NAERSA or the client's own advisor, no regulatory footer. Mitigant: internally escalated first — "while we confirmed this with our pension specialists". | MCC boundary: answering statutory obligation questions vs. describing our own scheme | Escalate to HOB/GM. Same treatment as the Q1 call findings on auto-enrolment. | **3** |
+| 21/08/2026 | 17/08/2026 | Simon Ward (automated campaign) | Definely (Inga Bruzikaite) | Healthcare renewal prompt — Irish Life Health, renewal 19/09/2026 | No | Outbound marketing email with no regulatory status footer. Prompts review of cover and flags "the price may have increased and you might want to review your offering" with a booking link — promotional content. Unclear whether the template has been through financial promotion approval. Separately, sent to a client that has had **no Irish employees since June** and whose payroll services should have been cancelled — client had to write back to ask whether the scheme was still live. | Financial promotion approval scope; suppression rules for offboarded clients | Confirm whether renewal templates are in scope of the IRL/financial-promotion approval process. Fix suppression on cancelled schemes. | **3** |
+| 21/08/2026 | 17–21/08/2026 | Michelle Jenei, Isabel Brooks | Remote / Anthropic (prospect "Dale", Singapore) | Pre-enrolment cover enquiry — allied health, pre-existing conditions | Yes | Conduct clean: no advice offered, questions routed to Allianz, escalated twice, correct CBI/FCA footer on every outbound. Service outcome poor — Embed P0 (1h) **SLA missed**, still unresolved on day 5 with the prospect chasing. Data protection: thread carries special-category health data about a **child** (childhood apraxia of speech, DCD) for someone **not yet enrolled** — lawful basis for pre-enrolment special-category processing is not documented. | Pre-enrolment special category data handling | Confirm lawful basis/retention for prospect health data. Chase Allianz. | **2** |
+| 21/08/2026 | 17/08/2026 | Michael Nikeenok | Imvizar (Taricia Baccan) | NAERSA letter — MyFutureFund registration obligation | No | Gave a general interpretation of the AE exemption, but **properly qualified it**: flagged that the registration question "isn't entirely clear from public guidance", and recommended confirming "directly with NAERSA (01 568 9555) or your accountant/tax advisor... rather than relying solely on our interpretation here". This is the correct pattern. Only gap is the missing regulatory footer. | — (use as the worked example of good handling) | Adopt as the model response for AE/NAERSA queries. | **2** |
+| 21/08/2026 | 19/08/2026 | Michael Nikeenok | LearnUpon (Tommy Ibikunle) | Laya Inspire — dependant cover query | No | Described dependant cover in specific terms (GP access, 24-hour GP/nurse/physio lines, consultant visits, scans, mental health support, "a fertility benefit (up to €1,000)") without referring the member to the table of cover or policy document. Accurate or not, benefit levels quoted from knowledge rather than source risk becoming misleading. | Always cite the table of cover when quoting benefit levels | Add "refer to policy document" to benefit-description macros. | **2** |
+| 21/08/2026 | 20/08/2026 | Simon Ward → CX team | Nory (Beth, Caitlyn) | Employee contribution percentage changed unexpectedly | Yes | Handoff itself is clean and correctly attributes the change to payroll via Smart rather than speculating. But the thread was **snoozed three times** (one week, then twice "until tomorrow") with **no reply ever sent to the customer**; first-reply SLA missed. An employee's pension contribution changed without explanation and nobody has answered. | Snoozing as a substitute for responding | Reply to the customer. Review snooze practice where FRT is at risk. | **2** |
+| 21/08/2026 | 20/08/2026 | Michael Nikeenok | Flatpay (Ishtyaq Ahmed) | Opt-out of Bupa PMI and Medicash | No | Clean acknowledgement and routing to Benefits, no advice, no attempt to retain or dissuade. Worth confirming separately whether an opt-out should trigger a consequences-of-cancellation disclosure. | — | Confirm opt-out disclosure requirement with Compliance. | **1** |
+| 21/08/2026 | 19/08/2026 | Michael Nikeenok | David Silver (employee, Bupa) | Add spouse and children as dependants | No | Correct, brief, directs to self-service. No advice. Handled inside SLA. | — | None | **1** |
+| 21/08/2026 | 21/08/2026 | Simon Ward → Dan (HOB) + CX | Solance (Dean Rodgers) | One-off pension contribution | Yes | Textbook handoff — routed to Head of Benefits and CX without attempting to answer a contribution question himself. | — | None | **1** |
 
-151 conversations had no SLA applied at all.
+FactFind and SOS columns: not applicable to any thread in this sample — none
+were advised sales. Retained in the template for parity with call monitoring.
 
-The pattern is not uniform degradation. The P3 SME tier, on an 8-hour first
-response target, performs acceptably at 21% missed. The failure concentrates
-almost entirely in the tightest tiers: the 1-hour Embed P0 and the 30-minute
-Urgent tier. This is consistent with the tight-target tiers being unresourced
-rather than the team being uniformly overloaded.
+## Period Summary
 
-> [!warning] Live exposure
-> **71 conversations are still open with a missed SLA**, of which **53 sit on
-> Urgent or Embed P0**. The oldest reaches back to Monday 17 August.
-
-Examples of open, past-target items:
-
-- `[ACTION REQUIRED] DSS Employee policy creation — Remote Technology Aps in DK`
-  (Embed P0, opened 17 Aug 00:00)
-- `Complaint - CM-143628 [#116402935]` (Embed P0, opened 17 Aug 08:10, reopened
-  19 Aug)
-- `Re: Re: Re: Internal Audit Error Corrections [#116313802]` (Embed P0, 17 Aug)
-- `Re: Name Update Request Across all policies — Pautsch [#116403164]`
-  (BO Internal P1, 17 Aug)
-- `Re: Coverage Clarification — High Priority Executive level prospective
-  (Anthropic) [#116404166]` (Embed P0, 18 Aug)
-- `#1952172 - URGENT - Medical Claim` (Remote, Urgent tier, snoozed 21 Aug)
-
-## Complaints
-
-Three complaint references moved through the channel.
-
-### CM-143628 — newborn dependent start date (open)
-
-Allianz Care notified Kota on 17 August that a member complained about the
-effective start date of a newborn dependent, added by Gsec with effect from
-11 August 2026, under policy P005152345. Allianz asked Kota to confirm the
-correct start date with Deel.
-
-The thread was replied to on 18 and 20 August but **reopened on 19 August and
-is open again as at 21 August, on an Embed P0 tier with a missed SLA**. This is
-the one complaint still requiring action.
-
-### CM-143362 — declined claim, cover cancellation (closed)
-
-Complaint received by Allianz 07 August, final response issued. Claim C36217155
-was initially declined on the basis that treatment took place after cancellation
-of cover (out of force since 31 March 2026). On review Allianz reprocessed and
-paid the claim under settlement C37437783 on 13 August, reimbursing KES 4,610.
-
-### CM-143443 — delayed claim payment (closed)
-
-Complaint received 11 August, final response issued 19 August. Payment of claim
-C36208763 failed and was returned twice with reason "BENE ACCOUNT BENE NAME NOT
-MATCH". Allianz has asked for corrected beneficiary bank details to reissue.
-
-> [!question] Open question — ombudsman signposting
-> Both final response letters direct the complainant to **the UK Financial
-> Ombudsman Service** (Exchange Tower, London E14 9SR) within six months, and
-> both are issued by Allianz Care from Park West, Dublin 12, over an Irish
-> helpline (+353 1 514 8456). Neither letter mentions the Irish **Financial
-> Services and Pensions Ombudsman**.
->
-> These are the provider's letters, not Kota's, so the primary obligation sits
-> with Allianz. But Kota is the distributor in the chain and these letters reach
-> members through our channel. Whether UK FOS signposting is correct depends on
-> the underwriting entity and the member's location — CM-143362 concerns a
-> member reimbursed in Kenyan shillings, which is neither. Worth putting to
-> Allianz and confirming the position before it recurs. Flagged as a question;
-> not asserted as a breach.
-
-## Fraud Case — Appeal Window Closes 24 August 2026
-
-On 17 August Kota (Isabel) notified Deel that **Allianz has confirmed a proven
-fraud case** relating to EOR member Abraham Scoth, covering policies
-**P005252604, P004776649 and P004847354**. A report was attached.
-
-Per Allianz's terms and Kota's, the member's cover **must be removed**. Kota
-committed to actioning removal **after 7 days** to allow an appeal — a window
-that **expires Monday 24 August 2026**. Deel was asked to notify the relevant
-parties, as Deel owns the employer/employee relationship.
-
-The forwarded Allianz internal correspondence (Claims Risk Unit, Health) records
-that the policyholder has confirmed willingness to cooperate and repay the sum
-due in instalments, and asks whether the policy — expiring November 2026 — will
-be renewed under the group.
-
-**The Kota-side thread is snoozed.** Two things need confirming before Monday:
-that no appeal was received, and that the renewal question has been answered.
-
-## Automated Data-Change Alerts
-
-Automated `[Needs Attention]` notifications from `noreply@kota.io`:
-
-| Alert type | Count |
+| | |
 |---|---|
-| An employee was deleted by their Employer | **25** |
-| An employee has their country changed | 3 |
-| An Employee Salary Changed | 1 |
+| **Period** | Week 34 — 17–21 Aug 2026 |
+| **Channel** | Intercom email |
+| **Population** | 434 conversations |
+| **Total emails monitored** | 9 |
+| **Grade distribution** | 1 = Pass: 3 · 2 = Pass with comments: 4 · 3 = Fail: 2 · 4 = Fail with referral: 0 · 5 = Severe Fail: 0 |
 
-**Employee deletions — 25 in five working days.** Each is an employer-initiated
-deletion flowing through HRIS into the Kota platform. This connects directly to
-[[Data Retention]] and the CPC 2025 retention position: deletion by an employer
-is a retention trigger, and at five per working day the volume is high enough
-that the handling needs to be a defined process rather than case-by-case. Most
-were closed quickly; three remain open (17 Aug 12:34, and two from 19 Aug 16:47).
+### What we did right
 
-**Country changes — 3.** ES→PT, DE→CH (×2). Each is a cross-border change that
-may alter which regulatory regime and which product applies to that member. The
-two logged at 21 Aug 12:36 are open. The DE→CH change is the notable one:
-Switzerland is outside the EEA, so freedom-of-services passporting does not
-carry across.
+| Observation | Category |
+|---|---|
+| Consistent, professional greetings and sign-offs across all sampled threads | Communication |
+| Correct CBI/FCA regulatory footer applied automatically on BenOps outbound | Consumer Protection Code |
+| Strong escalation discipline on the Anthropic prospect enquiry — routed to Allianz, escalated twice, no attempt to answer cover questions directly | Minimum Competency Code |
+| Clean handoffs by Simon Ward on both pension queries rather than answering out of scope | Minimum Competency Code |
+| The Imvizar/NAERSA reply is a genuinely good model — interpretation offered, uncertainty admitted, client referred to NAERSA and their own advisor | Minimum Competency Code |
 
-## Operational Finding — Misrouting
+### Areas for improvement
 
-**87 conversations (20%) carry the `wrong-team-redirect` tag.** Concentrated in:
-Allianz `client.services` 21 · Kota automated 9 · Irish Life (various) 21
-combined · Allianz `group.admin` 7 · Bupa 4 · Allianz `disability.services` 4.
+| Area | Priority | Impact | Category | Commentary |
+|---|---|---|---|---|
+| Advice on statutory auto-enrolment obligations given without qualification | High | High | Minimum Competency Code | The Ctrl Alt reply answers five statutory-obligation questions as settled fact. Directly comparable to the Q1 call finding against Karl O'Brien ("went a little bit too deep into Auto-enrolment... that statement comes too close to advice"), which was logged as an MCC breach. The same handler qualified an almost identical query correctly two days earlier, so this is an inconsistency in application, not a knowledge gap. Recommend logging as an MCC breach and referring to HOB/GM. |
+| Regulatory disclosure footer missing on non-BenOps outbound | High | Medium | Consumer Protection Code | Present on BenOps replies, absent from the CX platform team's replies and from the automated renewal campaign. Inconsistent disclosure of regulated status across the same inbox. |
+| Renewal marketing campaign outside financial promotion approval | Medium | Medium | Consumer Protection Code | The "Healthcare Renewal - Important" template contains promotional content and a pricing prompt with no disclosure. Confirm whether it is in scope of the IRL approval route used for other promotions. |
+| Benefit levels quoted without reference to policy documentation | Medium | Medium | Consumer Protection Code | Specific monetary benefit limits given to a member with no signpost to the table of cover. |
+| Marketing sent to offboarded clients | Medium | Low | Consumer Protection Code | Renewal prompt sent to a client with no Irish employees since June. Suppression rules not firing on cancelled schemes. |
+| Snoozing used in place of responding | Medium | Medium | Consumer Protection Code | Nory thread snoozed three times with no customer reply and FRT missed. Where a customer is waiting on an unexplained pension contribution change, repeated snoozing is a poor customer outcome. |
+| Special category data processed pre-enrolment without documented basis | Medium | Medium | Data Protection | Child health conditions handled for a prospect who is not yet a member. Confirm lawful basis and retention for pre-enrolment health data. |
 
-One in five inbound emails lands in the wrong queue and must be redirected
-before work starts. On tiers with a 30-minute or 1-hour first-response target,
-a redirect hop is likely a direct contributor to the miss rates above. The two
-findings should be read together.
+## Escalations
 
-A further 3 conversations are tagged `BenOps - Deel - Bad Ticket`.
-
-## Recommended Actions
-
-| # | Action | Owner | By |
+| # | Item | To | By |
 |---|---|---|---|
-| 1 | Confirm no appeal received on the Allianz fraud case; action cover removal on P005252604 / P004776649 / P004847354; answer Allianz's renewal question | BenOps / Isabel | **24 Aug** |
-| 2 | Close out complaint CM-143628 — confirm newborn dependent start date with Deel | BenOps | 25 Aug |
-| 3 | Work the 53 open Urgent/Embed-P0 conversations that are already past target | Support leads | 25 Aug |
-| 4 | Put the UK FOS vs FSPO signposting question to Allianz in writing | Compliance | 28 Aug |
-| 5 | Root-cause the 83% Embed P0 miss rate — resourcing, target realism, or the redirect hop | Support leads + Compliance | 31 Aug |
-| 6 | Review the 20% misrouting rate; fix inbound routing rules for Allianz and Irish Life senders | Support ops | 31 Aug |
-| 7 | Define and document the retention/deletion process behind the 25 employee-deletion alerts | Compliance | 31 Aug |
-| 8 | Confirm regulatory treatment of the DE→CH member change (non-EEA) | Compliance | 31 Aug |
+| 1 | Ctrl Alt auto-enrolment reply — proposed MCC breach log and handler discussion | HOB / GM | 26 Aug |
+| 2 | Financial promotion approval scope for renewal campaign templates | Compliance / IRL | 28 Aug |
+| 3 | Regulatory footer missing on CX platform and campaign outbound | Support ops | 31 Aug |
+| 4 | Lawful basis for pre-enrolment special category health data | Compliance / DPO | 31 Aug |
 
 ## Method and Limitations
 
-- Source: Intercom `search_conversations`, filtered `source_type=email`,
-  `created_at > 1786924800` (2026-08-17 00:00 UTC). All 5 pages retrieved;
-  434 unique conversation IDs, matching Intercom's reported `total_count`.
-- Classification of complaints, fraud and data-change items is based on
-  **subject lines and the opening message body** of each conversation. Full
-  reply chains were not read for all 434. A conversation whose compliance
-  relevance only emerges in a later reply would not be caught by this sweep.
-- SLA figures are Intercom's own `sla_applied.sla_status` values, not
-  recalculated independently.
-- Keyword scanning covered: complaint, GDPR, data subject/protection/breach,
-  DSAR, erasure, deletion, access request, privacy, consent, vulnerable,
-  ombudsman, FSPO, regulator, escalation, legal, solicitor, fraud, dispute,
-  mis-sold, misrepresentation. **No DSARs, no GDPR/data-protection requests and
-  no personal-data breaches surfaced this week.**
-- Member names, policy numbers and claim references are reproduced here because
-  they are needed to action items 1 and 2. Per the wiki's confidentiality
-  convention this report sits in `output/` and should not be propagated into
-  wiki entity or concept pages in identifiable form.
+- Criteria taken from `Call Monitoring 2026` (Drive, `194CUZA3...`) and the
+  `☎️ Call Supervision Audit` Notion database. No criteria added or removed;
+  Recording Consent remapped to Regulatory Disclosure as noted above.
+- Sample of 9 from a population of 434. Selection was **risk-weighted, not
+  random** — threads with employers, employees, prospects and new customers on
+  pension and health topics, where advice risk concentrates. It is therefore
+  not a basis for extrapolating a channel-wide pass rate.
+- Full reply chains were read for all 9 assessed threads.
+- Grades are Compliance's assessment and are open to challenge by the handlers
+  and their managers via the "Responses from management" column, per the call
+  monitoring process.
+- Automated Fin AI replies were in scope but none in this sample answered a
+  regulated question — Fin escalated to a human in every assessed case.

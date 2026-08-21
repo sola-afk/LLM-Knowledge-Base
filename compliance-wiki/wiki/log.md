@@ -92,8 +92,13 @@ status: active
 - Updated: wiki/index.md
 - Notes: CPC 2025 sets 12-month retention for non-customer records (quote-only) — reduced from 6 years. 6 years retained for active customers. 12 months is consent-based. GDPR Art.5(1)(e) overlay — DPC suggests ~21-day cooling-off for abandoned quotes. Effective 24 March 2026.
 
-## [2026-08-21] monitoring | Intercom email channel — Week 34 (17–21 Aug 2026)
-- Source: Intercom email channel (support@kota.io), 434 conversations, full population
+## [2026-08-21] monitoring | Email monitoring — Intercom — Week 34 (17–21 Aug 2026)
+- Applied the Call Monitoring programme's assessment criteria (Call Monitoring 2026 sheet + Call Supervision Audit Notion DB) to customer-facing email in Intercom.
+- Criteria carried across unchanged; Recording Consent remapped to Regulatory Disclosure (no email analogue). Grades 1-5 and categories (CPC / MCC / Data Protection) unchanged.
 - Created: output/intercom-email-monitoring-2026-W34.md
-- Notes: SLA missed on 164/283 tracked (58%); Embed P0 83% missed, Urgent tier 74% missed. 71 open conversations already past target, 53 on Urgent/P0. Three complaints (CM-143628 open, CM-143362 and CM-143443 closed with final response). Both final responses signpost UK FOS rather than FSPO — question raised for Allianz, not asserted as breach. Allianz proven fraud case (P005252604/P004776649/P004847354) — 7-day appeal window expires 24 Aug, Kota thread snoozed. 25 employer-initiated employee deletions in 5 days — links to data-retention. 3 country changes incl. DE→CH (non-EEA). 87 conversations (20%) tagged wrong-team-redirect. No DSARs, GDPR requests or personal-data breaches surfaced.
-- Gmail sweep for Intercom-as-vendor mail: nil returns across 21 days (no DPA, sub-processor or security notices).
+- Sample: 9 customer-facing threads, risk-weighted, from a population of 434 email conversations.
+- Grades: 3x Pass, 4x Pass with comments, 2x Fail.
+- Fail 1 - Ctrl Alt: five statutory auto-enrolment questions answered as settled fact, no caveat or referral. Comparable to the Q1 call finding logged as an MCC breach. Same handler qualified an near-identical query correctly two days earlier.
+- Fail 2 - Healthcare Renewal campaign: promotional outbound with no regulatory footer, financial promotion approval status unconfirmed, and sent to a client with no Irish employees since June.
+- Other themes: footer applied on BenOps outbound but missing from CX platform and campaign email; benefit levels quoted without reference to the table of cover; snoozing used in place of responding; special category health data processed pre-enrolment without documented basis.
+- Escalations raised to HOB/GM, IRL, Support ops and DPO.
