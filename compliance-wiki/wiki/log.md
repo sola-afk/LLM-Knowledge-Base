@@ -91,3 +91,9 @@ status: active
 - Created: wiki/concepts/data-retention.md
 - Updated: wiki/index.md
 - Notes: CPC 2025 sets 12-month retention for non-customer records (quote-only) — reduced from 6 years. 6 years retained for active customers. 12 months is consent-based. GDPR Art.5(1)(e) overlay — DPC suggests ~21-day cooling-off for abandoned quotes. Effective 24 March 2026.
+
+## [2026-08-21] monitoring | Intercom email channel — Week 34 (17–21 Aug 2026)
+- Source: Intercom email channel (support@kota.io), 434 conversations, full population
+- Created: output/intercom-email-monitoring-2026-W34.md
+- Notes: SLA missed on 164/283 tracked (58%); Embed P0 83% missed, Urgent tier 74% missed. 71 open conversations already past target, 53 on Urgent/P0. Three complaints (CM-143628 open, CM-143362 and CM-143443 closed with final response). Both final responses signpost UK FOS rather than FSPO — question raised for Allianz, not asserted as breach. Allianz proven fraud case (P005252604/P004776649/P004847354) — 7-day appeal window expires 24 Aug, Kota thread snoozed. 25 employer-initiated employee deletions in 5 days — links to data-retention. 3 country changes incl. DE→CH (non-EEA). 87 conversations (20%) tagged wrong-team-redirect. No DSARs, GDPR requests or personal-data breaches surfaced.
+- Gmail sweep for Intercom-as-vendor mail: nil returns across 21 days (no DPA, sub-processor or security notices).
