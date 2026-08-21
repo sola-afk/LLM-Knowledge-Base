@@ -102,3 +102,11 @@ status: active
 - Fail 2 - Healthcare Renewal campaign: promotional outbound with no regulatory footer, financial promotion approval status unconfirmed, and sent to a client with no Irish employees since June.
 - Other themes: footer applied on BenOps outbound but missing from CX platform and campaign email; benefit levels quoted without reference to the table of cover; snoozing used in place of responding; special category health data processed pre-enrolment without documented basis.
 - Escalations raised to HOB/GM, IRL, Support ops and DPO.
+
+## [2026-08-21] setup | Email Monitoring Asana project created
+- Created Asana project "Email Monitoring" (gid 1217717281350976) in the Compliance team, mirroring the Call Monitoring project (gid 1213240137041729).
+- Sections mirror call monitoring: Go-to-Market, Customer Success, Benefits, Escalated, Resolved/False Positives. Added "Embed" as a sixth - it is a live Intercom queue with no call-channel equivalent.
+- Seeded with the 9 assessed threads from the week 34 review. 2 in Escalated (Ctrl Alt MCC, Healthcare Renewal campaign), 4 across team sections, 3 in Resolved/False Positives.
+- Each task body carries the full assessment in the call monitoring column order: date, Kota staff, prospect/client, email purpose, regulatory disclosure, grade, requirement breached, Intercom conversation link, issues, training gap, action, response from management.
+- Outstanding manual steps (Asana API cannot do these): attach the 7 existing workspace custom fields (Grade, Issues, Requirement Breached, Kota Staff, Prospect/Client, Call Purpose, Recording Link); delete the auto-created empty section; reorder sections; confirm privacy (created as Private/owner-only, Call Monitoring is private to team).
+- Grade mapping from the Notion 1-5 scale to the Asana triage scale: 1 Pass = no grade + Resolved; 2 Pass with comments = Minor Correction; 3 Fail = Fail; 4 Fail with referral = Fail + Escalated; 5 Severe Fail = Severe Fail.
