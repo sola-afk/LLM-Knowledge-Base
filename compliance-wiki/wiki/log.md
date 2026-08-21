@@ -133,3 +133,10 @@ status: active
 - Interim mitigation applied: renamed all 9 tasks to lead with the Kota employee, format "Employee - Client - Purpose (date)", so the author is visible in the list row without a column and survives truncation. The Intercom link remains a clickable link at the top of each task description.
 - Awaiting the manual UI step: add the existing workspace fields Kota Staff (1214635377742250), Recording Link (1213240170325738, relabel to Conversation Link), Grade (1213240170325716), Issues (1213240170325728), Requirement Breached (1213240170325733), Prospect/Client (1214635377742252), Call Purpose (1213240170325723, relabel to Email Purpose). Once attached, all 9 tasks can be populated in a single call - values already held.
 - Decision (21 Aug): use the existing Kota Staff workspace field rather than repurposing Assignee. Assignee would have given a native column immediately but would notify each employee and place an adverse finding in their My Tasks ahead of management review. Both columns therefore wait on the UI step; values are prepared.
+
+## [2026-08-21] update | Email Monitoring Asana columns populated
+- Fields added in the UI by Sola: Link (text) and Grade (enum: False Positive / Severe Fail / Fail / Minor Correction). Note this is a new project-specific Grade field, not the shared Call Monitoring one, so cross-channel reporting on a single Grade field is not available.
+- Populated all 9 tasks: Link on all 9 (Intercom conversation permalinks), Grade on 6.
+- Grade mapping applied: Fail x2 (Ctrl Alt, Definely); Minor Correction x4 (Imvizar, LearnUpon, Nory, Remote/Anthropic); the 3 passes left blank, since the enum is exception-based and has no Pass option, matching Call Monitoring.
+- Caveat: the enum has no "Fail with referral" option, so Ctrl Alt displays as "Fail". The upgrade to Fail with referral, and the reasoning for it, sit in the task description.
+- No Kota Staff field was added; the employee remains at the front of each task name.
