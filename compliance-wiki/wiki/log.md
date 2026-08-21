@@ -119,3 +119,10 @@ status: active
 - Because the SOP instructs staff to duplicate template 42771939 and keep the copy unchanged, the defect is likely in the template rather than the sender, and would affect every ILH renewal customer this year. Not yet verified against the template - flagged as the first action.
 - Noted the SOP is marked "In progress" with the UK (Freedom) and IPMI (Allianz) sections unfinished, and risk level set to Low.
 - Discovered the Notion MCC Supervision page already holds a "Email Audit" database with the same schema as Call Supervision Audit, plus a "Documentation Audit" database. Overlaps with the new Asana project - the record of truth needs deciding.
+
+## [2026-08-21] update | Email Monitoring Asana simplified to two sections
+- Reworked every task to lead with a clickable "Open this conversation in Intercom" link at the top of the description (html_notes), so each email can be reviewed directly from the task.
+- Collapsed the workflow to two sections per request: Escalated and Resolved/False Positives.
+- Placement: 2 in Escalated (Ctrl Alt MCC, Definely renewal template); 7 in Resolved/False Positives.
+- Three of the resolved items carry open actions noted in their descriptions and flagged to move back to Escalated if needed: Nory (customer still unanswered, FRT missed), Remote/Anthropic (pre-enrolment special category data, lawful basis undocumented), Flatpay (whether an opt-out triggers a consequences-of-cancellation disclosure).
+- Asana API cannot delete or reorder sections, so Go-to-Market, Customer Success, Benefits, Embed and the auto-created untitled section are now empty and need deleting in the UI. There is also no update_project endpoint exposed, so the project description still describes the original six-section structure and needs editing by hand.
