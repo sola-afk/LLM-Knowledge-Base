@@ -140,3 +140,17 @@ status: active
 - Grade mapping applied: Fail x2 (Ctrl Alt, Definely); Minor Correction x4 (Imvizar, LearnUpon, Nory, Remote/Anthropic); the 3 passes left blank, since the enum is exception-based and has no Pass option, matching Call Monitoring.
 - Caveat: the enum has no "Fail with referral" option, so Ctrl Alt displays as "Fail". The upgrade to Fail with referral, and the reasoning for it, sit in the task description.
 - No Kota Staff field was added; the employee remains at the front of each task name.
+
+## [2026-08-28] monitoring | Email monitoring — Intercom — Week 35 (24–28 Aug 2026)
+- Second run of the email supervision programme. Criteria unchanged from Call Monitoring.
+- Population: 594 email conversations, full sweep (6 pages, matches Intercom's count). Up 37% on week 34's 434.
+- Created: output/intercom-email-monitoring-2026-W35.md. 5 threads assessed and added to the Email Monitoring Asana with Link and Grade populated.
+- Grades: 1 Fail with referral, 1 Fail, 2 Pass with comments, 1 Pass.
+- ESCALATION 1 (Data Protection): a health scheme renewal letter for Trevor Gardiner, Kota personnel, was posted to Ramp Network's Ireland office. Handled as a "mailing error", snoozed twice, no breach assessment, no DPO escalation, no Article 33 clock. Kota has precedent for this (Notion "Mixed employees data incident", Dec 2025) and a written commitment on the Cybersecurity page - neither applied. Recognition failure rather than knowledge gap. Letter contents not inspected; grading between 4 and 5 depends on that.
+- ESCALATION 2 (CPC): employee pension transfer-in query received 26 Aug, no reply at all, both SLA targets breached, still open. Cross-reference shows an approved Help Centre article (9145103) answers the question almost verbatim - Fin escalated it out rather than serving the article and it sat unassigned. A Fin configuration and triage finding, not a handler one.
+- Second renewal-communication defect in two consecutive weeks (W34: campaign email to an offboarded client; W35: letter to the wrong company). Widens the W34 recommendation from suppression rules to the mailing file itself.
+- Onboard Retail: employer states the employee "has no recollection of enrolling in the health plan" and asks to reverse charges - a possible mis-enrolment/consent and redress issue processed as a routine cancellation, not flagged to Compliance.
+- Ineffable Intelligence: possible platform defect enforcing an under-18 dependant age rule that may not match Bupa's policy, potentially refusing eligible dependants. Tier 1 (1h) SLA answered in 15 hours.
+- SLA week on week: overall miss 58% to 55%; Embed P0 83% to 69%; Urgent 74% to 80%; P3 SME 19% to 30%. Misrouting 20% to 23%.
+- Carried over unresolved from W34: opt-out consequences-of-cancellation disclosure question, and the missing regulatory footer on CX Platform outbound.
+- Noted: the W34 Ctrl Alt item, graded 4 by Compliance, now shows as Minor Correction in Asana. Left as amended - the management view belongs in that column.
