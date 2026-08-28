@@ -154,3 +154,4 @@ status: active
 - SLA week on week: overall miss 58% to 55%; Embed P0 83% to 69%; Urgent 74% to 80%; P3 SME 19% to 30%. Misrouting 20% to 23%.
 - Carried over unresolved from W34: opt-out consequences-of-cancellation disclosure question, and the missing regulatory footer on CX Platform outbound.
 - Noted: the W34 Ctrl Alt item, graded 4 by Compliance, now shows as Minor Correction in Asana. Left as amended - the management view belongs in that column.
+- Deployed to Asana: the 5 week 35 tasks were confirmed live in the Email Monitoring project (14 tasks total across W34 and W35, all with Link and Grade populated), and the week 35 report was posted as a project status update (status red / off track), linking the two escalated tasks.
