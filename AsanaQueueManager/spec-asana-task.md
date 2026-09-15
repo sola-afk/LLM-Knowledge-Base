@@ -15,7 +15,7 @@ Full specification for creating a task in the Asana Call Monitoring project for 
 
 ## Quote-fidelity rule (Issues field)
 
-Every finding listed in the `Issues` custom field must include the **EXACT verbatim transcript quote**. No paraphrasing, no AI summaries, no "the speaker said something like". The quote is the search key: compliance pastes it into the Fireflies search bar to jump to the moment in the recording. If the transcript renders a word oddly (e.g. "Boop" for "BUPA", "Booba" for "BUPA"), preserve that exact rendering — it's what the Fireflies search will match. Per-second timestamps are unreliable through the current MCC transcript tools, so the verbatim quote is the source of truth.
+Every finding listed in the `Issues` custom field must include the **EXACT verbatim transcript quote**. No paraphrasing, no AI summaries, no "the speaker said something like". The quote is the search key: compliance pastes it into the Fireflies search bar to jump to the moment in the recording. If the transcript renders a word oddly (e.g. "Boop" for "BUPA", "Booba" for "BUPA"), preserve that exact rendering — it's what the Fireflies search will match. The verbatim quote remains the authoritative evidence. **Update 2026-09-07**: Fireflies MCP transcripts now return per-sentence `[MM:SS - MM:SS]` ranges and support deep links of the form `https://app.fireflies.ai/view/{id}?t={seconds}`, so a timestamp anchor can be included as a navigation aid alongside the quote.
 
 ## Assignee rule
 
@@ -120,6 +120,18 @@ Company name of the prospect or client, e.g.:
 
 Construct as valid XML with a single `<body>` root.
 
+> [!warning] Allowed elements — verified against the live API 2026-09-07
+> Asana accepts **only**: `<body> <strong> <em> <u> <s> <code> <ol> <ul> <li> <a> <blockquote>
+> <pre> <h1> <h2> <hr/> <img>`.
+>
+> **`<br/>` and `<p>` are rejected** with `bad_request: "XML is invalid"`, even though the
+> document is well-formed. An earlier version of this template used `<br/>` throughout and
+> could not create a task — two attempts failed before the cause was isolated. Use **nested
+> `<ul>`** for sub-lines within a finding, and `<ul>` or `<blockquote>` in place of `<p>`.
+>
+> Validate before calling: parse the string and assert the element set is a subset of the list
+> above. Well-formedness alone is not sufficient.
+
 ```xml
 <body>
 <h1>Call Details</h1>
@@ -138,17 +150,20 @@ Construct as valid XML with a single `<body>` root.
 
 <h1>Compliance Findings</h1>
 <ul>
-  <li>
-    <strong>[Criterion ID] — [Criterion name] — [HH:MM:SS]</strong><br/>
-    <em>Transcript:</em> "[exact quote from transcript]"<br/>
-    <em>Speaker:</em> [Name] ([MCC status])<br/>
-    <em>Regulation:</em> [matches the Requirement Breached field]<br/>
-    <em>Severity:</em> High / Medium / Low
+  <li><strong>[Criterion ID] — [Criterion name] — [~MM:SS]</strong>
+    <ul>
+      <li><em>Transcript:</em> "[exact quote from transcript]"</li>
+      <li><em>Speaker:</em> [Name] ([MCC status])</li>
+      <li><em>Regulation:</em> [matches the Requirement Breached field]</li>
+      <li><em>Severity:</em> High / Medium / Low</li>
+    </ul>
   </li>
 </ul>
 
 <h1>Training / Gap</h1>
-<p>[What training or process change would prevent recurrence]</p>
+<ul>
+  <li>[What training or process change would prevent recurrence]</li>
+</ul>
 
 <h1>Actions Required</h1>
 <ol>
@@ -186,7 +201,7 @@ Also place the task in the **Escalated** section (`1213240137041730`) instead of
       "due_on": "2026-05-08",
       "followers": "1213006028880034,1212984665985179",
       "custom_fields": "{\"1213240170325716\":\"1214635377742249\",\"1213240170325723\":\"PMI demo — new prospect\",\"1213240170325728\":\"HF-10 (unqualified speaker describing cover details): \\\"The cash plan covers dental up to €500 per year and optical up to €150.\\\"\",\"1213240170325733\":\"CBI Minimum Competency Code 2017 — provision of information on retail financial product by unqualified person\",\"1213240170325738\":\"https://app.fireflies.ai/view/abc123\",\"1214635377742250\":\"Karl O'Brien (Script pathway)\",\"1214635377742252\":\"Prospect Corp Ltd\"}",
-      "html_notes": "<body><h1>Call Details</h1><ul><li><strong>Client / Prospect:</strong> Prospect Corp Ltd</li><li><strong>Call date:</strong> 2026-05-08 10:30</li><li><strong>Duration:</strong> 24 minutes</li><li><strong>Department:</strong> GTM</li></ul><h1>Participants</h1><ul><li><strong>Kota staff:</strong> Karl O'Brien — Account Executive — Script pathway (unqualified)</li><li><strong>Customer / Prospect:</strong> Jane Smith, Prospect Corp Ltd</li></ul><h1>Compliance Findings</h1><ul><li><strong>HF-10 — Cover details by unqualified speaker</strong><br/><em>Verbatim transcript quote (paste into Fireflies search):</em> \"The cash plan covers dental up to €500 per year and optical up to €150.\"<br/><em>Speaker:</em> Karl O'Brien (Script pathway — unqualified)<br/><em>Regulation:</em> CBI MCC 2017 — provision of information on retail financial product by unqualified person<br/><em>Severity:</em> High</li></ul><h1>Training / Gap</h1><p>Karl is on the prescribed script pathway and described specific PMI cover limits to a prospect. This is a MCC-regulated activity that requires an APA (PMI) or QFA qualification.</p></body>"
+      "html_notes": "<body><h1>Call Details</h1><ul><li><strong>Client / Prospect:</strong> Prospect Corp Ltd</li><li><strong>Call date:</strong> 2026-05-08 10:30</li><li><strong>Duration:</strong> 24 minutes</li><li><strong>Department:</strong> GTM</li></ul><h1>Participants</h1><ul><li><strong>Kota staff:</strong> Karl O'Brien — Account Executive — Script pathway (unqualified)</li><li><strong>Customer / Prospect:</strong> Jane Smith, Prospect Corp Ltd</li></ul><h1>Compliance Findings</h1><ul><li><strong>HF-10 — Cover details by unqualified speaker</strong><ul><li><em>Verbatim transcript quote:</em> \"The cash plan covers dental up to €500 per year and optical up to €150.\"</li><li><em>Speaker:</em> Karl O'Brien (Script pathway — unqualified)</li><li><em>Regulation:</em> CBI MCC 2017 — provision of information on retail financial product by unqualified person</li><li><em>Severity:</em> High</li></ul></li></ul><h1>Training / Gap</h1><ul><li>Karl is on the prescribed script pathway and described specific PMI cover limits to a prospect. This is a MCC-regulated activity that requires an APA (PMI) or QFA qualification.</li></ul></body>"
     }
   ]
 }
