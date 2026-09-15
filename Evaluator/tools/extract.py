@@ -42,6 +42,21 @@ def is_non_human(email):
     e = (email or "").lower()
     return any(d in e for d in NON_HUMAN)
 
+# !! REGISTER SNAPSHOT IS STALE !!
+# research-mcc-fitness-probity.md carries a snapshot dated MAY 2026. Anyone who joined
+# after that date resolves as UNRECOGNISED and, under fail-closed (R6), generates a
+# false HF-00 — the most serious criterion in the set — against a properly registered
+# colleague. This already happened once: Mark Fitzgibbon (script pathway, joined approx.
+# July 2026) was reported as "NOT ON MCC REGISTER" in a live Asana task on 2026-09-15.
+#
+# Fail-closed is correct for a genuinely unknown speaker. It is NOT correct for a stale
+# baseline, because the failure mode is indistinguishable from a real finding. Until the
+# register is refreshed, treat every UNRECOGNISED result as "verify with Compliance
+# before raising HF-00", not as a finding.
+#
+# Still unverified as of 2026-09-15: Luke Healy, Tadhg, Dan (organiser), Mark Fitzgibbon's
+# supervisor arrangement. All appear in customer-facing calls; none are in the snapshot.
+#
 # MCC register — research-mcc-fitness-probity.md is canonical (calibration rule R6).
 # NOTE: spec-eval-daily-run.md Step 3 carries an inline copy that has DRIFTED from the
 # register (it still lists Matthew Brennan as New Entrant, and omits Barbara Murray and
@@ -61,6 +76,9 @@ QUALIFIED = {
 SCRIPT = {
     "henry godson", "katie garry", "will robbins", "simon ward",
     "claudia correa", "karl o'brien", "joana crisostomo", "joana crisóstomo",
+    # Added 2026-09-15 by Compliance correction. NOT in the May 2026 register
+    # snapshot in research-mcc-fitness-probity.md — joined approx. July 2026.
+    "mark fitzgibbon",
 }
 UNREGISTERED = {"kate fullen", "ceri thomas", "luke mackey"}
 

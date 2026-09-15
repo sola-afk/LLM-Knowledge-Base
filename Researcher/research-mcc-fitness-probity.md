@@ -126,6 +126,26 @@ Kota maintains a detailed MCC/F&P register in Google Drive ("Fitness and Probity
 1. **PCF/CF Register** — Senior management roles (PCF = Pre-approval Controlled Function; CF = Controlled Function)
 2. **MCC-regulated customer-facing staff** — Qualifications, script pathway, supervisor, training status
 
+> [!warning] Snapshot is stale — verify UNRECOGNISED results before raising HF-00
+> This snapshot is dated **May 2026**. Anyone who joined after that date resolves as
+> unrecognised and, under fail-closed (R6), generates a **false HF-00** — the most serious
+> criterion in the set — against a properly registered colleague.
+>
+> **This has already happened.** On 2026-09-15 a live Asana task recorded **Mark Fitzgibbon**
+> as *"NOT ON MCC REGISTER"* and routed partly on that basis. He is on the **script pathway**;
+> he simply joined around July 2026, after this snapshot was taken. Compliance caught it.
+>
+> Fail-closed is right for a genuinely unknown speaker. It is **wrong for a stale baseline**,
+> because the failure mode is indistinguishable from a real finding. Until this file is
+> refreshed, treat every unrecognised speaker as **"verify with Compliance"**, not as a finding.
+>
+> **Unverified as of 2026-09-15** — all appear in customer-facing calls, none are below:
+> Mark Fitzgibbon (now known: script pathway), **Luke Healy**, **Tadhg**, **Dan** (call
+> organiser, distinct from Dan McAvinue), **Mark Fitzgibbon's supervisor**.
+>
+> Recommend a refreshed export from the Google Drive register, and thereafter a refresh
+> cadence tied to onboarding rather than to quarterly review.
+
 As of the latest register snapshot (May 2026), the call monitoring agent should treat speakers as follows:
 
 ### ✅ Fully Qualified MCC Persons (Can conduct regulated activity independently)
@@ -159,6 +179,7 @@ As of the latest register snapshot (May 2026), the call monitoring agent should 
 | **Simon Ward** | Customer Success | Trevor Gardiner | Prescribed script pathway |
 | **Claudia Correa** | Customer Support | Trevor Gardiner | Prescribed script pathway |
 | **Karl O'Brien** | Account Executive | Trevor Gardiner | Prescribed script pathway; **unmonitored mobile phone use flagged** |
+| **Mark Fitzgibbon** | Go-to-Market | *to confirm* | Script pathway *(added 2026-09-15 per Compliance; joined approx. July 2026, absent from the May snapshot)*. Supervisor not yet recorded |
 | **Joana Crisóstomo** | CS Co-ordinator | Trevor Gardiner | Moved roles Sept 2025 |
 | **Gabriella Pistol** | (unspecified) | Trevor Gardiner | Resigned Sept 2025 |
 | **Grace Lynch** | Benefits Co-ordinator | Trevor Gardiner | Removed from register Dec 2025 |
