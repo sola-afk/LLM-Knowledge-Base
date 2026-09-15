@@ -12,6 +12,7 @@ saved to disk (the client persists oversized results and prints the path).
 Usage
   extract.py triage <transcripts-list.txt>   # Step 1: customer-facing filter
   extract.py speakers <transcript.txt>       # Step 3: Kota-side speakers + authorisation
+  extract.py scan     <transcript.txt>       # Step 4: criterion trigger sweep, non-qualified speakers
 
 Field contract mirrors `Evaluator/spec-eval-daily-run.md`. Change both together.
 """
@@ -189,7 +190,79 @@ def cmd_speakers(path):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3 or sys.argv[1] not in ("triage", "speakers"):
+    if len(sys.argv) != 3 or sys.argv[1] not in ("triage", "speakers", "scan"):
         print(__doc__)
         sys.exit(1)
-    {"triage": cmd_triage, "speakers": cmd_speakers}[sys.argv[1]](sys.argv[2])
+    {"triage": cmd_triage, "speakers": cmd_speakers, "scan": cmd_scan}[sys.argv[1]](sys.argv[2])
+
+
+# --- scan: criterion trigger sweep over a fetched transcript ------------------
+# Added 2026-09-15. Assessing one call per week is not coverage — two weeks of
+# running produced two findings from ~98 triaged calls, which says more about the
+# sampling than the population. This sweeps a transcript for trigger language per
+# criterion and reports candidate hits by speaker, so a reviewer reads the ~20 lines
+# that matter rather than 800. Candidates are NOT findings: every hit needs reading
+# in context, and R1/R7 still apply.
+TRIGGERS = {
+    "HF-01 recommendation": r"\b(i'?d? recommend|i would recommend|you should|best thing|best option|"
+                            r"what we recommend|we always say|i'?d suggest|i would suggest|my advice|"
+                            r"better off|worth considering|i'?d go with|if i were you)\b",
+    "HF-02 comparative":    r"\b(so superior|much better than|more advantageous|better than|falls down|"
+                            r"stronger than|weaker than|outperform)\b",
+    "HF-03 firm status":    r"\b(qualified financial advis|we'?re global|whole of market|go to market|"
+                            r"most competitive quote|everything i say is regulated|we'?re regulated)\b",
+    "HF-04 arranging":      r"\b(get you a quote|get a quote|request a quote|set that up for you|"
+                            r"i'?ll set up|put you in touch with.*quote|sort that out for you)\b",
+    "HF-05 tax/AE":         r"\b(tax relief|benefit in kind|\bbik\b|p11d|auto.?enrol|my future fund|"
+                            r"taxable income|net pay|gross pay|gross earnings|revenue|prsi|usc)\b",
+    "HF-10 mechanics":      r"\b(excess|waiting period|moratorium|underwrit|pre.?existing|dental|optical|"
+                            r"outpatient|inpatient|day.?to.?day cover|claim|cover(s|age)?\b|"
+                            r"vesting|salary sacrifice)\b",
+    "HF-11 comparison":     r"\b(compared to|versus|\bvs\b|difference between|cheaper than|"
+                            r"more expensive than|like for like)\b",
+    "HF-13 pricing":        r"(€\s?\d|£\s?\d|\d+\s?(euro|quid|pound)|per month|per annum|pepm|"
+                            r"\bcheaper\b|\bpricing\b|premium.{0,20}(increase|rise|go(ing)? up|down))",
+    "HF-15 performance":    r"\b(performing|performance|returns|market.?leading|best in market|"
+                            r"top performing)\b",
+    "SF-12 emotive":        r"\b(wild west|good news story|no.?brainer|game.?changer|amazing|fantastic)\b",
+    "SF-13 disparagement":  r"\b(difficult to work with|falls down|not great|a nightmare|clunky|"
+                            r"poor service|let us down)\b",
+}
+
+
+def cmd_scan(path):
+    txt = open(path).read()
+    kota_speakers = {}
+    for line in txt.splitlines():
+        m = re.match(r"\[(\d\d:\d\d) - \d\d:\d\d\]\s*([^:]{1,60}?):\s*(.*)", line)
+        if not m:
+            continue
+        t, spk, body = m.groups()
+        st, scope = authorisation(spk)
+        kota_speakers.setdefault(spk, (st, scope, []))[2].append((t, body))
+
+    title = re.search(r"^Title:\s*(.*)$", txt, re.M)
+    print(f"{title.group(1) if title else '(no title)'}\n")
+
+    any_hit = False
+    for spk, (st, scope, lines) in sorted(kota_speakers.items(), key=lambda x: -len(x[1][2])):
+        if st in ("QUALIFIED", "QUALIFIED*"):
+            continue  # in-scope by default; check scope separately, not by trigger sweep
+        hits = []
+        for t, body in lines:
+            for crit, pat in TRIGGERS.items():
+                if re.search(pat, body, re.I):
+                    hits.append((t, crit, body))
+                    break
+        if not hits:
+            continue
+        any_hit = True
+        print("=" * 100)
+        print(f"{spk}  [{st}] {scope}   {len(lines)} turns, {len(hits)} candidate lines")
+        print("=" * 100)
+        for t, crit, body in hits:
+            print(f"  [{t}] {crit:<22} {body[:150]}")
+        print()
+    if not any_hit:
+        print("No trigger hits for non-qualified speakers.")
+    print("Candidates are NOT findings. Read each in context; R1 and R7 still apply.")
