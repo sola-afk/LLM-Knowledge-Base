@@ -64,8 +64,32 @@ SCRIPT = {
 UNREGISTERED = {"kate fullen", "ceri thomas", "luke mackey"}
 
 
+# Diminutives seen in Fireflies speaker labels vs the register's formal names. The
+# 2026-09-07→11 run labelled a speaker "Dan McAvinue" while the register says "Daniel
+# McAvinue" (APA Pensions & Life). Exact matching returned UNRECOGNISED, which under
+# fail-closed would have raised a spurious HF-00 against a QUALIFIED person — a false
+# positive on the most serious criterion in the set.
+ALIASES = {
+    "dan mcavinue": "daniel mcavinue",
+    "danny mcavinue": "daniel mcavinue",
+    "matt brennan": "matthew brennan",
+    "cal pearse": "callum pearse",
+    "chas blake": "charlie blake",
+    "charles blake": "charlie blake",
+    "pat o'boyle": "patrick o'boyle",
+    "paddy o'boyle": "patrick o'boyle",
+    "barb murray": "barbara murray",
+    "trev gardiner": "trevor gardiner",
+    "kate garry": "katie garry",
+    "si ward": "simon ward",
+    "hen godson": "henry godson",
+    "claudia correia": "claudia correa",
+}
+
+
 def authorisation(name):
     k = (name or "").strip().lower()
+    k = ALIASES.get(k, k)
     if k in QUALIFIED:
         s, scope = QUALIFIED[k]
         return s, scope
@@ -73,7 +97,9 @@ def authorisation(name):
         return "SCRIPT", "script only — Step 3.5 carve-out applies"
     if k in UNREGISTERED:
         return "UNREGISTERED", "cannot conduct regulated activity"
-    return "UNRECOGNISED", "fail closed (R6); but see R7 — advising vs observing"
+    return ("UNRECOGNISED",
+            "fail closed (R6); but see R7. CHECK ALIASES before flagging HF-00 — a diminutive "
+            "or spelling variant of a registered name is not an unregistered person")
 
 
 def parse_transcripts(path):
