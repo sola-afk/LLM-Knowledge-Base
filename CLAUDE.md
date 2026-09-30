@@ -32,6 +32,7 @@ Allocation so far: **HF-00–HF-15** base (calls), **HF-16–HF-22** email-only,
 | Define or update what the agent must detect (Intercom) | /Researcher | CONTEXT.md + req-intercom-detection-criteria.md |
 | Write or revise agent prompts and output schema | /Designer | CONTEXT.md |
 | Pull Fireflies transcripts for a date and assess compliance | /Evaluator | CONTEXT.md |
+| Change the weekly call-eval schedule or its prompt | /Evaluator | spec-weekly-routine.md |
 | Pull email for a date and assess compliance | /EmailEvaluator | CONTEXT.md |
 | Audit the email template library | /EmailEvaluator | CONTEXT.md § Template Library Audit |
 | Pull Intercom conversations for a date and assess compliance | /IntercomEvaluator | CONTEXT.md |
