@@ -2,7 +2,7 @@
 title: Weekly Call Eval — Scheduled Routine
 created: 2026-09-30
 type: spec
-status: created — BLOCKED on connector attachment
+status: active — Fireflies + Asana attached; Slack missing
 trigger_id: trig_01MpWuUjHQZgdX2EQ1gZh5yY
 ---
 
@@ -21,24 +21,30 @@ behaviour is reviewable in the repo rather than living only in the scheduler.
 | **Notifications** | Push to the owner on completion |
 | **Branch** | `claude/call-monitoring-agent-foa9cs` |
 
-> [!warning] BLOCKED — the Routine has no connectors attached
-> The Routine was created successfully and **will fire**, but the sessions it starts carry **no
-> connector tools** — no Fireflies, no Asana, no Slack. As it stands it will fail at step 3, when
-> it tries to pull transcripts.
+> [!note] Verified 2026-09-30 — live, with one gap
+> Connectors were attached manually and confirmed present on the trigger:
 >
-> Connectors could not be attached programmatically: passing them through from this session is
-> disabled for this organization. **They must be attached to the Routine from the claude.ai
-> Routines UI** before the first run.
+> | Connector | Status | Used for |
+> |---|---|---|
+> | **Fireflies** | ✅ attached | Pull transcripts (steps 3–4) |
+> | **Asana** | ✅ attached | File Grade 3/4/5 (step 7) |
+> | **Slack** | ❌ **not attached** | DM Compliance (step 8) |
 >
-> Required: **Fireflies** (pull transcripts), **Asana** (file Grade 3/4/5), **Slack** (notify
-> Compliance).
+> Also confirmed: `enabled: true`, fresh session per fire (`persist_session: false`), next run
+> **2026-10-05 07:00 UTC**, and the tool allowlist includes Bash / Read / Write / Edit — so the
+> session can run `extract.py` and push to git.
 >
-> Until that is done the schedule produces failures, not coverage. A Routine that fires and fails
-> is worse than no Routine, because the calendar entry implies the work is happening.
+> **The Slack gap does not break the run.** Step 8 now degrades gracefully: with no Slack tool the
+> session writes the same summary into the report under a "Summary for Compliance" heading and says
+> explicitly in its final message that the DM could not be sent. Push notification to the owner is
+> on regardless, so a run is never silent.
+>
+> Attach Slack from the claude.ai Routines UI to close it.
 
 ## What it does
 
-1. **Period** — previous Mon–Fri, computed at run time.
+1. **Period** — the most recent complete Mon–Fri *ending before today*, computed from the actual
+   day-of-week at run time.
 2. **Reads** the run spec, criteria, MCC register, AE source-of-truth, script register, the R1–R7
    calibration rules, and the two most recent weekly reports (for repeat patterns).
 3. **Pulls and triages** via `fireflies_get_transcripts` → `tools/extract.py triage`. Payloads are
@@ -48,7 +54,8 @@ behaviour is reviewable in the repo rather than living only in the scheduler.
 5. **Reports** to `Evaluator/eval-<from>-to-<to>-weekly.md`, including the mandatory R5 withdrawn-
    findings section.
 6. **Files** every Grade 3/4/5 to Asana per `AsanaQueueManager/spec-asana-task.md`.
-7. **Slacks** Sola Olaniyan (`U09CME6LKEU`) with a phone-readable summary.
+7. **Notifies Compliance** — DMs Sola (`U09CME6LKEU`) if Slack is available; otherwise writes the
+   summary into the report and says so, rather than skipping silently.
 8. **Commits and pushes** to the working branch.
 
 ## Guards carried in the prompt
@@ -72,6 +79,10 @@ fresh session inherits them without having to rediscover them:
   tractable (~10/day) — worth revisiting if partial coverage proves unsatisfactory.
 - **DST drift.** The cron is UTC. Ireland leaves IST on 25 October 2026, after which 07:00 UTC is
   07:00 local rather than 08:00. Harmless for a Monday-morning job; noted so it is not a surprise.
+- **Date arithmetic is day-of-week independent** *(fixed 2026-09-30)*. The first version said
+  "7 days ago through 3 days ago", which is only correct on a Monday — a manual fire or a retry on
+  any other day would have silently assessed a Wed–Sun window and labelled it a working week. The
+  prompt now computes the last complete Mon–Fri and verifies the day-of-week before proceeding.
 - **The register guard is a mitigation, not a fix.** Refreshing
   `Researcher/research-mcc-fitness-probity.md` from the Google Drive source removes the underlying
   failure mode. Until then every run carries the caveat.
